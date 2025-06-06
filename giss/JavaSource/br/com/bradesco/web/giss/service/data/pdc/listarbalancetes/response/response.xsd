@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarBalancetesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codEmpresa" type="xsd:int" default="0" />
+        <xsd:element name="descEmpresa" type="xsd:string" />
+        <xsd:element name="cpfCnpj" type="xsd:long" default="0" />
+        <xsd:element name="controle" type="xsd:int" default="0" />
+        <xsd:element name="filial" type="xsd:int" default="0" />
+        <xsd:element name="codGrupoInicio" type="xsd:int" default="0" />
+        <xsd:element name="codGrupoFim" type="xsd:int" default="0" />
+        <xsd:element name="codNivelConta" type="xsd:string" />
+        <xsd:element name="descDependencia" type="xsd:string" />
+        <xsd:element name="descMunicipio" type="xsd:string" />
+        <xsd:element name="siglaUf" type="xsd:string" />
+        <xsd:element name="codTipoBalancete" type="xsd:string" />
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codSolicitacaoBalancete" type="xsd:long" default="0" />
+              <xsd:element name="seqApuracaoBalancete" type="xsd:long" default="0" />
+              <xsd:element name="codCosif" type="xsd:long" default="0" />
+              <xsd:element name="codGrupoContabil" type="xsd:int" default="0" />
+              <xsd:element name="codSubgrupoContabil" type="xsd:int" default="0" />
+              <xsd:element name="codConta" type="xsd:long" default="0" />
+              <xsd:element name="digConta" type="xsd:string" />
+              <xsd:element name="sinalSaldoAnterior" type="xsd:string" />
+              <xsd:element name="vlrSaldoAnterior" type="xsd:decimal" default="0" />
+              <xsd:element name="vlrSaldoDebito" type="xsd:decimal" default="0" />
+              <xsd:element name="vlrSaldoCredito" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalSaldoAtual" type="xsd:string" />
+              <xsd:element name="vlrSaldoAtual" type="xsd:decimal" default="0" />
+              <xsd:element name="nivelLancamento" type="xsd:int" />
+              <xsd:element name="descLancamento" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

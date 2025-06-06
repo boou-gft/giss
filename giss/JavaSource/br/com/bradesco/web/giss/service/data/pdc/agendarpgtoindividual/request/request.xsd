@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="agendarPgtoIndividualRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codEmpresa" type="xsd:int" default="0" />
+        <xsd:element name="competencia" type="xsd:int" default="0" />
+        <xsd:element name="codProduto" type="xsd:int" default="0" />
+        <xsd:element name="listaMunicipioAgendar" minOccurs="200" maxOccurs="200">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="valorTotalApuracaoIss" type="xsd:decimal" default="0" />
+              <xsd:element name="valorMulta" type="xsd:decimal" default="0" />
+              <xsd:element name="percentualAtualizacaoMonetaria" type="xsd:double" default="0" />
+              <xsd:element name="valorAtualizacaoMonetaria" type="xsd:decimal" default="0" />
+              <xsd:element name="valorPagamento" type="xsd:decimal" default="0" />
+              <xsd:element name="dataOrigem" type="xsd:string" />
+              <xsd:element name="dataAgendamento" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

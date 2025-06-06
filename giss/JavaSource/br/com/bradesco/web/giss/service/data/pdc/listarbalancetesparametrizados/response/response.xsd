@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarBalancetesParametrizadosResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" minOccurs="0" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="codGrupo" type="xsd:string" />
+              <xsd:element name="siglaUf" type="xsd:string" />
+              <xsd:element name="descMunicipio" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

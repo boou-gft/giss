@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resultadoPesquisaApuracaoMovimentoNaoTributavelResponse>
+	<codMensagem/>
+	<mensagem/>
+	<receitaTotalMunicipioSinal>+</receitaTotalMunicipioSinal>
+	<receitaTotalMunicipioValor>522198.01</receitaTotalMunicipioValor>
+	<movimentoTotalMunicipioSinal>+</movimentoTotalMunicipioSinal>
+	<movimentoTotalMunicipioValor>10254.03</movimentoTotalMunicipioValor>
+	<receitaTotalGeralSinal>+</receitaTotalGeralSinal>
+	<receitaTotalGeralValor>5522198.01</receitaTotalGeralValor>
+	<movimentoTotalGeralSinal>+</movimentoTotalGeralSinal>
+	<movimentoTotalGeralValor>2510254.03</movimentoTotalGeralValor>
+	<numeroConsultas>2</numeroConsultas>
+	<ocorrencias>
+		<codigoPessoaJuridica>1</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>1</numeroSequenciaUnidadeOrganizacional>
+		<codigoDependencia>3546</codigoDependencia>
+		<descricaoDependencia>URB. MT - CUIABA</descricaoDependencia>
+		<movimentoSinal>-</movimentoSinal>
+		<movimentoValor>115245.30</movimentoValor>
+		<receitaSinal>+</receitaSinal>
+		<receitaValor>5245.30</receitaValor>
+    </ocorrencias>
+    <ocorrencias>
+		<codigoPessoaJuridica>2</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>2</numeroSequenciaUnidadeOrganizacional>
+		<codigoDependencia>13585</codigoDependencia>
+		<descricaoDependencia>OSASCO</descricaoDependencia>
+		<movimentoSinal>+</movimentoSinal>
+		<movimentoValor>790.55</movimentoValor>
+		<receitaSinal>-</receitaSinal>
+		<receitaValor>800.68</receitaValor>
+    </ocorrencias>
+</resultadoPesquisaApuracaoMovimentoNaoTributavelResponse>

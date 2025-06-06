@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoMensalReprocessamentoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigo" type="xsd:int" default="0" />
+              <xsd:element name="solicitacao" type="xsd:string" />
+              <xsd:element name="processamento" type="xsd:string" />
+              <xsd:element name="periodoInicial" type="xsd:string" />
+              <xsd:element name="periodoFinal" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

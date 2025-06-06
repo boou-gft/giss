@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarDiferencasRetificadorContabilRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ANO-MES" type="xsd:int" default="0" />
+        <xsd:element name="COD-EMPRESA" type="xsd:int" default="0" />
+        <xsd:element name="CIDTFD-TRANS" type="xsd:int" default="0" />
+        <xsd:element name="NAPURC-ISS-EMPR" type="xsd:int" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

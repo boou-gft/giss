@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarValorMesTotalNvContaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="sinalTotalReceita" type="xsd:string" />
+        <xsd:element name="valorTotalReceita" type="xsd:double" default="0" />
+        <xsd:element name="sinalTotalIss" type="xsd:string" />
+        <xsd:element name="ValorTotalIss" type="xsd:double" default="0" />
+        <xsd:element name="listaValorMesTotalNvConta" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="cosif" type="xsd:string" />
+              <xsd:element name="codGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codSubGrupo" type="xsd:int" default="0" />
+              <xsd:element name="conta" type="xsd:int" default="0" />
+              <xsd:element name="digConta" type="xsd:string" />
+              <xsd:element name="sinalReceita" type="xsd:string" />
+              <xsd:element name="valorReceita" type="xsd:double" default="0" />
+              <xsd:element name="sinalIss" type="xsd:string" />
+              <xsd:element name="valorIss" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

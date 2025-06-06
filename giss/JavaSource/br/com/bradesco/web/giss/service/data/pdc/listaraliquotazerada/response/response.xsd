@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarAliquotaZeradaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="receitaApuracaoTotalSinal" type="xsd:string" />
+        <xsd:element name="receitaApuracaoTotalValor" type="xsd:decimal" default="0" />
+        <xsd:element name="nroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="250">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="contaContabil" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="descRazao" type="xsd:string" />
+              <xsd:element name="receitaApuracaoSinal" type="xsd:string" />
+              <xsd:element name="receitaApuracaoValor" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaPlanilhaApuracao2Request">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="qtdeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="mesAnoApurInicial" type="xsd:int" default="0" />
+        <xsd:element name="mesAnoApurFinal" type="xsd:int" default="0" />
+        <xsd:element name="codPessoaJurid" type="xsd:long" default="0" />
+        <xsd:element name="numSeqUnidOrganiz" type="xsd:int" default="0" />
+        <xsd:element name="filtroConta" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

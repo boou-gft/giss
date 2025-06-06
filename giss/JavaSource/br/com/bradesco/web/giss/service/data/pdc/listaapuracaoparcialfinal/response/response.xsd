@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaApuracaoParcialFinalResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="baseCalculoTributario" type="xsd:double" default="0" />
+        <xsd:element name="aliquotaPadraoMunicipio" type="xsd:double" default="0" />
+        <xsd:element name="tipoIncidenteTributario" type="xsd:string" />
+        <xsd:element name="numeroApuracao" type="xsd:int" default="0" />
+        <xsd:element name="dataApuracao" type="xsd:string" />
+        <xsd:element name="horaProcessamento" type="xsd:string" />
+        <xsd:element name="totalValorMovimentoSinal" type="xsd:string" />
+        <xsd:element name="totalValorMovimento" type="xsd:double" default="0" />
+        <xsd:element name="totalValorTribuSinal" type="xsd:string" />
+        <xsd:element name="totalValorTribu" type="xsd:double" default="0" />
+        <xsd:element name="totalValorIssSinal" type="xsd:string" />
+        <xsd:element name="totalValorIss" type="xsd:double" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="300">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="contaContabilTributavel" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="valorMovimentoSinal" type="xsd:string" />
+              <xsd:element name="valorMovimento" type="xsd:double" default="0" />
+              <xsd:element name="valorTributarioSinal" type="xsd:string" />
+              <xsd:element name="valorTributario" type="xsd:double" default="0" />
+              <xsd:element name="aliquotaConta" type="xsd:double" default="0" />
+              <xsd:element name="valorIssSinal" type="xsd:string" />
+              <xsd:element name="valorIss" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

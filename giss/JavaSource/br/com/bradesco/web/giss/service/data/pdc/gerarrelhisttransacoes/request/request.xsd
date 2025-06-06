@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="gerarRelHistTransacoesRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="eCompetIni" type="xsd:int" default="0" />
+        <xsd:element name="eCompetFim" type="xsd:int" default="0" />
+        <xsd:element name="eCodEmpresa" type="xsd:int" default="0" />
+        <xsd:element name="eCodMunicip" type="xsd:long" default="0" />
+        <xsd:element name="eFiller" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

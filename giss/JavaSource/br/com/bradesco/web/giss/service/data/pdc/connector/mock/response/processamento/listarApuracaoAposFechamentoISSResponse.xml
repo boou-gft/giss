@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarApuracaoAposFechamentoISSResponse>
+ 	<codMensagem/>
+    <mensagem/>
+    <quantidadeOcorrencias>3</quantidadeOcorrencias>
+		<ocorrencias>
+			 <codigoSolicitacaoApuracao>41</codigoSolicitacaoApuracao>
+			 <dataSolicitacaoApuracao>.12.06.2010</dataSolicitacaoApuracao>
+			 <dataProcessamento>18.06.2010</dataProcessamento>
+		</ocorrencias>
+		<ocorrencias>
+			 <codigoSolicitacaoApuracao>65</codigoSolicitacaoApuracao>
+			 <dataSolicitacaoApuracao>30.07.2010</dataSolicitacaoApuracao>
+			 <dataProcessamento>05.08.2010</dataProcessamento>
+		</ocorrencias>
+		<ocorrencias>
+			 <codigoSolicitacaoApuracao>10</codigoSolicitacaoApuracao>
+			 <dataSolicitacaoApuracao>26.04.2010</dataSolicitacaoApuracao>
+			 <dataProcessamento>30.04.2010</dataProcessamento>
+		</ocorrencias>				
+</listarApuracaoAposFechamentoISSResponse>            

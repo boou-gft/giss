@@ -1,0 +1,218 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+                                   "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<!-- ###########################################################################  
+	 
+	 En este xml se definen aquellos "trozos" ("tiles") de JSP que se repiten
+	 en las diferentes paginas. Como por ejemplo, el layout principal donde
+	 se compone el marco de la pagina, o otros templates que puedan ser 
+	 utilizados por mas de una pagina.
+	 
+	 Tambien puede ser posible que estos templates sean compartidos por mas 
+	 de una aplicacion. De ahi el motivo de dividir en varios el fichero de 
+	 definiciones de "tiles".
+	 	 
+	 ###########################################################################
+--> 
+
+<tiles-definitions>
+
+	<!-- #####################################################################   
+		 ####################### MASTER LAYOUT ###############################
+		 #####################################################################
+		 
+		 Template principal de la pagina, donde se compone la pagina a partir
+		 de una cabecera (atributo "header"), de un menu de navegacion (atributo
+		 "menu"), de un pie de pagina (atributo "footer") y opcionalmente con 
+		 contenido a izquierda (atributo "leftContent") y a derecha (atributo 
+		 "rightContent"), para acabar de enmarcar cada una de las pagina. 
+		 
+		 La pagina principal se definira, a traves del atributo "body", en las 
+		 "definitions" que extiendan este layout principal.
+		 
+	--> 
+    <definition name="main.layout" path="/template/mainLayout.jsp">
+    	<put name="title" value="webapp_title" />
+    	
+    	<!-- Meta Data -->
+    	<put name="description" value="meta_description" />
+    	<put name="author" value="meta_author" />
+    	<put name="copyright" value="meta_copyright" />
+		<put name="keywords" value="meta_keywords" />
+    	
+    	<put name="header" value="header.attributes" />
+        <put name="footer" value="footer.attributes" />
+        <put name="labelTela" value="label_tela" />
+    	
+        <!-- Lista de StyleSheets generales a incluir en el template -->
+        <putList name="css">
+			<item value="Tiles" link="/template/css/tiles.css"/>
+			<item value="Components" link="/template/css/components.css"/>
+			<item value="PrintCSS" link="/template/css/print.css" tooltip="print"/>
+			<item value="ModalMessagesIntranetCSS" link="/css/modalMessages.css"/>
+			<item value="CalendarCSS" link="/template/css/estilos_calendar.css"/>
+		</putList>
+		
+		<!-- Lista de modulos Javascript a incluir en el template -->
+        <putList name="js">
+			<item value="UtilFuncoes" link="/javascript/utilFuncoes.js"/>
+		</putList>
+        
+    </definition>
+    
+    <!-- Atributos de la cabecera -->
+    <definition name="header.attributes" path="/template/header.jsp" ><!-- setar subheader aqui /template/subHeader.jsp-->
+    	<!-- Imagenes de Cabecera para Usuario Prime -->
+    	<put name="primeImg" value="/template/images/barra_top_prime.gif" />
+        <put name="primeSessaoImg" value="/template/images/barra_top_prime_sessao.gif" />
+        
+        
+<!--         Imagenes de Cabecera para Usuario Bradesco Dia e Noite -->
+        <put name="diaNoiteImg" value="/template/images/barra_top.gif" />
+        <put name="diaNoiteSessaoImg" value="/template/images/barra_top_sessao.gif" />
+        <put name="logoImg" value="/template/images/logo_marca.png" /><!-- Raphael -->
+        <put name="btSairImg" value="images/bt_sair.gif" />
+        <put name="subHeaderText" value="label_link_header" />
+        <put name="subHeaderText1" value="label_sair" />
+        
+        <!-- Links de Cabecera -->
+        <putList name="headerLinks">
+        	<item value="420,0,500,27" link="/home1.jsf" tooltip="Pagina Inicial"/>
+        	<item value="500,0,600,27" link="/home1.jsf" tooltip="Mapa de Servicios"/>
+        	<item value="600,0,677,27" link="/home1.jsf" tooltip="Outra Conta"/>
+        	<item value="677,0,745,27" link="#" tooltip="Sair"/>
+        </putList>
+        
+        <!-- Links do SubHeader -->
+    	<putList name="subHeaderLinks">
+        		<item value="420,0,500,27" link="/home1.jsf" tooltip="Pagina Inicial"/>
+        		<item value="500,0,600,27" link="/home1.jsf" tooltip="Mapa de Servicios"/>
+        		<item value="600,0,677,27" link="/home1.jsf" tooltip="Outra Conta"/>
+        		<item value="677,0,745,27" link="#" tooltip="Sair"/>
+   		</putList>
+        
+        
+    </definition>
+    
+    
+    <!-- Atributos Footer -->
+    <definition name="footer.attributes" path="/template/footer.jsp" >
+			<put name="footerImg" value="/template/images/canto_rodape.gif" />
+			<put name="footerText" value="label_footer" />
+			<put name="footerText2" value="label_footer_teste" />
+    </definition>
+    
+
+	<!-- #####################################################################   
+		 ####################### INNER LAYOUT ################################
+		 #####################################################################
+		 
+		 Definicion del contenido "body" general de la pagina, con subheaders, 
+		 menus superiores, menus a izquierda, help, etc.
+	--> 
+    <definition name="inner.layout" extends="main.layout" >
+    	<put name="subHeader" value="subheader.attributes" />
+        <put name="help" value="help.attributes" />
+    </definition>
+    
+      <!-- Atributos de la segunda cabecera  -->
+   <definition name="subheader.attributes" path="/template/subHeader.jsp" >
+   	<put name="labelUsuario" value="label_user" />
+    	<put name="labelRole" value="label_role" />
+    	<put name="labelAgencia" value="label_agencia" />
+    	<put name="labelConta" value="label_conta" />
+    	<put name="logoImg" value="/template/images/logo_marca.png" /><!-- Raphael -->
+        <put name="btSairImg" value="images/bt_sair.gif" />
+        <put name="subHeaderText" value="label_link_header" />
+        <put name="subHeaderText1" value="label_sair" />
+   </definition>
+    
+     <!-- Atributos del rodapie de ayuda -->
+    <definition name="help.attributes" path="/template/help.jsp" >
+    	<put name="labelAyuda" value="label_ayuda" />
+    	<putList name="helpOptions">
+    		<item value="help_option_duvidas" link="#"/>
+    		<item value="help_option_segur" link="#"/>
+    	</putList>
+    </definition>
+    
+    <!-- #####################################################################   
+		 ############ DEFINICION DE PAGINAS CON MENU SUPERIOR ################
+		 #####################################################################
+	--> 
+	<definition name="menu.inner.layout" extends="inner.layout" >
+		<put name="menuSelected" value="menu1" /> <!-- menu seleccionado por defecto, atributo "tooltip" -->
+    	<!-- Menu Principal Horizontal -->
+    	<put name="mainMenu" value="main.menu.options"/>
+    	<!-- Indica si el aplicativo verifica seguridad de usuario/roles -->
+    	<!-- En caso contrario, siempre se muestra en menu completo "mainMenu" -->
+    	<put name="checkUserRoles" value="false"/>
+    	    	
+    	<!-- Servicios de Consulta Rapida -->
+        <put name="quickServices" value="services.menu.options"/>
+        
+        <!-- Definir las "menuOptions" del "mainMenu" en las definiciones que extiendan esta -->
+    	<putList name="menuOptions"/>
+        
+    </definition>
+    
+    <!-- TODAS las opciones de Menu -->
+    <definition name="main.menu.options" path="/template/mainMenu.jsp">
+    	<putList name="mainMenuOptions">
+            <!-- <item value="menu_1" link="#" tooltip="menu1" /> -->
+            <!-- <item value="menu_2" link="#" tooltip="menu2" /> -->
+            <!-- <item value="menu_3" link="#" tooltip="menu3" /> -->
+            <!-- <item value="menu_4" link="#" tooltip="menu4" /> -->
+            <!-- <item value="menu_5" link="#" tooltip="menu5" /> -->
+            <!-- <item value="menu_6" link="#" tooltip="menu6" /> -->
+            <!-- <item value="menu_7" link="#" tooltip="menu7" /> -->
+        </putList>
+
+    </definition>
+    
+    <!-- ALL Menu Options for the Quick Services Menu -->
+    <definition name="services.menu.options" path="/template/servicesMenu.jsp">
+    	<putList name="services">
+            <!-- <item value="quick_1" link=""/> -->
+            <!-- <item value="quick_1_1" link="#" /> -->
+            <!-- <item value="quick_1_2" link="#" /> -->
+            <!-- <item value="quick_2" link="" /> -->
+            <!-- <item value="quick_2_1" link="# /> -->
+            <!-- <item value="quick_3" link="" /> -->
+            <!-- <item value="quick_3_1" link="#" />-->
+        </putList>
+    </definition>
+    
+    <!-- #####################################################################   
+		 ############ EJEMPLO DEFINICION DE PAGINAS CON MENU #########################
+		 #####################################################################
+		 
+	--> 
+	<!-- 
+	<definition name="menu1.inner.layout" extends="menu.inner.layout" >
+		<put name="menuSelected" value="menu1" /> /* identificador del menu seleccionado "tooltip" */
+		<putList name="menuOptions">
+            <item value="menu_1_item_1" link="#" tooltip="main" />
+            <item value="menu_1_item_1_subitem_1" link="XXXX.jsf" />
+            <item value="menu_1_item_1_subitem_2" link="YYYY.jsf" />
+            <item value="menu_1_item_2" link="#" tooltip="main"/>
+            <item value="menu_1_item_2_subitem_1" link="ZZZZ.jsf" />
+            <item value="menu_1_item_3" link="#" tooltip="main"/>
+            <item value="menu_1_item_3_subitem_1" link="#" />
+            <item value="menu_1_item_3_subitem_2" link="#" />
+        </putList>
+    </definition>
+     -->
+     
+    <!-- #####################################################################   
+		 ############ EJEMPLO DEFINICION HOMES POR MENU ##############################
+		 #####################################################################
+		 
+	--> 
+	<!-- 
+	<definition name="home1.inner.layout" extends="menu1.inner.layout" >
+		<put name="isHome" value="true" /> 
+    </definition>
+     -->
+    
+</tiles-definitions>

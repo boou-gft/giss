@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarContasContabeisTipoServicoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsulta" type="xsd:int" default="0" />
+        <xsd:element name="listaContaContabilTipoServico" maxOccurs="200">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codTipoServico" type="xsd:int" default="0" />
+              <xsd:element name="cosif" type="xsd:string" />
+              <xsd:element name="codGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codSubGrupo" type="xsd:int" default="0" />
+              <xsd:element name="hrManutencaoRegistro" type="xsd:string" />
+              <xsd:element name="codItemLeiCompl" type="xsd:int" default="0" />
+              <xsd:element name="nomeRazao" type="xsd:string" />
+              <xsd:element name="numConta" type="xsd:int" default="0" />
+              <xsd:element name="digConta" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

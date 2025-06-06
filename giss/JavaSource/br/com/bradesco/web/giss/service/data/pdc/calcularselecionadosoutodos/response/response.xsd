@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="calcularSelecionadosOuTodosResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="listaCalculo" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codEmpresa" type="xsd:int" default="0" />
+              <xsd:element name="descEmpresa" type="xsd:string" />
+              <xsd:element name="competencia" type="xsd:int" default="0" />
+              <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="descMunicipio" type="xsd:string" />
+              <xsd:element name="dataOriginal" type="xsd:string" />
+              <xsd:element name="dataAgendamento" type="xsd:string" />
+              <xsd:element name="valorTotalApuracaoIss" type="xsd:decimal" default="0" />
+              <xsd:element name="valorMulta" type="xsd:decimal" default="0" />
+              <xsd:element name="percentualAtualizacaoMonetaria" type="xsd:decimal" default="0" />
+              <xsd:element name="valorAtualizacaoMonetaria" type="xsd:decimal" default="0" />
+              <xsd:element name="valorPagamentoAtualizado" type="xsd:decimal" default="0" />
+              <xsd:element name="codStatus" type="xsd:int" default="0" />
+              <xsd:element name="descStatus" type="xsd:string" />
+              <xsd:element name="codProduto" type="xsd:int" default="0" />
+              <xsd:element name="descProduto" type="xsd:string" />
+              <xsd:element name="descTipoCredito" type="xsd:string" />
+              <xsd:element name="banco" type="xsd:int" default="0" />
+              <xsd:element name="agencia" type="xsd:int" default="0" />
+              <xsd:element name="numConta" type="xsd:long" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="elegivelPgto" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoMensalNvContaRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="codPessoaJurid" type="xsd:long" default="0" />
+        <xsd:element name="numSeqUnidadeOrgnz" type="xsd:int" default="0" />
+        <xsd:element name="mesAnoApuracao" type="xsd:int" default="0" />
+        <xsd:element name="codGrupo" type="xsd:int" default="0" />
+        <xsd:element name="codSubGrupo" type="xsd:int" default="0" />
+        <xsd:element name="cosif" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

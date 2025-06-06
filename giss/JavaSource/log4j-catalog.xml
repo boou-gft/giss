@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "../WebContent/WEB-INF/log4j.dtd">
+
+<!--
+Atencao:
+- No valor do parametro File do appender padrao (FILE-ROLLING), substituir <nome_canal> pelo nome do canal e <nome_aplicacao> pelo nome da aplicacao (no diretorio e no arquivo) em minusculo (ex.: /suportedbdc_logs/intranet/eint/eint.log).
+- No logger da aplicacao (APL LOGGER), substituir <cccc> (no final do pacote) pelo centro de custo da aplicacao em minusculo (ex.: br.com.bradesco.web.eint).
+-->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!--FILE-ROLLING APPENDER-->
+	<appender name="FILE-rolling" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/suportedbdc_logs/intranet/giss/giss.log"/>
+		<param name="DatePattern" value="yyyy-MM-dd"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] [%p] [%t] [%c] [%m]%n"/>
+		</layout>
+	</appender>
+
+	<!--APL LOGGER-->
+	<logger name="br.com.bradesco.web.giss" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="FILE-rolling"/>
+	</logger>
+
+	<!--AWB LOGGER-->
+	<logger name="br.com.bradesco.web.aq" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="FILE-rolling"/>
+	</logger>
+
+	<!--AWB CONNECTORS LOGGER-->
+	<logger name="br.com.bradesco.data.connector" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="FILE-rolling"/>
+	</logger>
+
+	<!--SPRING LOGGER-->
+	<logger name="org.springframework" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="FILE-rolling"/>
+	</logger>
+
+	<!--ROOT LOGGER-->
+	<root>
+		<level value="info"/>
+		<appender-ref ref="FILE-rolling"/>
+	</root>
+
+</log4j:configuration>

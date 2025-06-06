@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenciaIncorporaDepartamentoResultResponse>
+	<codMensagem/>
+	<mensagem/>
+	<numeroConsultas>3</numeroConsultas>
+	<ocorrencia>
+		<codigoPessoaJuridica>10</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>20</numeroSequenciaUnidadeOrganizacional>
+		<mesAnoApuracaoContabil>082015</mesAnoApuracaoContabil>
+		<codigoDependencia>500000</codigoDependencia>
+		<descricaoDependencia>MOOCA</descricaoDependencia>
+		<receitaSinal>+</receitaSinal>
+		<receitaValor>5</receitaValor>
+		<issSinal>+</issSinal>
+		<issValor>5</issValor>
+    </ocorrencia>
+    <ocorrencia>
+		<codigoPessoaJuridica>90</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>60</numeroSequenciaUnidadeOrganizacional>
+		<mesAnoApuracaoContabil>082015</mesAnoApuracaoContabil>
+		<codigoDependencia>963258</codigoDependencia>
+		<descricaoDependencia>ITU</descricaoDependencia>
+		<receitaSinal>+</receitaSinal>
+		<receitaValor>8</receitaValor>
+		<issSinal>+</issSinal>
+		<issValor>1</issValor>
+    </ocorrencia>
+    <ocorrencia>
+		<codigoPessoaJuridica>200</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>50</numeroSequenciaUnidadeOrganizacional>
+		<mesAnoApuracaoContabil>032012</mesAnoApuracaoContabil>
+		<codigoDependencia>80808080</codigoDependencia>
+		<descricaoDependencia>GONZAGA</descricaoDependencia>
+		<receitaSinal>+</receitaSinal>
+		<receitaValor>6</receitaValor>
+		<issSinal>+</issSinal>
+		<issValor>2</issValor>
+    </ocorrencia>
+</agenciaIncorporaDepartamentoResultResponse>

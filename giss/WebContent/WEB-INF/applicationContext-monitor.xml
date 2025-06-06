@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    
+  <!-- Comentamos el mbeanServer que ofrece Spring por si el aplicativo no corre en un Web COntainer con soporte JMX -->
+  <!--	
+    <bean id="mbeanServer" class="org.springframework.jmx.support.MBeanServerFactoryBean"/> 
+   -->
+	
+	<bean id="monitorManager" class="org.springframework.jmx.export.MBeanExporter">
+	    <property name="registrationBehaviorName"><value>REGISTRATION_IGNORE_EXISTING</value></property>
+    	<property name="beans">
+    	     <map>
+          	   <entry key="${monitorManager.domain}:name=alertManagerStatistics"
+               		  value-ref="alertManagerStatistics"/>	
+               <entry key="${monitorManager.domain}:name=sessionManagerStatistics"
+               		  value-ref="sessionManagerStatistics"/>	   		      
+	           <entry key="${monitorManager.domain}:name=exceptionManagerStatistics"
+               		  value-ref="exceptionManagerStatistics"/>
+               <entry key="${monitorManager.domain}:name=bradescoLogChangeConfig"
+               		  value-ref="bradescoLogChangeConfig"/>	   	
+	        </map> 
+	   	</property>
+		
+		   	<property name="assembler">
+	   		 <bean class="org.springframework.jmx.export.assembler.InterfaceBasedMBeanInfoAssembler">
+		        <property name="interfaceMappings">
+        			 <map>
+          	   			<entry key="${monitorManager.domain}:name=alertManagerStatistics">
+          					<value>br.com.bradesco.web.aq.application.alert.jmx.IAlertManagerStatistics</value>
+	          	   		</entry>
+	          	   		<entry key="${monitorManager.domain}:name=exceptionManagerStatistics">
+          					<value>br.com.bradesco.web.aq.application.error.jmx.IExceptionManagerStatistics</value>
+	          	   		</entry>
+	          	   		<entry key="${monitorManager.domain}:name=sessionManagerStatistics">
+          					<value>br.com.bradesco.web.aq.application.session.jmx.ISessionManagerStatistics</value>
+	          	   		</entry>
+	          	   		<entry key="${monitorManager.domain}:name=bradescoLogChangeConfig">
+          					<value>br.com.bradesco.web.aq.application.log.config.IBradescoLogChangeConfig</value>
+	          	   		</entry>
+					</map>   			
+		        </property>
+      		 </bean>
+	   	</property>
+	</bean>
+	
+	<!-- ALERTAS -->
+	<bean id="alertManagerStatistics"
+		  class="br.com.bradesco.web.aq.application.alert.jmx.AlertManagerStatisticsImplService">
+	</bean>	
+	
+	<!-- ERRORES -->
+	<bean id="exceptionManagerStatistics"
+		  class="br.com.bradesco.web.aq.application.error.jmx.ExceptionManagerStatisticsImplService">	
+	</bean>
+	
+	<!-- LOG -->
+	<bean id="logManagerStatistics"
+		  class="br.com.bradesco.web.aq.application.log.jmx.LogManagerStatisticsImplService"/>
+	
+	<!-- SESSION -->
+	<bean id="sessionManagerStatistics" 
+          class="br.com.bradesco.web.aq.application.session.jmx.SessionManagerStatisticsImplService">
+          	<property name="logger"><ref bean="logManager"/></property>
+    </bean>     
+</beans>

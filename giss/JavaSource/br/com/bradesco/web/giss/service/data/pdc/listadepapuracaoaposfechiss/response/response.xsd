@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaDepApuracaoAposFechISSResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="dtProcessamento" type="xsd:string" />
+        <xsd:element name="sinalTotalReceita" type="xsd:string" />
+        <xsd:element name="valorTotalReceita" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalIss" type="xsd:string" />
+        <xsd:element name="valorTotalIss" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalReceitaAg" type="xsd:string" />
+        <xsd:element name="valorTotalReceitaAg" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalIssAg" type="xsd:string" />
+        <xsd:element name="valorTotalIssAg" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalReceitaPa" type="xsd:string" />
+        <xsd:element name="valorTotalReceitaPa" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalIssPa" type="xsd:string" />
+        <xsd:element name="valorTotalIssPa" type="xsd:decimal" default="0" />
+        <xsd:element name="ocorrenciasApurParcDep" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numeroSequencial" type="xsd:int" default="0" />
+              <xsd:element name="codDependencia" type="xsd:int" default="0" />
+              <xsd:element name="descDependencia" type="xsd:string" />
+              <xsd:element name="codPa" type="xsd:int" default="0" />
+              <xsd:element name="descPa" type="xsd:string" />
+              <xsd:element name="sinalRec" type="xsd:string" />
+              <xsd:element name="valorRec" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalIss" type="xsd:string" />
+              <xsd:element name="valorIss" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

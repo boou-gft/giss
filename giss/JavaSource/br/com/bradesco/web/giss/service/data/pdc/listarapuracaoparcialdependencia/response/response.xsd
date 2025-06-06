@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoParcialDependenciaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="sinalReceitaGeral" type="xsd:string" />
+        <xsd:element name="valorReceitaGeral" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalISSGeral" type="xsd:string" />
+        <xsd:element name="valorISSGeral" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalReceitaGeralPa" type="xsd:string" />
+        <xsd:element name="valorReceitaGeralPa" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalISSGeralPa" type="xsd:string" />
+        <xsd:element name="valorISSGeralPa" type="xsd:decimal" default="0" />
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="descMunicipio" type="xsd:string" />
+        <xsd:element name="codUf" type="xsd:string" />
+        <xsd:element name="descUf" type="xsd:string" />
+        <xsd:element name="listaApuracaoParcialDependencia" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codPessoaJurid" type="xsd:long" default="0" />
+              <xsd:element name="numSeqUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="codDependencia" type="xsd:int" default="0" />
+              <xsd:element name="descDependencia" type="xsd:string" />
+              <xsd:element name="codPa" type="xsd:int" default="0" />
+              <xsd:element name="descPa" type="xsd:string" />
+              <xsd:element name="sinalReceita" type="xsd:string" />
+              <xsd:element name="valorReceita" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalISS" type="xsd:string" />
+              <xsd:element name="valorISS" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaDependenciaPorMunicipioResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="descMunicipio" type="xsd:string" />
+        <xsd:element name="codUF" type="xsd:string" />
+        <xsd:element name="descUF" type="xsd:string" />
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="OcorrenciasDepPorMunicipio" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="descUnidadeOrganizacional" type="xsd:string" />
+              <xsd:element name="tragSemTrag" type="xsd:string" />
+              <xsd:element name="dataAtualizacao" type="xsd:string" />
+              <xsd:element name="horaAtualizacao" type="xsd:string" />
+              <xsd:element name="dataExclusao" type="xsd:string" />
+              <xsd:element name="codPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numSeqUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="timeStamp" type="xsd:string" />
+              <xsd:element name="codigoFuncional" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

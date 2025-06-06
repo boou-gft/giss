@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="DetalharJustificativaApuracaoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsultas" type="xsd:int" default="0" />
+        <xsd:element name="competencia" type="xsd:int" default="0" />
+        <xsd:element name="lista" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="dataAtualizacao" type="xsd:string" />
+              <xsd:element name="sinalJustificativa" type="xsd:string" />
+              <xsd:element name="valorJustificativa" type="xsd:double" default="0" />
+              <xsd:element name="descJustificativa" type="xsd:string" />
+              <xsd:element name="codUsuarioManut" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

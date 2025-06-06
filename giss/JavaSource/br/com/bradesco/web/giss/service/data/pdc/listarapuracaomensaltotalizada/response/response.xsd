@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoMensalTotalizadaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="baseCalculo" type="xsd:double" default="0" />
+        <xsd:element name="percAliquotaPadrao" type="xsd:double" default="0" />
+        <xsd:element name="nomeTipoIncidencia" type="xsd:string" />
+        <xsd:element name="nroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="movtoReceitaApuracaoTotalSinal" type="xsd:string" />
+        <xsd:element name="movtoReceitaApuracaoTotalValor" type="xsd:double" default="0" />
+        <xsd:element name="movtoReceitaTributavelTotalSinal" type="xsd:string" />
+        <xsd:element name="movtoReceitaTributavelTotalValor" type="xsd:double" default="0" />
+        <xsd:element name="tributoApurcaoTotalSinal" type="xsd:string" />
+        <xsd:element name="tributoApurcaoTotalValor" type="xsd:double" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="250">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="contaContabil" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="numeroConta" type="xsd:int" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="movtoReceitaApuracaoSinal" type="xsd:string" />
+              <xsd:element name="movtoReceitaApuracaoValor" type="xsd:double" default="0" />
+              <xsd:element name="movtoReceitaTributavelSinal" type="xsd:string" />
+              <xsd:element name="movtoReceitaTributavelValor" type="xsd:double" default="0" />
+              <xsd:element name="percAliquotaPadrao" type="xsd:double" default="0" />
+              <xsd:element name="tributoApurcaoSinal" type="xsd:string" />
+              <xsd:element name="tributoApurcaoValor" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

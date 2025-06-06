@@ -1,0 +1,20 @@
+[
+	{
+		"versao": "3.0.1",
+		"data": "20/12/2022",
+		"descricao": ["Inclusão página ajuda com versões do sistema", "Inclusão versão sistema rodapé"],
+		"telas": ["GISSC001"]
+	},
+	{
+		"versao": "3.0.0",
+		"data": "25/02/2022",
+		"descricao": ["Inclusão campo sintético e analítico calculo de apuração", "Ajuste validação pesquisa apuração"],
+		"telas": ["GISSC002"]
+	},
+	{
+		"versao": "2.9.9",
+		"data": "01/01/2022",
+		"descricao": ["Sistema atualizado"],
+		"telas": ["GISSC001"]
+	}	
+]

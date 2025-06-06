@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarContasEmpResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsultas" type="xsd:int" default="0" />
+        <xsd:element name="listaContasEmp" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="resumo" type="xsd:int" default="0" />
+              <xsd:element name="contaReceita" type="xsd:long" default="0" />
+              <xsd:element name="descContaReceita" type="xsd:string" />
+              <xsd:element name="cosif" type="xsd:long" default="0" />
+              <xsd:element name="codItemServ" type="xsd:int" default="0" />
+              <xsd:element name="descItemServ" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

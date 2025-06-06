@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+                       "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-dependency-check="none" default-autowire="no">
+
+
+	<bean id="ejbPDCConnectorServiceBean"
+        class="org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean"
+        abstract="false" singleton="true" lazy-init="true"
+        autowire="default" dependency-check="default">
+        <property name="jndiName">
+            <value>${remoting.transferencia.ejb.jndiName}</value>
+        </property>
+        <property name="businessInterface">
+            <value>br.com.bradesco.web.aq.application.pdc.connector.IController</value>
+        </property>
+        <property name="jndiEnvironment">
+            <props>
+                <prop key="java.naming.factory.initial">${remoting.transferencia.ejb.jndiEnvironment.factory}</prop>
+                <prop key="java.naming.provider.url">${remoting.transferencia.ejb.jndiEnvironment.provider}</prop>
+            </props>
+        </property>
+        <property name="lookupHomeOnStartup">
+            <value>false</value>
+        </property>
+        <property name="refreshHomeOnConnectFailure">
+            <value>true</value>
+        </property>        
+    </bean>
+
+
+
+
+ <!-- Ejemplo de configuración de conector Mock utilizando el MOCK generico de la arquitectura-->
+ <!-- Este conector se usará cuando se quiere simular una comunicación con PDC -->
+ 
+
+
+ <!-- Ejemplo de configuración de conector Mock implementando especifico para el aplicativo ( extiende el genérico)-->
+ <!-- Este conector se usará cuando se quiere simular una comunicación con PDC -->
+    
+</beans>

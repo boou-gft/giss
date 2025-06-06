@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarContasResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="nroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="700">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="aliquota" type="xsd:double" default="0" />
+              <xsd:element name="dataInicioVigencia" type="xsd:string" />
+              <xsd:element name="dataFimVigencia" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

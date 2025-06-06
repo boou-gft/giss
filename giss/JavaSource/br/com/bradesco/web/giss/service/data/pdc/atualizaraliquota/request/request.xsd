@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="atualizarAliquotaRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="codTipoServico" type="xsd:int" default="0" />
+        <xsd:element name="aliquota" type="xsd:double" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

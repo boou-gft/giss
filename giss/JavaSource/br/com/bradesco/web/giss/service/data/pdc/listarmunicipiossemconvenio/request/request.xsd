@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarMunicipiosSemConvenioRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="qtdeOcorr" type="xsd:int" default="0" />
+        <xsd:element name="codUf" type="xsd:long" default="0" />
+        <xsd:element name="CodMunicipio" type="xsd:long" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

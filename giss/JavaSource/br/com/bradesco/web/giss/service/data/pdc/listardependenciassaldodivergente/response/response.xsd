@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarDependenciasSaldoDivergenteResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="sinalTotalApuracao" type="xsd:string" />
+        <xsd:element name="valorTotalApuracao" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalContabil" type="xsd:string" />
+        <xsd:element name="valorTotalContabil" type="xsd:decimal" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numeroSequenciaUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="codigoDependencia" type="xsd:int" default="0" />
+              <xsd:element name="descricaoDependencia" type="xsd:string" />
+              <xsd:element name="sinalApuracao" type="xsd:string" />
+              <xsd:element name="valorApuracao" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalContabil" type="xsd:string" />
+              <xsd:element name="valorContabil" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

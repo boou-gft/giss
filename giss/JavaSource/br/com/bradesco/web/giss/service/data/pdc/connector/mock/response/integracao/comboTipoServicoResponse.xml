@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comboTipoServicoResponse>
+    <codMensagem/>
+    <mensagem/>
+    <numeroConsultas>2</numeroConsultas>
+    <ocorrencias>
+    	<codigoTipoServico>1</codigoTipoServico>
+    	<descricaoTipoServico>TIPO</descricaoTipoServico>
+    </ocorrencias>
+    <ocorrencias>
+    	<codigoTipoServico>2</codigoTipoServico>
+    	<descricaoTipoServico>TIPO2</descricaoTipoServico>
+    </ocorrencias>
+</comboTipoServicoResponse>

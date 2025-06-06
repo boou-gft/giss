@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="solicitarReprocessamentoPorDependenciaRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="competenciaInicial" type="xsd:int" default="0" />
+        <xsd:element name="competenciaFinal" type="xsd:int" default="0" />
+        <xsd:element name="usuario" type="xsd:string" />
+        <xsd:element name="criterioSelecao" type="xsd:string" />
+        <xsd:element name="dependencias" minOccurs="100" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="nroSeqUndOrganizacional" type="xsd:int" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="aliquotas" minOccurs="50" maxOccurs="50">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="percAliquotaApuracaoEvtal" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

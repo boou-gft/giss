@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ListarConciliacaoApuracaoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsultas" type="xsd:int" default="0" />
+        <xsd:element name="sinalReceitaTotalCCRS" type="xsd:string" />
+        <xsd:element name="valorReceitaTotalCCRS" type="xsd:string" default="0" />
+        <xsd:element name="sinalReceitaTotalGISS" type="xsd:string" />
+        <xsd:element name="valorReceitaTotalGISS" type="xsd:string" default="0" />
+        <xsd:element name="sinalAjusteTotal" type="xsd:string" />
+        <xsd:element name="valorAjusteTotal" type="xsd:string" default="0" />
+        <xsd:element name="sinalIssTotal" type="xsd:string" />
+        <xsd:element name="valorIssTotal" type="xsd:string" default="0" />
+        <xsd:element name="sinalAliquotaZeradaTotal" type="xsd:string" />
+        <xsd:element name="valorAliquotaZeradaTotal" type="xsd:string" default="0" />
+        <xsd:element name="sinalOscilacaoNegativaTotal" type="xsd:string" />
+        <xsd:element name="valorOscilacaoNegativaTotal" type="xsd:string" default="0" />
+        <xsd:element name="sinalRedutorTotal" type="xsd:string" />
+        <xsd:element name="valorRedutosTotal" type="xsd:string" default="0" />
+        <xsd:element name="lista" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="cosif" type="xsd:string" />
+              <xsd:element name="grupoRazao" type="xsd:int" default="0" />
+              <xsd:element name="subGrupoRazao" type="xsd:int" default="0" />
+              <xsd:element name="conta" type="xsd:int" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="descContaRazao" type="xsd:string" />
+              <xsd:element name="sinalSaldoAnteriorCCRS" type="xsd:string" />
+              <xsd:element name="valorSaldoAnteriorCCRS" type="xsd:string" default="0" />
+              <xsd:element name="sinalDebitoCCRS" type="xsd:string" />
+              <xsd:element name="valorDebitoCCRS" type="xsd:string" default="0" />
+              <xsd:element name="sinalCreditoCCRS" type="xsd:string" />
+              <xsd:element name="valorCreditoCCRS" type="xsd:string" default="0" />
+              <xsd:element name="sinalSaldoAtualCCRS" type="xsd:string" />
+              <xsd:element name="valorSaldoAtualCCRS" type="xsd:string" default="0" />
+              <xsd:element name="sinalReceitaBalancete" type="xsd:string" />
+              <xsd:element name="valorReceitaBalancete" type="xsd:string" default="0" />
+              <xsd:element name="sinalReceitaGISS" type="xsd:string" />
+              <xsd:element name="valorReceitaGISS" type="xsd:string" default="0" />
+              <xsd:element name="sinalDifReceitaBalancete" type="xsd:string" />
+              <xsd:element name="valorDifReceitaBalancete" type="xsd:string" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

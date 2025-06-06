@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+                              "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+	<!-- CONFIGURACION DE APLICATIVO -->
+	<application>
+		<view-handler>
+			br.com.bradesco.web.aq.view.viewhandler.BradescoViewHandler
+		</view-handler>
+		<variable-resolver>
+			org.springframework.web.jsf.DelegatingVariableResolver
+		</variable-resolver>
+		<locale-config>
+			<default-locale>pt</default-locale>
+		</locale-config>
+		<message-bundle>
+			br.com.bradesco.web.giss.view.bundle.Messages
+		</message-bundle>
+	</application>
+	<!-- CONFIGURACION LIFECYCLE FACTORY -->
+	<factory>
+		<lifecycle-factory>
+			br.com.bradesco.web.aq.view.lifecycle.BradescoLifecycleFactoryImpl
+		</lifecycle-factory>
+	</factory>
+			
+	<!--  
+		
+		REFERED BEANS 
+		RENDER KITS 
+		VALIDADORES 
+		CONVERSORES 
+		COMPONENTES 
+		
+	-->
+	<!-- Components -->
+
+	<component>
+
+		<component-type>UIMenu</component-type>
+
+		<component-class>
+
+			br.com.bradesco.web.aq.view.components.app.UIMenu.UIMenu
+
+		</component-class>
+
+	</component>
+
+
+	<!-- Renderers -->
+
+
+	<render-kit>
+
+		<renderer>
+
+			<component-family>UIMenu</component-family>
+
+			<renderer-type>UIMenuRenderer</renderer-type>
+
+			<renderer-class>
+
+
+
+				br.com.bradesco.web.aq.view.components.app.UIMenu.UIMenuRenderer
+
+			</renderer-class>
+
+		</renderer>
+
+	</render-kit>
+
+
+	<lifecycle>
+
+		<phase-listener>
+
+
+
+			br.com.bradesco.web.aq.view.components.app.UIMenu.MenuPhaseListener
+
+		</phase-listener>
+
+	</lifecycle>
+
+	<converter>
+	 	<display-name>decimalBrazillianConverter</display-name>
+	 	<converter-id>decimalBrazillianConverter</converter-id>
+	 	<converter-class>
+	 		br.com.bradesco.web.giss.view.converters.DecimalBrazillianConverter
+	 	</converter-class>
+	</converter>
+	<converter>
+ 	<display-name>dateBrazillianConverter</display-name>
+ 	<converter-id>dateBrazillianConverter</converter-id>
+ 	<converter-class>
+ 		br.com.bradesco.web.giss.view.converters.DateBrazillianConverter
+ 	</converter-class>
+ </converter>
+  <converter>
+ 	<display-name>timestampPdcConverter</display-name>
+ 	<converter-id>timestampPdcConverter</converter-id>
+ 	<converter-class>
+ 		br.com.bradesco.web.giss.view.converters.TimestampPdcConverter
+ 	</converter-class>
+ </converter>
+ <converter>
+ 	<display-name>competenciaConverter</display-name>
+ 	<converter-id>competenciaConverter</converter-id>
+ 	<converter-class>
+ 		br.com.bradesco.web.giss.view.converters.CompetenciaConverter
+ 	</converter-class>
+ </converter>
+</faces-config>

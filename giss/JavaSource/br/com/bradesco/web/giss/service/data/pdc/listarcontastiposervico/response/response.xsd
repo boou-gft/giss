@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarContasTipoServicoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="quantidadeOcorrencia" type="xsd:int" default="0" />
+        <xsd:element name="listaContasTipoServico" maxOccurs="220">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoConta" type="xsd:string" />
+              <xsd:element name="codGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codSubGrupo" type="xsd:int" default="0" />
+              <xsd:element name="numeroConta" type="xsd:int" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="descricaoRazao" type="xsd:string" />
+              <xsd:element name="percentualAliquota" type="xsd:double" default="0" />
+              <xsd:element name="codigoTributo" type="xsd:int" default="0" />
+              <xsd:element name="dtInicioVigencia" type="xsd:string" />
+              <xsd:element name="dtFinalVigencia" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,74 @@
+<errorCatalog>
+
+	<!-- EXCEPCIONES GENERALES -->
+	
+	<error type="java.lang.Exception"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="fatal"/>
+			<redirect-behaviour path="/exception.jsf"
+					    		messageKey="error.message.key"
+					    		showInModal="false"/>
+	</error>
+
+	<error type="java.lang.RuntimeException"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="error"/>
+			<redirect-behaviour path="/exception.jsf"
+					    		messageKey="error.message.key"
+					    		showInModal="false"/>
+	</error>
+	
+	<!-- EXCEPCIONES DE ARQUITECTURA -->
+	
+	<error type="br.com.bradesco.web.aq.application.error.BradescoBaseException"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="error"/>
+			<redirect-behaviour path="/exception.jsf"
+					    		messageKey="error.message.key"
+					    		showInModal="false"/>
+	</error>
+	
+	<error type="br.com.bradesco.web.aq.application.error.BradescoArchitectureException"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="error"/>
+			<alert-behaviour alertId="ERROR_MANAGER.0001"/>
+			<redirect-behaviour path="/exception.jsf"
+					    		messageKey="error.message.key"
+					    		showInModal="false"/>
+	</error>
+	<error type="br.com.bradesco.web.aq.application.pdc.adapter.exception.PdcAdapterException"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="fatal"/>
+			<alert-behaviour alertId="ERROR_MANAGER.0002"/>
+			<redirect-behaviour path="/exception.jsf"
+					    		messageKey="error.message.key"
+								showInModal="false"/>
+			<logoff-behaviour required="true"/>
+	</error>
+	<error type="br.com.bradesco.web.aq.application.pdc.adapter.exception.PdcAdapterFunctionalException"
+	       handler="gissModalExceptionHandler">
+	</error>
+
+	<error type="br.com.bradesco.web.aq.application.error.BradescoApplicationException"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="error"/>
+			<redirect-behaviour path="/exception.jsf"
+					    		messageKey="error.message.key"
+					    		showInModal="false"/>
+	</error>
+	
+	<error type="br.com.bradesco.web.aq.application.error.BradescoViewException"
+	       handler="gissViewExceptionHandler">
+	</error>	
+
+	<!-- EXCEPCIONES DE APLICATIVO -->
+
+	<error type="br.com.bradesco.web.giss.exception.GissException"
+	       handler="gissExceptionHandler">  
+			<log-behaviour severity="warn"/>
+			<redirect-behaviour path="/exception.jsf" 
+								messageKey="error.message.key"
+								showInModal="false"/>
+	</error>
+
+</errorCatalog>

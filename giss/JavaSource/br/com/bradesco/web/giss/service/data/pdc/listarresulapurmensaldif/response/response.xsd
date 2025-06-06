@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarResulApurMensalDifResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdeRegistro" type="xsd:int" default="0" />
+        <xsd:element name="baseCalculo" type="xsd:decimal" default="0" />
+        <xsd:element name="aliquotaPadrao" type="xsd:decimal" default="0" />
+        <xsd:element name="tipoIncidencia" type="xsd:string" />
+        <xsd:element name="solicitacao" type="xsd:int" default="0" />
+        <xsd:element name="dataSolicitacao" type="xsd:string" />
+        <xsd:element name="sinalMovimento" type="xsd:string" />
+        <xsd:element name="valorMovimento" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTributavel" type="xsd:string" />
+        <xsd:element name="valorTributavel" type="xsd:decimal" default="0" />
+        <xsd:element name="OcorrenciaApurMensalDif" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="sinalFaixa" type="xsd:string" />
+              <xsd:element name="valorFaixa" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalFaixaFinal" type="xsd:string" />
+              <xsd:element name="valorFaixaFinal" type="xsd:decimal" default="0" />
+              <xsd:element name="Aliquota" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalRedutor" type="xsd:string" />
+              <xsd:element name="valorRedutor" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

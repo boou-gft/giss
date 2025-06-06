@@ -1,0 +1,12 @@
+/*
+	Definicion de estilos propios del aplicativo para paginas o grupos de paginas concretas
+	
+	Esta StyleSheet debera ser declarada como item de un atributo List de nombre "especificCSS" 
+	en su tiles-definition correspondiente (en el fichero tiles-definitions.xml)
+*/
+
+.ejemploButton {
+	background-color: #E90B0B; /*rojo bradesco*/
+	color:white;
+	
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="incluirAlterarContasMunicipioRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+        <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+        <xsd:element name="codigoTipoServico" type="xsd:int" default="0" />
+        <xsd:element name="aliquotaConta" type="xsd:decimal" default="0" />
+        <xsd:element name="codigoTributo" type="xsd:int" default="0" />
+        <xsd:element name="dataInicioVigencia" type="xsd:string" />
+        <xsd:element name="dataFinalVigencia" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

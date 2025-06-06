@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="logonResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codRetorno" type="xsd:string" />
+        <xsd:element name="msgRetorno" type="xsd:string" />
+        <xsd:element name="idUsuario" type="xsd:string" />
+        <xsd:element name="nomeUsuario" type="xsd:string" />
+        <xsd:element name="tipoUsuario" type="xsd:string" />
+        <xsd:element name="codEmpresa" type="xsd:string" />
+        <xsd:element name="codDependencia" type="xsd:string" />
+        <xsd:element name="codSecao" type="xsd:string" />
+        <xsd:element name="tipoAlcada" type="xsd:string" />
+        <xsd:element name="maisPerfil" type="xsd:string" />
+        <xsd:element name="qtdPerfilAdicional" type="xsd:string" />
+        <xsd:element name="perfil">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codPerfilAdicional" maxOccurs="unbounded" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

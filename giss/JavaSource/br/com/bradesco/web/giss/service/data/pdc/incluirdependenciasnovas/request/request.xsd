@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="incluirDependenciasNovasRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+        <xsd:element name="numeroSequencialUnidadeOrganizacional" type="xsd:int" default="0" />
+        <xsd:element name="indicadorTributavel" type="xsd:int" default="0" />
+        <xsd:element name="codigoCCM" type="xsd:long" default="0" />
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="codigoPessoaIncorporadoraDepto" type="xsd:long" default="0" />
+        <xsd:element name="numeroSequencialIncorporadoraDepto" type="xsd:int" default="0" />
+        <xsd:element name="inscricaoMunicipal" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

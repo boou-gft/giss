@@ -1,0 +1,85 @@
+dn: ou=groups,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=A700013,ou=people,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Marcio Barroso
+sn: Barroso
+uid: A700013
+userPassword: TESTE09
+
+dn: uid=a000001,ou=people,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Pedro Matuti
+sn: Matuti
+uid: a000001
+userPassword: admin
+
+dn: uid=DC17B66,ou=people,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Rodrigo Di Cesar
+sn: Cesar
+mail: rodrigo.cesar@cpmbraxis.com
+uid: DC17B66
+userPassword: RODMAIO
+
+dn: uid=A700013,ou=people,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Marcio Barroso
+sn: Marcio
+mail: marcio.barroso@cpmbraxis.com
+uid: A700013
+userPassword: TESTE09
+
+dn: uid=a000002,ou=people,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Paulo Pedrosa
+sn: Pedrosa
+uid: a000002
+userPassword: admin
+
+dn: cn=RL_INTR,ou=groups,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: groupOfNames
+cn: RL_INTR
+member: uid=a000001,ou=people,dc=bradesco,dc=com,dc=br
+member: uid=a700013,ou=people,dc=bradesco,dc=com,dc=br
+member: uid=a000002,ou=people,dc=bradesco,dc=com,dc=br
+member: uid=DC17B66,ou=people,dc=bradesco,dc=com,dc=br
+member: uid=A700013,ou=people,dc=bradesco,dc=com,dc=br
+
+dn: cn=RL_MN_T,ou=groups,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: groupOfNames
+cn: RL_MN_T
+member: uid=a000001,ou=people,dc=bradesco,dc=com,dc=br
+member: uid=DC17B66,ou=people,dc=bradesco,dc=com,dc=br
+
+dn: cn=RL_BTN_T,ou=groups,dc=bradesco,dc=com,dc=br
+objectclass: top
+objectclass: groupOfNames
+cn: RL_BTN_T
+member: uid=a000001,ou=people,dc=bradesco,dc=com,dc=br
+member: uid=DC17B66,ou=people,dc=bradesco,dc=com,dc=br

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarPlanilhaApuracaoResponse>
+	<codMensagem/>
+	<mensagem/>
+	<codAgenciaDev>02063</codAgenciaDev>
+	<descAgenciaDev>POCOES</descAgenciaDev>
+	<cnpj>60746948230975</cnpj>
+	<inscricaoMunicipal>1234567890abcdefgh</inscricaoMunicipal>
+	<endereco>R. DA ITALIA 91-CTO</endereco>
+	<cep>45260</cep>
+	<complementoCep>0</complementoCep>
+	<codAgenciaCentralizadora>237</codAgenciaCentralizadora>
+	<digitoAgenciaCentralizadora>2</digitoAgenciaCentralizadora>
+	<descAgenciaCentralizadora>ILHEUS</descAgenciaCentralizadora>
+	<codigoMunicipio>21821</codigoMunicipio>
+	<digitoMunicipio>7</digitoMunicipio>
+	<siglaEstado>BA</siglaEstado>
+	<diaVencimento>1</diaVencimento>
+	<mesCompetencia>OUTUBRO</mesCompetencia>
+	<anoCompetencia>2009</anoCompetencia>
+	<ocorrencias>
+		<tipoRegistro>D</tipoRegistro>
+		<codigoTipoServico>1</codigoTipoServico>
+		<descricaoTipoServico>COBRANCA</descricaoTipoServico>
+		<contaContabil>7174000100</contaContabil>
+		<nomeContaContabil>Rendas de Cobranca</nomeContaContabil>
+		<itemLeiComplementar>15.10</itemLeiComplementar>
+		<percentualAliquota>5.0</percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>443.70</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>22.18</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>T</tipoRegistro>
+		<codigoTipoServico>1</codigoTipoServico>
+		<descricaoTipoServico></descricaoTipoServico>
+		<contaContabil></contaContabil>
+		<nomeContaContabil></nomeContaContabil>
+		<itemLeiComplementar></itemLeiComplementar>
+		<percentualAliquota></percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>443.70</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>22.18</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>D</tipoRegistro>
+		<codigoTipoServico>2</codigoTipoServico>
+		<descricaoTipoServico>RECEBIMENTO</descricaoTipoServico>
+		<contaContabil>7179900101</contaContabil>
+		<nomeContaContabil>Tarifa Sobre Recebimentos Diversos</nomeContaContabil>
+		<itemLeiComplementar>15.10</itemLeiComplementar>
+		<percentualAliquota>5.0</percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>21962.03</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>1098.10</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>T</tipoRegistro>
+		<codigoTipoServico>2</codigoTipoServico>
+		<descricaoTipoServico></descricaoTipoServico>
+		<contaContabil></contaContabil>
+		<nomeContaContabil></nomeContaContabil>
+		<itemLeiComplementar></itemLeiComplementar>
+		<percentualAliquota></percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>21962.03</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>1098.10</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>D</tipoRegistro>
+		<codigoTipoServico>3</codigoTipoServico>
+		<descricaoTipoServico>TRANSFERENCIA DE FUNDOS</descricaoTipoServico>
+		<contaContabil>7179515000</contaContabil>
+		<nomeContaContabil>Tarifa sobre Transferencia DOC/TED</nomeContaContabil>
+		<itemLeiComplementar>15.16</itemLeiComplementar>
+		<percentualAliquota>5.0</percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>4824.50</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>241.22</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>D</tipoRegistro>
+		<codigoTipoServico>3</codigoTipoServico>
+		<descricaoTipoServico>TRANSFERENCIA DE FUNDOS</descricaoTipoServico>
+		<contaContabil>7179517000</contaContabil>
+		<nomeContaContabil>Tarifa s/Transf.entre ctas propria</nomeContaContabil>
+		<itemLeiComplementar>15.16</itemLeiComplementar>
+		<percentualAliquota>5.0</percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>3213.00</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>160.65</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>D</tipoRegistro>
+		<codigoTipoServico>3</codigoTipoServico>
+		<descricaoTipoServico>TRANSFERENCIA DE FUNDOS</descricaoTipoServico>
+		<contaContabil>7179803100</contaContabil>
+		<nomeContaContabil>Tarifa - Transferencia de Fundos</nomeContaContabil>
+		<itemLeiComplementar>15.16</itemLeiComplementar>
+		<percentualAliquota>5.0</percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>10467.55</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>523.37</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>D</tipoRegistro>
+		<codigoTipoServico>3</codigoTipoServico>
+		<descricaoTipoServico>TRANSFERENCIA DE FUNDOS</descricaoTipoServico>
+		<contaContabil>7179804100</contaContabil>
+		<nomeContaContabil>TESTE LIMITE DE CARACTERES TESTE LIMITE MAXIMO XX</nomeContaContabil>
+		<itemLeiComplementar>15.16</itemLeiComplementar>
+		<percentualAliquota>5.0</percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>10467.55</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>523.37</valorTributo>
+	</ocorrencias>
+	<ocorrencias>
+		<tipoRegistro>T</tipoRegistro>
+		<codigoTipoServico>3</codigoTipoServico>
+		<descricaoTipoServico></descricaoTipoServico>
+		<contaContabil></contaContabil>
+		<nomeContaContabil></nomeContaContabil>
+		<itemLeiComplementar></itemLeiComplementar>
+		<percentualAliquota></percentualAliquota>
+		<sinalReceita>+</sinalReceita>
+		<valorReceita>18505.05</valorReceita>
+		<sinalTributo>+</sinalTributo>
+		<valorTributo>925.24</valorTributo>
+	</ocorrencias>
+	<sinalRedutor>-</sinalRedutor>
+	<valorRedutor>0.00</valorRedutor>
+	<valorTotalReceita>308590.83</valorTotalReceita>
+	<valorTotalIss>15429.46</valorTotalIss>
+</listarPlanilhaApuracaoResponse>

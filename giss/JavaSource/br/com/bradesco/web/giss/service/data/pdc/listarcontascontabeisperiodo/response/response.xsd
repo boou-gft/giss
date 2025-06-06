@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarContasContabeisPeriodoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="200">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoContaContabil" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="numeroConta" type="xsd:int" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="descricaoRazao" type="xsd:string" />
+              <xsd:element name="codigoLeiComplementar" type="xsd:int" default="0" />
+              <xsd:element name="codigoServico" type="xsd:int" default="0" />
+              <xsd:element name="dataAtualizacao" type="xsd:string" />
+              <xsd:element name="horaAtualizacao" type="xsd:string" />
+              <xsd:element name="dataExclusao" type="xsd:string" />
+              <xsd:element name="codigoFuncao" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarResultadoPesqApuracaoMensalDiferenciadaResponse>
+	<codMensagem/>
+	<mensagem/>
+	<codMunicipio>1000</codMunicipio>
+	<valorReceitaSinal>+</valorReceitaSinal>
+	<valorReceitaValor>500.50</valorReceitaValor>
+	<apuracaoMunicipioSinal>+</apuracaoMunicipioSinal>
+	<apuracaoMunicipioValor>100.25</apuracaoMunicipioValor>
+	<numeroOcorrencias>2</numeroOcorrencias>
+	<ocorrencias>
+		<codigoPessoaJuridica>1</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>1</numeroSequenciaUnidadeOrganizacional>
+		<codigoDependencia>3776</codigoDependencia>
+		<descricaoDependencia>VITORIA RIBEIRINHA</descricaoDependencia>
+		<valorReceitaTributacaoSinal>+</valorReceitaTributacaoSinal>
+		<valorReceitaTributacaoValor>10000.00</valorReceitaTributacaoValor>
+		<valorIssSinal>+</valorIssSinal>
+		<valorIssValor>50.75</valorIssValor>
+	</ocorrencias>
+	<ocorrencias>
+		<codigoPessoaJuridica>1</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>2</numeroSequenciaUnidadeOrganizacional>
+		<codigoDependencia>3546</codigoDependencia>
+		<descricaoDependencia>URB. MT - CUIABA</descricaoDependencia>
+		<valorReceitaTributacaoSinal>+</valorReceitaTributacaoSinal>
+		<valorReceitaTributacaoValor>10000.00</valorReceitaTributacaoValor>
+		<valorIssSinal>+</valorIssSinal>
+		<valorIssValor>50.75</valorIssValor>
+	</ocorrencias>
+</listarResultadoPesqApuracaoMensalDiferenciadaResponse>

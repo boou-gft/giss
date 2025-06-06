@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resultadoPesquisaOscilacaoNegativaResponse>
+	<codMensagem/>
+	<mensagem/>
+	<numeroConsultas>3</numeroConsultas>
+	<ocorrencias>
+		<codigoPessoaJuridica>1596</codigoPessoaJuridica>
+  		<numeroSequenciaUnidadeOrganizacional>63181</numeroSequenciaUnidadeOrganizacional>
+    	<contaContabil>7131010711</contaContabil>
+    	<codigoDependencia>3546</codigoDependencia>
+    	<codigoMunicipio>1583</codigoMunicipio>
+    	<descricaoMunicipio>OSASCO</descricaoMunicipio>
+    	<codigoUf>SP</codigoUf>
+    	<anteriorSinal>+</anteriorSinal>
+    	<anteriorValor>1000.00</anteriorValor>
+    	<atualSinal>-</atualSinal>
+    	<atualValor>1200.00</atualValor>
+    	<oscilacaoSinal>-</oscilacaoSinal>
+    	<oscilacaoValor>1000.00</oscilacaoValor>
+	</ocorrencias>
+	<ocorrencias>
+		<codigoPessoaJuridica>1894</codigoPessoaJuridica>
+  		<numeroSequenciaUnidadeOrganizacional>63181</numeroSequenciaUnidadeOrganizacional>
+    	<contaContabil>7131010900</contaContabil>
+    	<codigoDependencia>3546</codigoDependencia>
+    	<codigoMunicipio>1009</codigoMunicipio>
+    	<descricaoMunicipio>JARINU</descricaoMunicipio>
+    	<codigoUf>SP</codigoUf>
+    	<anteriorSinal>-</anteriorSinal>
+    	<anteriorValor>200.00</anteriorValor>
+    	<atualSinal>+</atualSinal>
+    	<atualValor>1200.00</atualValor>
+    	<oscilacaoSinal>+</oscilacaoSinal>
+    	<oscilacaoValor>1000.00</oscilacaoValor>
+	</ocorrencias>
+	<ocorrencias>
+		<codigoPessoaJuridica>1754</codigoPessoaJuridica>
+  		<numeroSequenciaUnidadeOrganizacional>63181</numeroSequenciaUnidadeOrganizacional>
+    	<contaContabil>7131010322</contaContabil>
+    	<codigoDependencia>1052</codigoDependencia>
+    	<codigoMunicipio>1853</codigoMunicipio>
+    	<descricaoMunicipio>SAO PAULO</descricaoMunicipio>
+    	<codigoUf>SP</codigoUf>
+    	<anteriorSinal>-</anteriorSinal>
+    	<anteriorValor>750.00</anteriorValor>
+    	<atualSinal>-</atualSinal>
+    	<atualValor>1900.00</atualValor>
+    	<oscilacaoSinal>+</oscilacaoSinal>
+    	<oscilacaoValor>100.00</oscilacaoValor>
+	</ocorrencias>
+
+</resultadoPesquisaOscilacaoNegativaResponse>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:s="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.1.xsd
+    http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util-2.0.xsd"
+
+	default-lazy-init="false">
+
+	<!-- Security Manager. (Componente da Arquitetura Bradesco) -->
+	<bean id="securityManager"
+		class="br.com.bradesco.web.aq.application.security.intranet.impl.SecurityManagerImpl">
+		<property name="logger">
+			<ref bean="logManager" />
+		</property>
+		<property name="sessionManager">
+			<ref bean="sessionManager" />
+		</property>
+		<!-- 
+		<property name="pdcConnector">
+			<ref bean="${pdc.connector}" />
+		</property>
+		 -->
+		<property name="reauthenticationOnPdcEnabled">
+			<value>true</value>
+		</property>
+		<property name="authenticationService">
+			<ref bean="authenticationService" />
+		</property>
+		<property name="cipher">
+			<ref bean="bradescoCipher" />
+		</property>
+	</bean>
+
+	
+	<!--  Definicao da Chain de autenticacao de Usuario -->
+	
+	<!--  As requisicoes mapeadas no web.xml serao passadas por todos os filtros definidos nessa chain. -->
+	<!--  Cada item da chain (filtro), representa uma acao referente a seguranca a ser tomada. -->
+	<bean id="filterChainProxy" class="org.springframework.security.util.FilterChainProxy">
+		<s:filter-chain-map path-type="ant">
+			<s:filter-chain pattern="/**/*.js"			filters="none"/>		
+			<s:filter-chain pattern="/**/*.css"			filters="none"/>
+			<s:filter-chain pattern="/template/**"		filters="none"/>			
+			<s:filter-chain pattern="/**/images/**"		filters="none"/>
+			<s:filter-chain pattern="/**/unsecure/**"	filters="none"/>
+			<s:filter-chain pattern="/**"				filters="httpSessionContextIntegrationFilter,basicProcessingFilter,requestMethodsFilter,exceptionTranslationFilter,filterSecurityInterceptor"/>  
+		</s:filter-chain-map> 		
+	</bean>
+	
+	<!-- Filtro que tem a responsabilidade de colocar os dados de autenticacao na sessao -->
+	<bean id="httpSessionContextIntegrationFilter"
+		class="org.springframework.security.context.HttpSessionContextIntegrationFilter">
+		<property name="contextClass"><value>org.springframework.security.context.SecurityContextImpl</value></property>
+	</bean>
+
+	<!-- Filtro responsavel pela autenticacao do usuario, usando BASIC AUTHENTICATION -->
+	<bean id="basicProcessingFilter" class="br.com.bradesco.web.aq.application.security.intranet.authentication.filter.BasicAuthenticationSecurityFilter">
+		<property name="securityManager"><ref bean="securityManager"/></property>
+		<property name="authenticationManager"><ref local="authenticationManager"/></property>
+		<property name="authenticationEntryPoint"><ref local="authenticationEntryPoint"/></property>
+	</bean>
+	
+	<!-- Filtro que adiciona funcionalidades referentes a seguranca ao ServletRequest -->
+	<bean id="requestMethodsFilter"
+		class="org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter" />	
+
+	<!-- Filtro resposavel por capturar exceptions de seguranca lancadas -->
+	<bean id="exceptionTranslationFilter"
+		class="org.springframework.security.ui.ExceptionTranslationFilter">
+		<property name="authenticationEntryPoint">
+			<ref local="authenticationEntryPoint" />
+		</property>
+	</bean>
+	
+	<!-- Filtro responsavel por definir as permissoes necessarias para recursos http (paginas) -->
+	<!-- Note que a ordem das declaracoes em objectDefinitionSource importa. -->
+	<!-- O filtro ira percorrer essas declaracoes de cima para baixo, e ira parar assim que um padrao valido for -->
+	<!-- for encontrado. Desse modo, coloque os padroes mais especificos no topo. -->
+	<bean id="filterSecurityInterceptor"
+		class="org.springframework.security.intercept.web.FilterSecurityInterceptor">
+		<property name="authenticationManager">
+			<ref bean="authenticationManager" />
+		</property>
+		<property name="accessDecisionManager">
+			<ref local="httpRequestAccessDecisionManager" />
+		</property>
+		<property name="objectDefinitionSource">
+			<s:filter-invocation-definition-source>
+				<s:intercept-url pattern="/*"								access="ROLE_INTRANET"/>
+			</s:filter-invocation-definition-source>
+		</property>
+	</bean>
+	<!-- Fim da Definicao da Chain de autenticacao de Usuario -->	
+
+	<!-- Authentication Manager -->
+	<bean id="authenticationManager" class="org.springframework.security.providers.ProviderManager" >
+		<property name="providers">
+			<list>
+				<ref local="ldapProvider"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- INICIO: CONFIGURACOES ACTIVE DIRECTORY BRADESCO 
+   Contexto referente ao servidor Active Directory Bradesco--> 
+    <bean id="contextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+        <constructor-arg value="${securityManager.contextSource.url}"/>
+		<property name="userDn" value="${securityManager.contextSource.userDn}"/>
+  		<property name="password" value="${securityManager.contextSource.senhaParam}"/>
+    </bean>
+
+	<!-- Provedor de seguranca baseado em LDAP/ActiveDirectory
+    <bean id="ldapProvider" class="br.com.bradesco.web.aq.application.security.intranet.authentication.providers.LdapBradescoProvider">
+		<constructor-arg>
+			<bean class="br.com.bradesco.web.aq.application.security.intranet.authentication.authenticator.BradescoBindAuthenticator">
+				<constructor-arg ref="contextSource" />
+				<property name="userSearch">
+					<bean id="userSearch" class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch">
+					  <constructor-arg index="0" value="${securityManager.ldapProvider.userSearch.0}"/>
+					  <constructor-arg index="1" value="(sAMAccountName={0})"/>
+					  <constructor-arg index="2" ref="contextSource" />
+					  <property name="searchSubtree" value="true"/>
+					</bean>
+				</property>				
+			</bean>
+		</constructor-arg>
+		<constructor-arg>
+			<bean class="br.com.bradesco.web.aq.application.security.intranet.authorization.populator.MappedLdapAuthoritiesPopulator">
+				<constructor-arg ref="contextSource" />
+				<constructor-arg value="${securityManager.ldapProvider.contextSource}" />
+				<property name="searchSubtree"		value="true"/>
+				<property name="authoritiesMapper"	ref="authoritiesMapper"/>
+			</bean>			
+		</constructor-arg>
+		<property name="logManager" ref="logManager"/>
+		<property name="fullNameLocalization" value="displayName"/>
+		<property name="useUpperCase" value="true"/>
+		<property name="userTreeProperties">
+			<set>
+				<value>mail</value>
+				<value>sn</value>
+			</set>
+		</property>
+    </bean>  -->
+    <!-- FIM: CONFIGURACOES ACTIVE DIRECTORY BRADESCO -->
+
+	<!-- INICIO: CONFIGURACOES LDAP MOCK -->
+	<!-- Provedor de seguranca Mock -->
+    <bean id="ldapProvider" class="br.com.bradesco.web.aq.application.security.intranet.authentication.providers.MockLdapBradescoProvider">
+    	<property name="authoritiesMapper" ref="authoritiesMapper"/>
+		<property name="logManager" ref="logManager"/>
+		<property name="useUpperCase" value="true"/>
+		<property name="principalMappings">		
+			<map>
+				<entry key="I915061/teste06a" value="GISS0001,GISS0002,GISS0003,GISS0004" />
+		   </map>
+		</property>
+    </bean>
+    <!-- FIM: CONFIGURACOES LDAP MOCK -->
+
+	<!-- Bean para mapear as roles obtidas no LDAP/ActiveDirectory para as roles da aplicacao -->
+	<bean id="authoritiesMapper" scope="singleton"
+		class="br.com.bradesco.web.aq.application.security.intranet.authorization.populator.FileAuthoritiesMapper">
+		<property name="internalMappingFile" value="${securityManager.internalMappingFile}" />
+		<property name="externalMappingFile" value="${securityManager.externalMappingFile}" />
+	</bean>
+
+	<!-- Efetua log dos AuthenticationEvent gerados pelos providers. -->
+	<!-- Esses eventos sao recebidos automaticamente. -->
+	<bean id="loggerListener" class="org.springframework.security.event.authentication.LoggerListener"/>
+
+	<!-- authenticationEntryPoint -->
+	<!-- Define os pontos (paginas) de entrada do sistema -->
+	<bean id="authenticationEntryPoint" 
+		class="org.springframework.security.ui.basicauth.BasicProcessingFilterEntryPoint">
+		<property name="realmName" value="Intranet"/>
+	</bean>
+
+	<bean id="httpRequestAccessDecisionManager" class="org.springframework.security.vote.AffirmativeBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<ref bean="roleVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Optionally, you can specify a "rolePrefix" property to change 
+		(or remove) the ROLE_ prefix for role names. -->
+	<bean class="org.springframework.security.vote.RoleVoter" id="roleVoter" />
+
+
+	<!-- Configuracoes de Criptografia -->
+	
+	<!-- Salt utilizado pelo bradescoCipher (utilizado se algoritmo for PBEWithMD5AndDES) -->
+	<!-- Deve conter apenas 8 caracteres -->
+	<bean id="cipherSalt" class="java.lang.String">
+		<constructor-arg value="${securityManager.encryption.salt}" />
+	</bean>
+
+	<!-- Numero de interacoes utilizado pelo bradescoCipher (utilizado se algoritmo for PBEWithMD5AndDES) -->
+	<bean id="cipherIterations" class="java.lang.Integer">
+		<constructor-arg value="${securityManager.encryption.iterations}" />
+	</bean>
+	
+	<!-- Key utilizado pelo bradescoCipher -->
+	<bean id="cipherKey" class="java.lang.String">
+		<constructor-arg value="${securityManager.encryption.key}" />
+	</bean>
+	
+	<!-- PBEWithMD5AndDES -->
+	<bean id="bradescoCipher" class="br.com.bradesco.web.aq.application.security.encryption.impl.BradescoCipherImpl" init-method="initialize">
+		<property name="algorithm" value="PBEWithMD5AndDES" />
+		<property name="algorithmParameterSpec">
+			<bean class="javax.crypto.spec.PBEParameterSpec">
+				<constructor-arg index="0">
+					<bean factory-bean="cipherSalt" factory-method="getBytes" />
+				</constructor-arg>
+				<constructor-arg index="1" value="20" />
+			</bean>
+		</property>
+		<property name="keySpec">
+			<bean class="javax.crypto.spec.PBEKeySpec">
+				<constructor-arg index="0">
+					<bean factory-bean="cipherKey" factory-method="toCharArray" />
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="base64Helper" ref="base64Helper" />
+		<property name="logger" ref="logManager" />
+	</bean>
+	
+
+	
+	<!-- Triple DES
+	<bean id="bradescoCipher" class="br.com.bradesco.web.aq.application.security.encryption.impl.BradescoCipherImpl" init-method="initialize">
+		<property name="algorithm" value="DESede" />
+		<property name="keySpec">
+			<bean class="javax.crypto.spec.DESedeKeySpec">
+				<constructor-arg index="0">
+					<bean factory-bean="cipherKey" factory-method="getBytes" />
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="base64Helper" ref="base64Helper" />
+	</bean> -->
+	
+	<!-- DES
+	<bean id="bradescoCipher" class="br.com.bradesco.web.aq.application.security.encryption.impl.BradescoCipherImpl" init-method="initialize">
+		<property name="algorithm" value="DES" />
+		<property name="keySpec">
+			<bean class="javax.crypto.spec.DESKeySpec">
+				<constructor-arg index="0">
+					<bean factory-bean="cipherKey" factory-method="getBytes" />
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="base64Helper" ref="base64Helper" />
+	</bean> -->	
+	
+</beans>

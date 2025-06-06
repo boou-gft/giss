@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarTarifasCobradasRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="dataInicio" type="xsd:string" />
+        <xsd:element name="dataFim" type="xsd:string" />
+        <xsd:element name="cdTipoPesquisa" type="xsd:int" default="0" />
+        <xsd:element name="nomeCliente" type="xsd:int" default="0" />
+        <xsd:element name="cdJuncao" type="xsd:int" default="0" />
+        <xsd:element name="cdMunicipioJuncao" type="xsd:long" default="0" />
+        <xsd:element name="cdUfJuncao" type="xsd:int" default="0" />
+        <xsd:element name="cdTipoRelatorio" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

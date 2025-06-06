@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- ======================================================================================= -->
+<!-- ========================= DEFINICIONES DE NEGOCIO Y SERVICIOS ========================= -->
+<!-- ======================================================================================= -->
+
+<beans>
+
+	
+	<bean id="bradescoSpringUtils"
+		class="br.com.bradesco.web.aq.application.util.spring.BradescoSpringUtils">
+		<property name="springUtils">
+			<ref bean="springUtils" />
+		</property>
+	</bean>
+
+	<bean id="springUtils"
+		class="br.com.bradesco.web.aq.application.util.spring.SpringUtilsImpl" />
+
+
+	<bean id="bradescoFacesUtils"
+		class="br.com.bradesco.web.aq.application.util.faces.BradescoFacesUtils">
+		<property name="facesUtils">
+			<ref bean="facesUtils" />
+		</property>
+	</bean>
+
+	<bean id="facesUtils"
+		class="br.com.bradesco.web.aq.application.util.faces.FacesUtilsMyFacesImpl">
+		<property name="logger">
+			<ref bean="logManager" />
+		</property>
+	</bean>
+	
+	<!-- Base64 Encoder/Decoder Helper -->
+	<bean id="base64Helper" class="br.com.bradesco.web.aq.application.util.base64.impl.CommonsCodecBase64HelperImpl" />
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	    <property name="basenames">
+	        <value>br.com.bradesco.web.giss.view.bundle.Messages</value>
+	    </property>
+	</bean>
+
+	<!-- ========================= BRADESCO COMMON SERVICES FACTORY ================== -->
+	<bean id="bradescoCommonServices"
+		class="br.com.bradesco.web.aq.application.util.BradescoCommonServiceFactory">
+		<property name="logManager">
+			<ref bean="logManager" />
+		</property>
+		<property name="alertManager">
+			<ref bean="alertManager" />
+		</property>
+		<property name="exceptionManager">
+			<ref bean="exceptionManager" />
+		</property>
+		<property name="objectManager">
+			<ref bean="objectManager" />
+		</property>
+		<property name="sessionManager">
+			<ref bean="sessionManager" />
+		</property>
+		<property name="securityManager">
+			<ref bean="securityManager" />
+		</property>
+	</bean>
+
+	<!-- ========================= DEFINICION de GESTOR DE CONFIGURACION  ========================= -->
+
+	<!-- Configurer that replaces ${...} placeholders with values from a properties file -->
+	<!-- Posibilidade da carga externa do arquivo de propiedades  -->
+	<bean id="applicationPropertyConfigurer"
+		class="br.com.bradesco.web.aq.application.propertyPlaceHolder.AWBPlaceholderConfigurer">
+		<!-- 1.- Parametro de maquina virtual que buscará para encontrar la ruta del application.properties -->
+		<property name="environmentParameter">
+			<value>environmentConfig</value>
+		</property>
+		<!-- 2.- Localizacion absoluta externa en donde buscará como segunda opcion para encontrar el application.properties -->
+		<property name="variablePreExternalLocation">
+			<value>apps.config</value>
+		</property>
+		<property name="externalLocation">
+			<value>/suportedbdc_config/intranet/giss/application.properties</value>
+		</property>
+		<!-- 3.- Ruta relativa del application properties ( dentro del war ) en donde se buscara como tercera opcion -->
+		<property name="location">
+			<value>/WEB-INF/application.properties</value>
+		</property>
+
+		<property name="systemPropertiesModeName">
+			<value>SYSTEM_PROPERTIES_MODE_NEVER</value>
+		</property>
+
+		<!-- Ignora parámetros no representados en application.properties permitiendo arrancar de todas formas 
+			la aplicación	-->
+		<property name="ignoreUnresolvablePlaceholders">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<!-- ========================= DEFINICIONES DE ADVISORS  ========================= -->
+
+	<!-- ========================= DEFINICIONES DE OBJETOS DE NEGOCIO ================ -->
+	
+	<bean id="tipoServicoImpl" class="br.com.bradesco.web.giss.service.business.tiposervico.impl.TipoServicoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+		
+	<bean id="tipoIncidenciaImpl" class="br.com.bradesco.web.giss.service.business.tipoincidencia.impl.TipoIncidenciaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="contaContabilImpl" class="br.com.bradesco.web.giss.service.business.contacontabil.impl.ContaContabilServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="dependenciaImpl" class="br.com.bradesco.web.giss.service.business.dependencia.impl.DependenciaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<!-- Referente a Municipios -->
+	
+	<bean id="manterMunicipioImpl" class="br.com.bradesco.web.giss.service.business.mantermunicipio.impl.ManterMunicipioServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="historicoMunicipioImpl" class="br.com.bradesco.web.giss.service.business.historicomunicipio.impl.HistoricoMunicipioServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="dependenciaMunicipioImpl" class="br.com.bradesco.web.giss.service.business.depmunicipio.impl.DepMunicipioServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="resultMunicNovoImpl" class="br.com.bradesco.web.giss.service.business.resultmunnovo.impl.ResultMunNovoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="aliquotaDiferencImpl" class="br.com.bradesco.web.giss.service.business.aliquotadiferenciada.impl.AliquotaDiferenciadaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="saldosDivergentesImpl" class="br.com.bradesco.web.giss.service.business.saldosdivergentes.impl.SaldosDivergentesServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="contasNaoConstantesBaseImpl" class="br.com.bradesco.web.giss.service.business.contasnaoconstantesbase.impl.ContasNaoConstBaseServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="controleSaldosRecolhimentoImpl" class="br.com.bradesco.web.giss.service.business.consaldosrec.impl.ConSaldosRecServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+		<property name="logger" ref="logManager" />
+	</bean>
+
+	<bean id="consultarApuracaoAposFechamentoImpl" class="br.com.bradesco.web.giss.service.business.consultarapuracaoaposfechamento.impl.ConsultarApuracaoAposFechamentoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	<bean id="apuracaoRepServiceImpl" class="br.com.bradesco.web.giss.service.business.apuracaorep.impl.ApuracaoRepServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+
+
+	
+	<bean id="valorMesTotalServiceImpl" class="br.com.bradesco.web.giss.service.business.valormestotal.impl.ValorMesTotalServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+
+	<bean id="apuracaoMensalServiceImpl" class="br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="apuracaoParcialImpl" class="br.com.bradesco.web.giss.service.business.apuracaoparcial.impl.ApuracaoParcialServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="apuracaoAposFechamentoServiceImpl" class="br.com.bradesco.web.giss.service.business.apuracaoaposfechamento.impl.ApuracaoAposFechamentoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="consultarApuracaoParcialImpl" class="br.com.bradesco.web.giss.service.business.consultarapuracaoparcial.impl.ConsultarapuracaoparcialServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="reprocessamentoPorDependenciaImpl" class="br.com.bradesco.web.giss.service.business.reprocessamentopordependencia.impl.ReprocessamentoPorDependenciaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="reprocessamentoPorMunicipioImpl" class="br.com.bradesco.web.giss.service.business.reprocessamentopormunicipio.impl.ReprocessamentopormunicipioServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+
+	<bean id="consultarOscilacaoNegativaImpl" class="br.com.bradesco.web.giss.service.business.consultarapuracaooscilacaonegativa.impl.ConsultarApuracaoOscilacaoNegativaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="consultarApuracaoAliquotaZeradaImpl" class="br.com.bradesco.web.giss.service.business.consultarapuracaoaliquotazerada.impl.ConsultarApuracaoAliquotaZeradaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>	
+	
+	<bean id="movimentoNaoTributavelImpl" class="br.com.bradesco.web.giss.service.business.movnaotrib.impl.MovNaoTribServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>	
+		
+	<bean id="agIncorpDepartServiceImpl" class="br.com.bradesco.web.giss.service.business.agincorpdepart.impl.AgIncorpDepartServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	<bean id="planApuracaoIssImpl" class="br.com.bradesco.web.giss.service.business.planapuracaoiss.impl.PlanApuracaoIssServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+
+	
+	<bean id="consultarApuracaoMensalDiferenciadaImpl" class="br.com.bradesco.web.giss.service.business.consultarapuracaomensaldiferenciada.impl.ConsultarApuracaoMensalDiferenciadaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="listarEmpresaServiceImpl" class="br.com.bradesco.web.giss.service.business.listarempresa.impl.ListarEmpresaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="listaMunicipioServiceImpl" class="br.com.bradesco.web.giss.service.business.listamunicipio.impl.ListaMunicipioServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="obterDescDependenciaServiceImpl" class="br.com.bradesco.web.giss.service.business.obterdescdependencia.impl.ObterDescDependenciaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="balancetesFiscalizacoesIssServiceImpl" class="br.com.bradesco.web.giss.service.business.balancetesfiscalizacoesiss.impl.BalancetesFiscalizacoesIssServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="codLancamentoServiceImpl" class="br.com.bradesco.web.giss.service.business.codlancamento.impl.CodLancamentoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="empresasISSServiceImpl" class="br.com.bradesco.web.giss.service.business.issempresa.impl.EmpresasISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="municipioISSServiceImpl" class="br.com.bradesco.web.giss.service.business.issmunicipio.impl.MunicipioISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="aliquotaISSServiceImpl" class="br.com.bradesco.web.giss.service.business.issaliquota.impl.AliquotaISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="utilidadesServiceImpl" class="br.com.bradesco.web.giss.service.business.utilidade.impl.UtilidadesServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="itemServicoLcISSServiceImpl" class="br.com.bradesco.web.giss.service.business.issitemservicolc.impl.ItemServicoLcISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="arquivoEmpresaISSServiceImpl" class="br.com.bradesco.web.giss.service.business.arquivoempresa.impl.ArquivoEmpresaISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="liberarPagtoISSServiceImpl" class="br.com.bradesco.web.giss.service.business.liberarpagamento.impl.LiberarPagtoISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="processarPagtoISSServiceImpl" class="br.com.bradesco.web.giss.service.business.issprocessarpagto.impl.ProcessarPagtoISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+
+	<bean id="relatorioISSServiceImpl" class="br.com.bradesco.web.giss.service.business.issrelatorio.impl.RelatorioISSServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter" />
+	</bean>
+	
+	<bean id="percentualTransicaoServiceImpl" class="br.com.bradesco.web.giss.service.business.percentualTransicao.impl.PercentualTransicaoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="cargaMassivaAliquotaServiceImpl" class="br.com.bradesco.web.giss.service.business.cargamassivaaliquota.impl.CargaMassivaAliquotaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="movimentoRetificadorServiceImpl" class="br.com.bradesco.web.giss.service.business.movimentoretificador.impl.MovimentoRetificadorServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<!-- Adicionados em 03/07/2021 -->
+	<bean id="parametrizarDependenciaServiceImpl" class="br.com.bradesco.web.giss.service.business.parametrizardependencia.impl.ParametrizarDependenciaServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+	
+	<bean id="logTransmissaoArquivoServiceImpl" class="br.com.bradesco.web.giss.service.business.logtransmissaoarquivo.impl.LogTransmissaoArquivoServiceImpl">
+		<property name="factoryAdapter" ref="factoryAdapter"/>
+	</bean>
+
+	
+	<!-- ========================= DEFINICIONES DE SERVICIOS ========================= -->
+	
+	<bean id="authenticationService"
+		class="br.com.bradesco.web.giss.service.provider.intranet.impl.AuthenticationServiceImpl">
+		<property name="factoryAdapter">
+			<ref bean="factoryAdapter"/>
+		</property>
+		<property name="logManager">
+			<ref bean="logManager" />
+		</property>
+	</bean>
+
+	<bean name="menuProviderService"
+		class="br.com.bradesco.web.aq.view.components.app.UIMenu.provider.impl.MenuProviderServiceImpl"
+		init-method="init">
+
+		<!-- Terminada inserção do securityManager, com a BradescoSpringSecurityUtils já nos basta no momento
+			
+			<property name="securityManager"><ref bean="securityManager"/></property> -->
+
+		<property name="logger">
+			<ref bean="logManager" />
+		</property>
+
+		<property name="xmlMappingResource"
+			value="${service.menuProvider.component.path}" />
+
+	</bean>
+
+
+	<!-- ########################### CacheManager Test ############################ -->
+	
+	
+	
+	<!-- ========================= DEFINICIONES DE PROXIES TRANSACCIONALES =========== -->
+	
+</beans>

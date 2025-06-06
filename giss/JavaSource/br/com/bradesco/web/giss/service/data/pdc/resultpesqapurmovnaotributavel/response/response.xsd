@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="resultPesqApurMovNaoTributavelResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="sinalReceitaTotalMun" type="xsd:string" />
+        <xsd:element name="valorReceitaTotalMun" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalApuracaoTotalMun" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotalMun" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalReceitaTotalGer" type="xsd:string" />
+        <xsd:element name="valorReceitaTotalGer" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalApuracaoTotalGer" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotalGer" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalApuracaoTotalAg" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotalAg" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalApuracaoTotalPa" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotalPa" type="xsd:decimal" default="0" />
+        <xsd:element name="codEmpresa" type="xsd:long" default="0" />
+        <xsd:element name="descEmpresa" type="xsd:string" />
+        <xsd:element name="codUF" type="xsd:long" default="0" />
+        <xsd:element name="descUF" type="xsd:string" />
+        <xsd:element name="codMunicipio" type="xsd:int" default="0" />
+        <xsd:element name="descMunicipio" type="xsd:string" />
+        <xsd:element name="codDependencia" type="xsd:string" />
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="OcorrenciasNaoTributaveis" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codPessoaJuridOcor" type="xsd:long" default="0" />
+              <xsd:element name="numSeqUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="codDependenicaOcor" type="xsd:string" />
+              <xsd:element name="descDependenciaOcor" type="xsd:string" />
+              <xsd:element name="codPa" type="xsd:string" />
+              <xsd:element name="descPa" type="xsd:string" />
+              <xsd:element name="sinalApuracao" type="xsd:string" />
+              <xsd:element name="valorApuracao" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalReceita" type="xsd:string" />
+              <xsd:element name="valorReceita" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

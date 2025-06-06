@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="excluirBalanceteRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="codGrupo" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarReprocessamentoDependenciaResponse>
+	<codMensagem/>
+	<mensagem/>
+    <aliquotaPadraoMunicipio>5.00</aliquotaPadraoMunicipio>
+    <numeroConsultas>2</numeroConsultas>
+    <ocorrencias>
+    	<codigoPessoaJuridica>1</codigoPessoaJuridica>
+    	<numeroSequenciaUnidadeOrganizacional>1</numeroSequenciaUnidadeOrganizacional>
+        <codigoDependencia>1009</codigoDependencia>
+        <descricaoDependencia>TESTE</descricaoDependencia>
+	</ocorrencias>
+	<ocorrencias>
+    	<codigoPessoaJuridica>1</codigoPessoaJuridica>
+    	<numeroSequenciaUnidadeOrganizacional>2</numeroSequenciaUnidadeOrganizacional>
+        <codigoDependencia>13505</codigoDependencia>
+        <descricaoDependencia>TESTE 2</descricaoDependencia>
+	</ocorrencias>
+</listarReprocessamentoDependenciaResponse>

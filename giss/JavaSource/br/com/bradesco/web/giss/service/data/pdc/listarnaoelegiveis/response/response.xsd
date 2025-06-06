@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarNaoElegiveisResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="listaPgtosNaoElegiveis" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="competencia" type="xsd:int" default="0" />
+              <xsd:element name="codEmpresa" type="xsd:int" default="0" />
+              <xsd:element name="nomeEmpresa" type="xsd:string" />
+              <xsd:element name="produto" type="xsd:string" />
+              <xsd:element name="valorIssApurado" type="xsd:decimal" default="0" />
+              <xsd:element name="valorBaseIss" type="xsd:decimal" default="0" />
+              <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="nomeMunicipio" type="xsd:string" />
+              <xsd:element name="vencimento" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

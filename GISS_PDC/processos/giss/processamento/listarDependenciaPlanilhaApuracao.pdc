@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process>
+  <header>
+    <name>giss.processamento.listarDependenciaPlanilhaApuracao</name>
+    <product>Intranet</product>
+    <loginRequired>false</loginRequired>
+    <description />
+  </header>
+  <request>
+    <field name="quantidadeOcorrencia" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="dataCompetenciaInicio" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="dataCompetenciaFim" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="codMunicipio" type="long" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="codPessoaJuridica" type="long" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="codDependencia" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+  </request>
+  <response>
+    <field name="codMensagem" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+    <field name="mensagem" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+    <field name="periodoInicio" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="periodoFim" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="quantidadeOcorrencia" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="qtdeAgencia" type="long" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="qtdePa" type="long" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    <field name="ocorrencias" type="" minOccurs="0" maxOccurs="100" unbounded="true" length="" depending="" id="">
+      <field name="codigoPessoaJuridica" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="numeroSequencial" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="dataCompetencia" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="contaContabil" type="long" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="codigoDependencia" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="codigoPaa" type="int" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="descricaoDependencia" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="descricaoPa" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="sinalReceita" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="valorReceita" type="double" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="sinalTributoApuracao" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="valorTributoApuracao" type="double" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+      <field name="uf" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="municipio" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="tragSemTrag" type="string" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="" />
+      <field name="codMunicipio" type="long" minOccurs="1" maxOccurs="1" unbounded="false" length="" depending="" id="" defaultValue="0" />
+    </field>
+  </response>
+  <body>
+    <control name="LpGissiacsMaiDados" type="Loop">
+      <action>giss.processamento.LpGissiacs</action>
+      <maxIterations>12</maxIterations>
+      <body>
+        <control name="GISSIACS" type="FWO">
+          <action>giss.processamento.TxGissiacs</action>
+          <FWO-transaction>GISSIACS</FWO-transaction>
+          <FWO-money>false</FWO-money>
+        </control>
+      </body>
+    </control>
+  </body>
+</process>
+

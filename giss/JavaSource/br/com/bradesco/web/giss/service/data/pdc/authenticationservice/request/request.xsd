@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="logonRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="idUsuario" type="xsd:string" />
+        <xsd:element name="senhaAtual" type="xsd:string" />
+        <xsd:element name="senhaNova" type="xsd:string" />
+        <xsd:element name="senhaConfirmacao" type="xsd:string" />
+        <xsd:element name="atualizarSenha" type="xsd:string" default="N" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

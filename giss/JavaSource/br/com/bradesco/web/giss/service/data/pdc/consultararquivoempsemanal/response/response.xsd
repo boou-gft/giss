@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarArquivoEmpSemanalResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsulta" type="xsd:int" default="0" />
+        <xsd:element name="listaConsultarArquivoEmpSemanal" maxOccurs="50">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codEmpresa" type="xsd:int" default="0" />
+              <xsd:element name="produto" type="xsd:string" />
+              <xsd:element name="sPeriodoIni" type="xsd:string" />
+              <xsd:element name="sPeriodoFim" type="xsd:string" />
+              <xsd:element name="anoMes" type="xsd:int" default="0" />
+              <xsd:element name="dataRecepcao" type="xsd:string" />
+              <xsd:element name="statusArquivo" type="xsd:string" />
+              <xsd:element name="codFinalidade" type="xsd:string" />
+              <xsd:element name="qntRegistroRecebido" type="xsd:long" default="0" />
+              <xsd:element name="qntRegistroRejeitado" type="xsd:long" default="0" />
+              <xsd:element name="sPercentualRejeicaoArqIss" type="xsd:double" default="0" />
+              <xsd:element name="sValorRegistroRejeitado" type="xsd:double" default="0" />
+              <xsd:element name="sQntdRegistroAcatado" type="xsd:long" default="0" />
+              <xsd:element name="sValorAcatado" type="xsd:double" default="0" />
+              <xsd:element name="qtdRegistroIssNegtv" type="xsd:long" default="0" />
+              <xsd:element name="valorTotalIssNegtv" type="xsd:double" default="0" />
+              <xsd:element name="valorBaseCalcApuracao" type="xsd:double" default="0" />
+              <xsd:element name="valorTotalApuracaoIss" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

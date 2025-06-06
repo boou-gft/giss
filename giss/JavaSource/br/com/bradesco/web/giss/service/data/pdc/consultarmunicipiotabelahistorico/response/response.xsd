@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarMunicipioTabelaHistoricoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="percentualAliquotaMunicipio" type="xsd:decimal" default="0" />
+        <xsd:element name="diaVencimento" type="xsd:int" default="0" />
+        <xsd:element name="diaVencimentoAnt" type="xsd:int" default="0" />
+        <xsd:element name="pagamentoDiaUtil" type="xsd:string" />
+        <xsd:element name="pagamentoDiaUtilAnt" type="xsd:string" />
+        <xsd:element name="formaPagamento" type="xsd:int" default="0" />
+        <xsd:element name="formaPagamentoAnt" type="xsd:int" default="0" />
+        <xsd:element name="percentBaseCalculo" type="xsd:decimal" default="0" />
+        <xsd:element name="percentBaseCalculoAnt" type="xsd:decimal" default="0" />
+        <xsd:element name="percentAliquotaPadrao" type="xsd:decimal" default="0" />
+        <xsd:element name="percentAliquotaPadraoAnt" type="xsd:decimal" default="0" />
+        <xsd:element name="codigoTipoIncidencia" type="xsd:int" default="0" />
+        <xsd:element name="codigoTipoIncidenciaAnt" type="xsd:int" default="0" />
+        <xsd:element name="nomeIncidencia" type="xsd:string" />
+        <xsd:element name="nomeIncidenciaAnt" type="xsd:string" />
+        <xsd:element name="nomeEstadoResponsavel" type="xsd:string" />
+        <xsd:element name="codigoUorgResponsavel" type="xsd:int" default="0" />
+        <xsd:element name="codigoUorgResponsavelAnt" type="xsd:int" default="0" />
+        <xsd:element name="nomeUorgResponsavel" type="xsd:string" />
+        <xsd:element name="nomeUorgResponsavelAnt" type="xsd:string" />
+        <xsd:element name="indiceVigencia" type="xsd:string" />
+        <xsd:element name="estadoCentralizador" type="xsd:string" />
+        <xsd:element name="estadoCentralizadorAnt" type="xsd:string" />
+        <xsd:element name="codigoMunicipioCentralizador" type="xsd:long" default="0" />
+        <xsd:element name="codigoMunicipioCentralizadorAnt" type="xsd:long" default="0" />
+        <xsd:element name="descricaoMunicipioCentralizador" type="xsd:string" />
+        <xsd:element name="descricaoMunicipioCentralizadorAnt" type="xsd:string" />
+        <xsd:element name="codigoLeiVigente" type="xsd:int" default="0" />
+        <xsd:element name="codigoLeiVigenteAnt" type="xsd:int" default="0" />
+        <xsd:element name="descLeiVigente" type="xsd:string" />
+        <xsd:element name="descLeiVigenteAnt" type="xsd:string" />
+        <xsd:element name="informacaoComplementar" type="xsd:string" />
+        <xsd:element name="informacaoComplementarAnt" type="xsd:string" />
+        <xsd:element name="saldoAlteracao" type="xsd:int" default="0" />
+        <xsd:element name="saldoAnterior" type="xsd:string" />
+        <xsd:element name="saldoAtual" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

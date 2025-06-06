@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="resultadoPesquisaOscilacaoNegativaPlanilhaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="descMunicipio" type="xsd:string" />
+        <xsd:element name="codigoUf" type="xsd:string" />
+        <xsd:element name="descUf" type="xsd:string" />
+        <xsd:element name="anteriorTotalSinal" type="xsd:string" />
+        <xsd:element name="anteriorTotalValor" type="xsd:decimal" default="0" />
+        <xsd:element name="atualTotalSinal" type="xsd:string" />
+        <xsd:element name="atualTotalValor" type="xsd:decimal" default="0" />
+        <xsd:element name="oscilacaoTotalSinal" type="xsd:string" />
+        <xsd:element name="oscilacaoTotalValor" type="xsd:decimal" default="0" />
+        <xsd:element name="nroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="nroSeqUndOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="contaContabil" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoDependencia" type="xsd:int" default="0" />
+              <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="descMunicipio" type="xsd:string" />
+              <xsd:element name="siglaUf" type="xsd:string" />
+              <xsd:element name="anteriorSinal" type="xsd:string" />
+              <xsd:element name="anteriorValor" type="xsd:decimal" default="0" />
+              <xsd:element name="atualSinal" type="xsd:string" />
+              <xsd:element name="atualValor" type="xsd:decimal" default="0" />
+              <xsd:element name="oscilacaoSinal" type="xsd:string" />
+              <xsd:element name="oscilacaoValor" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

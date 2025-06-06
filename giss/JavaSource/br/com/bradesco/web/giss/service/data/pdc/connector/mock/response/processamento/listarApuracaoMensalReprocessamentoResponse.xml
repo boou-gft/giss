@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarApuracaoMensalReprocessamentoResponse>
+	<codMensagem/>
+    <mensagem/>
+    <numConsultas>2</numConsultas>
+    <ocorrencias>
+        <codigo>4586</codigo>
+        <solicitacao>15.08.2010</solicitacao>
+        <processamento>15.08.2010</processamento>
+        <periodoInicial>16.05.2010</periodoInicial>
+        <periodoFinal>15.06.2010</periodoFinal>
+    </ocorrencias>     
+</listarApuracaoMensalReprocessamentoResponse>

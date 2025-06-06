@@ -1,0 +1,35 @@
+[
+
+
+
+	{
+		"versao": "5.0.0",
+		"data": "15/07/2022",
+		"descricao": ["Inclusão do Novo Produto: Cartões Comissões", "Inclusão do Painel de Controle Semanal", "Inclusão da Geração do Histórico de Transações Recusadas"],
+		"telas": ["GISSC001"]
+	},
+	{
+		"versao": "4.0.0",
+		"data": "20/06/2022",
+		"descricao": ["Ajustes na Equalização de Depêndencias"],
+		"telas": ["GISSC001"]
+	},
+	{
+		"versao": "3.0.0",
+		"data": "20/04/2022",
+		"descricao": ["Inclusão da Geração do Relatório de Tarifas Cobradas", "Inclusão do Controle de Versionamento do Sistema"],
+		"telas": ["GISSC001"]
+	},
+	{
+		"versao": "2.0.0",
+		"data": "02/01/2017",
+		"descricao": ["Implementação do GISS Gerencial"],
+		"telas": ["GISSC001", "GISSC004"]
+	},
+	{
+		"versao": "1.0.0",
+		"data": "02/01/2013",
+		"descricao": ["Implementação do sistema GISS"],
+		"telas": ["GISSC001", "GISSC004"]
+	}		
+]

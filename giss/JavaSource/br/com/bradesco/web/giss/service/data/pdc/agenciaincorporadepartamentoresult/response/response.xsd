@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="agenciaIncorporaDepartamentoResultResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="sinalTotalReceita" type="xsd:string" />
+        <xsd:element name="valorTotalReceita" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalTotalIss" type="xsd:string" />
+        <xsd:element name="valorTotalIss" type="xsd:decimal" default="0" />
+        <xsd:element name="ocorrencia" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numeroSequenciaUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="mesAnoApuracaoContabil" type="xsd:int" default="0" />
+              <xsd:element name="codigoDependencia" type="xsd:string" />
+              <xsd:element name="descricaoDependencia" type="xsd:string" />
+              <xsd:element name="receitaSinal" type="xsd:string" />
+              <xsd:element name="receitaValor" type="xsd:decimal" default="0" />
+              <xsd:element name="issSinal" type="xsd:string" />
+              <xsd:element name="issValor" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

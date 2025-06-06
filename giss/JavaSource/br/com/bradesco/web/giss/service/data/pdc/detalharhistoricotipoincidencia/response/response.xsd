@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="detalharHistoricoTipoIncidenciaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codigoTipoIncidencia" type="xsd:int" default="0" />
+        <xsd:element name="descricaoTipoIncidencia" type="xsd:string" />
+        <xsd:element name="dataInicioVigencia" type="xsd:string" />
+        <xsd:element name="dataFinalVigencia" type="xsd:string" />
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="valorInicial" type="xsd:decimal" default="0" />
+              <xsd:element name="valorFinal" type="xsd:decimal" default="0" />
+              <xsd:element name="percentAliquota" type="xsd:decimal" default="0" />
+              <xsd:element name="WvalorRedutor" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

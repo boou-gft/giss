@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarContasTipoServicoResponse>
+    <codMensagem/>
+    <mensagem/>
+    <quantidadeOcorrencias>2</quantidadeOcorrencias>
+    <ocorrencias>
+    	<codigoConta>1</codigoConta>
+    	<descricaoConta>CONTA</descricaoConta>
+    	<percentualAliquota>5.00</percentualAliquota>
+    	<codigoTributo>1</codigoTributo>
+    	<dtInicioVigencia>01.05.2010</dtInicioVigencia>
+    	<dtFinalVigencia>31.05.2010</dtFinalVigencia>
+    </ocorrencias>
+    <ocorrencias>
+    	<codigoConta>2</codigoConta>
+    	<descricaoConta>CONTA2</descricaoConta>
+    	<percentualAliquota>10.00</percentualAliquota>
+    	<codigoTributo>2</codigoTributo>
+    	<dtInicioVigencia>15.05.2010</dtInicioVigencia>
+    	<dtFinalVigencia>20.05.2010</dtFinalVigencia>
+    </ocorrencias>
+</listarContasTipoServicoResponse>

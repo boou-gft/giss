@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarDependenciaApuracaoMensalResultadoPesquisaResponse>
+	 <codMensagem/>
+	 <mensagem/>
+	        <receitaTotalMunicipioSinal>-</receitaTotalMunicipioSinal>
+	        <receitaTotalMunicipioValor>65764.91</receitaTotalMunicipioValor>
+	        <issTotalMunicipioSinal>+</issTotalMunicipioSinal>
+	        <issTotalMunicipioValor>6387.35</issTotalMunicipioValor>
+	        <receitaTotalGeralSinal>+</receitaTotalGeralSinal>
+	        <receitaTotalGeralValor>79876.84</receitaTotalGeralValor>
+	        <issTotalGeralSinal>-</issTotalGeralSinal>
+	        <issTotalGeralValor>6548.65</issTotalGeralValor>
+	        <numConsultas>2</numConsultas>
+        	<ocorrencias>
+	              <codPessoa>6415</codPessoa>
+	              <numSequencial>1883</numSequencial>
+	              <dataApuracao>062010</dataApuracao>
+	              <dependencia>6896</dependencia>
+	              <descricao>Agencia</descricao>
+	              <receitaSinal>+</receitaSinal>
+	              <receitaValor>4676.82</receitaValor>
+	              <issSinal>-</issSinal>
+	              <issValor>4657.56</issValor>
+         	</ocorrencias>
+        	<ocorrencias>
+	              <codPessoa>4687</codPessoa>
+	              <numSequencial>1946</numSequencial>
+	              <dataApuracao>062010</dataApuracao>
+	              <dependencia>7800</dependencia>
+	              <descricao>Agencia</descricao>
+	              <receitaSinal>-</receitaSinal>
+	              <receitaValor>4657.56</receitaValor>
+	              <issSinal>+</issSinal>
+	              <issValor>98896.83</issValor>
+         	</ocorrencias>         	
+</listarDependenciaApuracaoMensalResultadoPesquisaResponse>             

@@ -1,0 +1,69 @@
+/*
+	Definicion de estilos propios del aplicativo para paginas de login
+	
+	Esta StyleSheet debera ser declarada como item de un atributo List de nombre "especificCSS" 
+	en su tiles-definition correspondiente (en el fichero tiles-definitions.xml)
+*/
+
+.loginTdTop1 {
+	vertical-align: bottom;
+	height:1%;
+	width:100%;
+	background-image: url(../images/login_06.gif);
+}
+
+.loginTdTop2 {
+	text-align: right;
+	vertical-align: bottom;
+}
+
+.loginTdEsquerda {
+	vertical-align: top;
+	text-align: left;
+	background-image: url(../images/barra_esquerda.gif);
+}
+
+.loginTdContent {
+	height:100%;
+	width:100%;
+}
+
+.loginTdButtons {
+	text-align: center;
+}
+
+.loginTdChip {
+	text-align: right;	
+}
+
+.loginTdDireita {
+	vertical-align: top;
+	text-align: right;
+	width:1;
+	background-image: url(../images/barra_direita.gif);
+}
+
+.loginTdBottom {
+	vertical-align: text-top;
+	width:100%;
+	background-image: url(../images/login_08.gif);
+}
+
+.loginTdHalfWidth {
+	width: 50%;
+}
+
+.loginHeader {
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.loginRedMessage {
+	color: red;
+}
+
+.loginTokenBox {
+	height:20px;
+	width:67;
+}
+

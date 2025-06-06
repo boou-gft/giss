@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoReprocessamentoRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="nroMaxOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="nroSolicitacao" type="xsd:int" default="0" />
+        <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+        <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+        <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+        <xsd:element name="nroSeqUndOrganizadora" type="xsd:int" default="0" />
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="mesAnoApuracao" type="xsd:int" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

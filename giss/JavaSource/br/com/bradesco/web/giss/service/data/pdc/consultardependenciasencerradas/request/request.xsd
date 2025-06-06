@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarDependenciasEncerradasRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="dtInicio" type="xsd:string" />
+        <xsd:element name="dtFinal" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

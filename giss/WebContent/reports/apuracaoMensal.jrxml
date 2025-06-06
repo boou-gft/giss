@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="apuracaoMensal" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ENDERECO_IMAGEM" class="java.lang.String"/>
+	<parameter name="TOTAL_DEPENDENCIAS" class="java.lang.Long"/>
+	<parameter name="TOTAL _MUNICIPIO_RECEITA" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_MUNICIPIO_ISS" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_GERAL_RECEITA" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_GERAL_ISS" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_PA" class="java.lang.Long"/>
+	<parameter name="TOTAL_AGENCIA_RECEITA" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_AGENCIA_ISS" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_PA_RECEITA" class="java.math.BigDecimal"/>
+	<parameter name="TOTAL_PA_ISS" class="java.math.BigDecimal"/>
+	<field name="codDepPa" class="java.lang.String"/>
+	<field name="descDepPa" class="java.lang.String"/>
+	<field name="municipioReceitaValor" class="java.math.BigDecimal"/>
+	<field name="geralReceitaValor" class="java.math.BigDecimal"/>
+	<title>
+		<band height="60" splitType="Stretch">
+			<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
+				<reportElement x="10" y="20" width="92" height="27"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{ENDERECO_IMAGEM}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="169" y="10" width="217" height="17" forecolor="#CC0000"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<text><![CDATA[GISS - Apuração Mensal]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="7" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Dependência]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="7" width="187" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="7" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Receita]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="5" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="436" y="7" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[ISS a escolher]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="9" y="2" width="100" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{codDepPa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="2" width="187" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descDepPa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00">
+				<reportElement x="324" y="2" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{municipioReceitaValor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00">
+				<reportElement x="436" y="2" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{geralReceitaValor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="150">
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="324" y="100" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL _MUNICIPIO_RECEITA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="324" y="123" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_GERAL_RECEITA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="4" width="147" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total das Agências Listadas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="100" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total Município:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="123" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total Geral:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="4" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$P{TOTAL_DEPENDENCIAS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="435" y="123" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_GERAL_ISS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="435" y="100" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_MUNICIPIO_ISS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="27" width="147" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total dos PAs Listados: 
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="27" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$P{TOTAL_PA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="52" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total das Agências:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="324" y="52" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_AGENCIA_RECEITA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="435" y="52" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_AGENCIA_ISS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="76" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Total dos PAs: 
+ ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="324" y="76" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_PA_RECEITA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="435" y="76" width="100" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$P{TOTAL_PA_ISS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schema/menu-catalog.xsd">
+
+<menuItem id="1" action="" labelKey="menu.labelKey.titulo">
+
+	<link labelKey="Ajuda" action="#{ajudaVersaoSistemaBean.init}" />
+
+	<!-- Menu Parametro -->
+	<menuItem id="2" action="" actionListener="" labelKey="menu.labelKey.parametro" allowedRoles="ROLE_MENU_PARAMAMETRO">
+		
+		<!-- submenu Tipo de Serviço -->
+		<menuItem id="3" labelKey="menu.labelKey.tipoServico" title="menu.labelKey.parametro" allowedRoles="ROLE_MENU_PARAM_SUBMENU_TPOSERV"/>																		   
+		<menuItem id="4" action="#{tipoServicoBean.carregarIncluirListaTipoServico}" labelKey="menu.labelKey.incluirTipoServico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PARAM_TPOSERV_INCLUIR"/>
+		<menuItem id="4" action="#{tipoServicoBean.carregarAlterarListaTipoServico}" labelKey="menu.labelKey.manterTipoServico"  showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PARAM_TPOSERV_MANTER"/>
+		<menuItem id="4" action="#{tipoServicoBean.carregarHistoricoTipoServico}" labelKey="menu.labelKey.consultar_historico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PARAM_TPOSERV_CON"/>
+				 
+		<!-- submenu Tipo de Incidencias -->
+		<menuItem id="3" labelKey="menu.labelKey.tipoIncidencia" title="menu.labelKey.tipoIncidencia" allowedRoles="ROLE_MENU_PARAM_SUBMENU_TPOINCID"/>
+		<menuItem id="4" action="#{tipoIncidenciaBean.inicializaIncluirTipoIncidencia}" labelKey="menu.labelKey.incluirTipoIncidencia" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PARAM_TPOINCID_INCLUIR"/>
+		<menuItem id="4" action="#{tipoIncidenciaBean.carregarAlterarListaTipoIncidencia}" labelKey="menu.labelKey.manterTipoIncidencia" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PARAM_TPOINCID_MANTER"/>
+		<menuItem id="4" action="#{tipoIncidenciaBean.carregarHistoricoTipoIncidencia}" labelKey="menu.labelKey.consultar_historico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PARAM_TPOINCID_CON"/>
+		
+	</menuItem>			
+	
+	<menuItem id="2" action="" actionListener="" labelKey="menu.labelKey.integracao" allowedRoles="ROLE_MENU_INTEGRACAO">	
+		<!-- submenu Conta contábil -->	
+		<menuItem id="3" labelKey="menu.labelKey.contaContabil" title="menu.labelKey.integracao" allowedRoles="ROLE_MENU_INTEG_SUBMENU_CTACONTAB"/>
+		<menuItem id="4" action="#{contaContabilBean.inicializaIncluir}" labelKey="menu.labelKey.incluirConta" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_CTACONTAB_INCLUIR"/>
+		<menuItem id="4" action="#{contaContabilBean.inicializaManter}" labelKey="menu.labelKey.manterConta" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_CTACONTAB_MANTER"/>		
+		
+		<menuItem id="3" labelKey="menu.labelKey.consultar" title="menu.labelKey.consultar" allowedRoles="ROLE_MENU_INTEG_SUBMENU_CTACONTAB_CON"/>		
+		<menuItem id="4" action="#{contaContabilBean.inicializaHistorico}" labelKey="menu.labelKey.historico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_CTACONTAB_HIST"/>
+		<menuItem id="4" action="#{contaContabilBean.inicializaConsultarContaTipoServico}" labelKey="menu.labelKey.contaTipoServico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_CTACONTAB_CTA_TPOSERV"/>
+		
+		<menuItem id="3" labelKey="menu.labelKey.codmunicipio" title="menu.labelKey.codmunicipio" allowedRoles="ROLE_MENU_INTEG_SUBMENU_COD_LANCAMENTO"/>		
+		<menuItem id="4" action="#{codLancamentoBean.carregarIncluir}" labelKey="menu.labelKey.incluircodmunicipio" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_COD_LANCAMENTO_INCLUIR"/>
+		<menuItem id="4" action="#{codLancamentoBean.carregarManter}" labelKey="menu.labelKey.mantercodmunicipio" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_COD_LANCAMENTO_MANTER"/>
+		<menuItem id="4" action="#{codLancamentoBean.carregarHistorico}" labelKey="menu.labelKey.historicocodlancamento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_COD_LANCAMENTO_HISTORICO"/>
+		
+		<!-- submenu Dependencias -->
+		<menuItem id="3" labelKey="menu.labelKey.dependencia" title="menu.labelKey.dependencia" allowedRoles="ROLE_MENU_INTEG_SUBMENU_DEPEND"/>
+		<menuItem id="4" action="#{dependenciaBean.inicializaManterDependencia}" labelKey="menu.labelKey.manterDependencia"  showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_DEPEND_MANTER"/>
+		
+		<menuItem id="3" labelKey="menu.labelKey.consultar" title="menu.labelKey.consultar" allowedRoles="ROLE_MENU_INTEG_SUBMENU_DEPEND_CON"/>
+		<menuItem id="4" action="#{histDependenciaBean.iniciaTela}" labelKey="menu.labelKey.historico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_DEPEND_HIST"/>
+		<menuItem id="4" action="#{dependeciasEncerradasBean.iniciaTela}" labelKey="menu.labelKey.dependenciaEncerrada" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_DEPEND_DEPENCERRAD"/>
+		
+		<!-- submenu Municipios -->
+		<menuItem id="3" labelKey="menu.labelKey.municipio" title="menu.labelKey.municipio" allowedRoles="ROLE_MENU_INTEG_SUBMENU_MUNICIP"/>
+		<menuItem id="4" action="#{resultMunicNovoBean.inicializaResultadoMunicipiosNovos}" labelKey="menu.labelKey.resultadoMunicipioNovo" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_MUNICIP_RESULTMUNNVOS"/>		
+		<menuItem id="4" action="#{manterMunicipioBean.inicializaManterMunicipio}" labelKey="menu.labelKey.manterMunicipio" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_MUNICIP_MANTER"/>	
+		<menuItem id="4" action="#{resultMunicNovoBean.inicializaSelecMunicipiosSemConv}" labelKey="menu.labelKey.selecionarMunicipioSemConvenio" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_MUNICIP_RESULTMUNNVOS"/>		
+		
+		<menuItem id="3" labelKey="menu.labelKey.consultar" title="menu.labelKey.consultar" allowedRoles="ROLE_MENU_INTEG_SUBMENU_MUNICIP_CON"/>
+		<menuItem id="4" action="#{historicoMunicipioBean.inicializaHistoricoMunicipio}" labelKey="menu.labelKey.historico" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_MUNICIP_HIST"/>
+		<menuItem id="4" action="#{dependenciasMunicipioBean.inicializaDependenciaMunicipio}" labelKey="menu.labelKey.dependenciaMunicipio" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_MUNICIP_DEPMUNICIP"/>
+		<menuItem id="4" action="#{aliquotaDiferenciadaBean.inicializaAliquotaDiferenciada}" labelKey="menu.labelKey.aliquotaDiferenciada" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_MUNICIP_ALIQDIF"/>
+		
+		<!-- submenu Aliquotas -->
+		<menuItem id="3" labelKey="menu.labelKey.aliquotas" title="menu.labelKey.aliquotas" allowedRoles="ROLE_MENU_INTEG_ALIQUOTA"/>
+		<menuItem id="4" action="#{manterAliquotaBean.inicializar}" labelKey="menu.labelKey.manter.aliquotas" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_ALIQUOTA"/>
+		<menuItem id="4" action="#{cargaMassivaBean.inicializarIntegracao}" labelKey="menu.labelKey.carga.massiva" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_INTEG_ALIQUOTA"/>
+	</menuItem>		
+	
+	<menuItem id="2" action="" actionListener="" labelKey="menu.labelKey.processamento" allowedRoles="ROLE_MENU_PROCESSAMENTO">
+		<!-- Processamento -->
+		<menuItem id="3" labelKey="menu.labelKey.batimento" title="menu.labelKey.processamento" allowedRoles="ROLE_MENU_PROC_SUBMENU_BATIM"/>
+      	<menuItem id="4" action="#{contasNaoConstantesBaseBean.inicializaContasNaoConstantesBase}" labelKey="menu.labelKey.contarNaoConstanteBase" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_BATIM_CTANAOCONSTBSE"/>
+		<menuItem id="4" action="#{saldosDivergentesBean.inicializaSaldosDivergentes}" labelKey="menu.labelKey.saldosDivergente"  showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_BATIM_SLDDIVERG"/>
+		<!-- Controle Recolhimento -->
+		<menuItem id="3" labelKey="menu.labelKey.controleRecolhimento" title="menu.labelKey.controleRecolhimento" allowedRoles="ROLE_MENU_PROC_SUBMENU_CONTRECOL"/>
+ 		<menuItem id="4" action="#{conciliacaoApuracaoBean.iniciaTela}" labelKey="menu.labelKey.conciliacao.apuracao"  showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_BATIM_SLDDIVERG"/>
+		<menuItem id="4" action="#{conciliacaoApuracaoBean.iniciaTelaInclusao}" labelKey="menu.labelKey.incluir.informacoes.valores"  showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_BATIM_SLDDIVERG"/>
+		<!-- Apuracao -->
+		<menuItem id="3" labelKey="menu.labelKey.apuracao" title="menu.labelKey.apuracao" allowedRoles="ROLE_MENU_PROC_SUBMENU_APURAC"/>
+		<menuItem id="4" action="#{apuracaoMensalBean.inicializaApuracaoMensal}" labelKey="menu.labelKey.mensal" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_APURAC_MENSAL"/>
+		<menuItem id="4" action="#{apuracaoParcialBean.inicializaApuracaoParcial}" labelKey="menu.labelKey.parcialMes" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_APURAC_PARCMES"/>
+		<menuItem id="4" action="#{apuracaoAposFechamentoBean.inicializaApuracaoAposFechamento}" labelKey="menu.labelKey.aposFechamento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_APURAC_APOSFECH"/>
+		<!-- <menuItem id="4" action="#{reprocessamentoPorDependenciaBean.inicializarReprocessamentoPorDependencia}" labelKey="menu.labelKey.reprocessamentoDependencia" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_APURAC_REPROCDEPEND"/>
+		<menuItem id="4" action="#{reprocessamentoPorMunicipioBean.inicializaReprocessamentoPorMunicipio}" labelKey="menu.labelKey.reprocessamentoMunicipio" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_APURAC_REPROCMUNIC"/> -->
+		<!-- Consultar -->
+		<menuItem id="3" labelKey="menu.labelKey.consultar" title="menu.labelKey.consultar" allowedRoles="ROLE_MENU_PROC_SUBMENU_CON"/>
+		<menuItem id="4" action="#{consultarApuracaoParcialBean.iniciaApuracaoParcial}" labelKey="menu.labelKey.apuracaoParcialISS" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_APURPARCISS"/>
+		<menuItem id="4" action="#{consultarApuracaoAposFechamentoBean.iniciaPagina}" labelKey="menu.labelKey.apuracaoAposFechamentoISS" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_APURAPOSFECHISS"/>
+		<menuItem id="4" action="#{valorMesTotalBean.inicializaValoresMesTotal}" labelKey="menu.labelKey.valoresMesTotalConsolidado" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_VLRMESTOTAL"/>
+		<menuItem id="4" action="#{consultarApuracaoMensalBean.iniciarPagina}" labelKey="menu.labelKey.apuracaoMensaoISS" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_APURMENSALISS"/>
+		<menuItem id="4" action="#{apuracaoMensalDiferenciadaBean.iniciarTela}" labelKey="menu.labelKey.apuracaoMensalDiferenciada" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_APURMENSALDIF"/>
+		<menuItem id="4" action="#{planApuracaoIssBean.iniciarTela}" labelKey="menu.labelKey.planilhaApuracao" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_PLANAPUR"/>
+		<menuItem id="4" action="#{consultarOscilacaoNegativaBean.inicializaOscilacaoNegativa}" labelKey="menu.labelKey.oscilacaoNegativa" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_OSCILNEGAT"/>
+		<menuItem id="4" action="#{consultarApuracaoAliquotaZeradaBean.iniciarPagina}" labelKey="menu.labelKey.aliquotaZerada" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_ALIQZERADA"/>
+		<!-- <menuItem id="4" action="#{apuracaoRepBean.iniciaPagina}" labelKey="menu.labelKey.apuracaoReprocessamento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_APURREPROC"/> -->
+		<menuItem id="4" action="#{agIncorpDeptoBean.iniciaPagina}" labelKey="menu.labelKey.agenciaIncorporaDepartamento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_AGINCORPDEPART"/>
+		<menuItem id="4" action="#{movimentoNaoTributavelBean.inicializaMovimentoNaoTributavel}" labelKey="menu.labelKey.movimentoNaoTributavel" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_MOVNAOTRIBUT"/>
+		<menuItem id="4" action="#{planApuracaoIssBean.iniciarTelaAgencia}" labelKey="menu.labelKey.planilhaApuracaoAg" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_PLANAPURAG"/>
+		<menuItem id="4" action="#{tarifasCobradasBean.iniciaTela}" labelKey="menu.labelKey.tarifas.cobradas" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_CON_VLRMESTOTAL"/>
+	</menuItem>
+	
+	<!-- Menu Balancetes -->
+	<menuItem id="2" action="" actionListener="" labelKey="menu.labelKey.balancetes" allowedRoles="ROLE_MENU_BALANCELE">
+		<!-- Fiscalizacoes iss -->
+		<menuItem id="3" labelKey="menu.labelKey.fiscalizacoes_iss" title="menu.labelKey.balancetes" allowedRoles="ROLE_MENU_BALA_SUBMENU_FISCA"/>
+		<menuItem id="4" action="#{gerarBalanceteFiscalizacoesIssBean.inicializaGerarBalanceteFiscalizacoesIss}" labelKey="menu.labelKey.gerar_balancete_fiscalizacoes_iss" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_FISCA_GERABALAN"/>
+		<menuItem id="4" action="#{consultarBalanceteFiscalizacoesIssBean.inicializaConsultarBalanceteFiscalizacoesIss}" labelKey="menu.labelKey.consultar_balancetes_fiscalizacoes_iss" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_FISCA_CONSULTA"/>
+				 
+		<!-- Tipo de Incidencias -->
+		<menuItem id="3" labelKey="menu.labelKey.obrigacoes_acessorias" title="menu.labelKey.balancetes" allowedRoles="ROLE_MENU_BALA_SUBMENU_OBRIG"/>
+		<menuItem id="4" action="#{gerarBalanceteObrigacoesAcessoriasBean.inicializaGerarBalanceteObrigacoesAcessorias}" labelKey="menu.labelKey.gerar_balancete_obrigacoes_acessorias" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_OBRIG_GERABALAN"/>
+		<menuItem id="4" action="#{consultarBalanceteObrigacoesAcessoriasBean.inicializaConsultarBalanceteObrigacoesAcessorias}" labelKey="menu.labelKey.consultar_balancetes_obrigacoes_acessorias" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_OBRIG_CONSULTA"/>
+		
+		<!-- Obrigações Webservice -->
+		<menuItem id="3" labelKey="menu.labelKey.obrigacoes_webservice" title="menu.labelKey.balancetes" allowedRoles="ROLE_MENU_BALA_SUBMENU_OBRIG"/>
+		<menuItem id="4" action="#{parametrizacaoDependenciaBean.inicializaManterDependencia}" labelKey="menu.labelKey.parametrizar_dependencia" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_OBRIG_GERABALAN"/>
+		<menuItem id="4" action="#{uploadTransmissaoArquivosBean.inicializaUploadTransmissaoArquivosBean}" labelKey="menu.labelKey.upload_transmissao_arquivos" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_OBRIG_CONSULTA"/>
+		<menuItem id="4" action="#{consultaLogArquivosBean.inicializaConsultaLogArquivos}" labelKey="menu.labelKey.consulta_log_arquivos" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_PROC_OBRIG_CONSULTA"/>
+	</menuItem>
+	
+	<!-- Menu ISS Gerencial -->
+	<menuItem id="2" action="" actionListener="" labelKey="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GERENCIAL">
+		<!-- Empresa ISS -->
+		<menuItem id="3" labelKey="menu.labelKey.iss.empresa" title="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GER_SUBMENU_CAD_EMP"/>
+		<menuItem id="4" action="#{empresaISSBean.inicializarManter}" labelKey="menu.labelKey.iss.manter.empresa" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_MANTER_CAD_EMP"/>
+		<menuItem id="4" action="#{empresaISSBean.inicializarHistorico}" labelKey="menu.labelKey.iss.manter.historicoEmpresa" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_MANTER_CAD_EMP"/>
+		<!-- Municipio ISS -->
+		<menuItem id="3" labelKey="menu.labelKey.iss.municipio" title="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GER_SUBMENU_MUNICIPIO"/>
+		<menuItem id="4" action="#{municipioISSBean.carregarManter}" labelKey="menu.labelKey.iss.manter.municipio" allowedRoles="ROLE_MENU_ISS_GER_MANTER_MUNICIPIO"/>	
+		<menuItem id="4" action="#{municipioISSBean.carregarHistorico}" labelKey="menu.labelKey.iss.historico.municipio" allowedRoles="ROLE_MENU_ISS_GER_MANTER_MUNICIPIO"/>
+		<!-- Item de Seviço LC ISS -->
+		<menuItem id="3" labelKey="menu.labelKey.iss.item.servico.lc" title="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GER_SUBMENU_ITEM_LC"/>
+		<menuItem id="4" action="#{itemServicoLcISSBean.carregarManter}" labelKey="menu.labelKey.iss.manter.item.lc" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ITEM_LC"/>	
+		<menuItem id="4" action="#{itemServicoLcISSBean.carregarConsultar}" labelKey="menu.labelKey.iss.consultar.item.lc" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_DET_ITEM_LC"/>			 	 		 
+		<menuItem id="4" action="#{itemServicoLcISSBean.carregarHistorico}" labelKey="menu.labelKey.iss.consultar.historico.lc" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_DET_ITEM_LC"/>
+		<!-- Parametrizar ISS -->
+		<menuItem id="3" labelKey="menu.labelKey.iss.parametrizar" title="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GER_SUBMENU_ALIQUOTA"/>
+		<menuItem id="4" action="#{aliquotaISSBean.carregarManter}" labelKey="menu.labelKey.iss.manter.aliquota" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ALIQUOTA"/>
+		<menuItem id="4" action="#{cargaMassivaBean.inicializarIssGerencial}" labelKey="menu.labelKey.carga.massiva" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ALIQUOTA"/>
+		<menuItem id="4" action="#{consultarInformacoesAliquotaBean.inicializar}" labelKey="menu.labelKey.iss.manter.consultarInformacoesAliquota" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ALIQUOTA"/>
+		<menuItem id="4" action="#{parametrizarMinMaxAliquotaBean.inicializar}" labelKey="menu.labelKey.iss.manter.parametrizar.aliquota" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ALIQUOTA"/>
+		<menuItem id="4" action="#{parametrizarMinMaxAliquotaBean.inicializarHistorico}" labelKey="consultar.historico.aliquota.path.title" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ALIQUOTA"/>
+		<menuItem id="4" action="#{parametrizarPercentualTransicaoBean.inicializar}" labelKey="menu.labelKey.iss.parametrizacao.percentuais.transicao" allowedRoles="ROLE_MENU_ISS_GER_MANTER_ALIQUOTA"/>
+		<!-- Processamento ISS -->
+		<menuItem id="3" labelKey="menu.labelKey.iss.processamento" title="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GER_SUBMENU_PROCESSAMENTO"/>
+        <menuItem id="4" action="#{arquivoEmpresaISSBean.carregarConsulta}" labelKey="menu.labelKey.iss.consultar.arquivos.empresa" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_PAINEL_CONTROLE"/>	
+        <menuItem id="4" action="#{arquivoEmpresaISSBean.carregarConsultaSemanais}" labelKey="menu.labelKey.iss.consultar.arquivos.empresa.semanal" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_PAINEL_CONTROLE"/>	
+		<menuItem id="4" action="#{processarPagtoISSBean.carregarProcessarPagto}" labelKey="menu.labelKey.iss.processar.pagamento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_PROCESSAR"/>
+		<menuItem id="4" action="#{liberarPagtoISSBean.carregarLiberarPagto}" labelKey="menu.labelKey.iss.liberar.pagamento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_LIBERAR"/>
+		<menuItem id="4" action="#{consultarPagamentosBean.inicializar}" labelKey="menu.labelKey.iss.consultar.pagamentos" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_LIBERAR"/> 
+		<menuItem id="4" action="#{pesquisarPagamentoManualBean.inicializar}" labelKey="menu.labelKey.iss.liberar.pagamento.manual" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_LIBERAR"/>
+		<menuItem id="4" action="#{processarContabilidadeMovimentoBean.inicializar}" labelKey="menu.labelKey.iss.processar.contabilidade.movimento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_LIBERAR"/>
+		<menuItem id="4" action="#{liberarPagtoISSBean.carregarLiberarPagtoRetificado}" labelKey="menu.labelKey.iss.liberar.pagamentos.movimento" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_LIBERAR"/>
+		<menuItem id="4" action="#{reprocessarApuracaoBean.inicializar}" labelKey="menu.labelKey.reprocessar.apuracao" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_LIBERAR"/>
+		<!-- Relatorio ISS -->
+		<menuItem id="3" labelKey="menu.labelKey.iss.relatorio" title="menu.labelKey.iss.gerencial" allowedRoles="ROLE_MENU_ISS_GER_SUBMENU_PROCESSAMENTO"/>
+        <menuItem id="4" action="#{relatorioISSBean.iniciarTela}" labelKey="menu.labelKey.iss.gerar.relatorio.apuracao" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_PAINEL_CONTROLE"/>	
+		<menuItem id="4" action="#{aliquotaISSBean.carregarRelatoriosDeAliquotas}" labelKey="menu.labelKey.iss.gerar.relatorio.aliquota" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_PAINEL_CONTROLE"/>
+		<menuItem id="4" action="#{historicoTransacoesRecusadasISSBean.carregarRelatoriosDeTransacoesRecusadas}" labelKey="menu.labelKey.iss.gerar.relatorio.transacoes.recusadas" showForNotAllowedRoles="false" allowedRoles="ROLE_MENU_ISS_GER_PAINEL_CONTROLE"/>
+		
+	</menuItem>
+	
+</menuItem>
+</menu>

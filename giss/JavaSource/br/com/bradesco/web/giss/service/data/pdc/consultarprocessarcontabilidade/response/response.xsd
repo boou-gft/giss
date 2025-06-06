@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarProcessarContabilidadeResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numConsultas" type="xsd:int" default="0" />
+        <xsd:element name="listaConsultarProcessarContabilidade" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="anoMes" type="xsd:int" default="0" />
+              <xsd:element name="codEmpresa" type="xsd:int" default="0" />
+              <xsd:element name="descEspresa" type="xsd:int" default="0" />
+              <xsd:element name="napurcIssEmpresa" type="xsd:int" default="0" />
+              <xsd:element name="produto" type="xsd:string" />
+              <xsd:element name="dataRecepcao" type="xsd:string" />
+              <xsd:element name="qtdRegistros" type="xsd:long" default="0" />
+              <xsd:element name="valorReceita" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

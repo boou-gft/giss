@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarReprocessamentoPorMunicipioResponse>
+    <codMensagem/>
+    <mensagem/>
+    <numeroConsultas>2</numeroConsultas>
+    <ocorrencias>
+    	<codigoMunicipio>1</codigoMunicipio>
+    	<descricaoMunicipio>TESTE</descricaoMunicipio>
+	</ocorrencias>
+	<ocorrencias>
+    	<codigoMunicipio>2</codigoMunicipio>
+    	<descricaoMunicipio>TESTE2</descricaoMunicipio>
+	</ocorrencias>
+</listarReprocessamentoPorMunicipioResponse>

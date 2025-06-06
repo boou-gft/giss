@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<logonResponse>
+  <codRetorno>0</codRetorno>
+  <msgRetorno />
+  <idUsuario>I502166</idUsuario>
+  <nomeUsuario>USUÁRIO TESTE #021 - GP. 66</nomeUsuario>
+  <tipoUsuario>0</tipoUsuario>
+  <codEmpresa>322986524</codEmpresa>
+  <codDependencia>2856</codDependencia>
+  <codSecao>0</codSecao>
+  <tipoAlcada>006</tipoAlcada>
+  <maisPerfil>N</maisPerfil>
+  <qtdPerfilAdicional>3</qtdPerfilAdicional>
+  <perfil>
+    <codPerfilAdicional>PFGSEG02</codPerfilAdicional>
+    <codPerfilAdicional>GISS0000</codPerfilAdicional>
+    <codPerfilAdicional>GISS0004</codPerfilAdicional>
+  </perfil>
+</logonResponse>

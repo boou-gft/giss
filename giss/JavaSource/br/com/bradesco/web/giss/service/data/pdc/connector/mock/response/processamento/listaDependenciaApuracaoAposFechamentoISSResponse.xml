@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listaDependenciaApuracaoAposFechamentoISSResponse>
+		<codMensagem/>
+		<mensagem/>
+		<quantidadeOcorrencias>2</quantidadeOcorrencias>
+        <ocorrencias>
+              <codigoPessoaJuridica>1573</codigoPessoaJuridica>
+              <numeroSequencialUnidadeOrganizacional>7000</numeroSequencialUnidadeOrganizacional>
+              <codigoDependencia>4895</codigoDependencia>
+              <descricaoDependencia>Matriz</descricaoDependencia>
+              <valorReceita>
+                    <sinalReceita>+</sinalReceita>
+                    <valorReceita>4866.88</valorReceita>
+ 				</valorReceita>
+              <valorISS>
+                    <sinalISS>+</sinalISS>
+                    <valorISS>54779.84</valorISS>
+			</valorISS>
+		</ocorrencias>
+        <ocorrencias>
+              <codigoPessoaJuridica>1865</codigoPessoaJuridica>
+              <numeroSequencialUnidadeOrganizacional>7000</numeroSequencialUnidadeOrganizacional>
+              <codigoDependencia>9542</codigoDependencia>
+              <descricaoDependencia>Matriz</descricaoDependencia>
+              <valorReceita>
+                    <sinalReceita>-</sinalReceita>
+                    <valorReceita>3333.33</valorReceita>
+ 				</valorReceita>
+              <valorISS>
+                    <sinalISS>-</sinalISS>
+                    <valorISS>64779.84</valorISS>
+			</valorISS>
+		</ocorrencias>
+
+</listaDependenciaApuracaoAposFechamentoISSResponse>

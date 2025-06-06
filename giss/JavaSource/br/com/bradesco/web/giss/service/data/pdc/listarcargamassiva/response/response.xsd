@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarCargaMassivaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="qtdOcorrencia" type="xsd:int" default="0" />
+        <xsd:element name="lista" minOccurs="0" maxOccurs="200">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="numeroRemessa" type="xsd:long" default="0" />
+              <xsd:element name="codigoSituacao" type="xsd:int" default="0" />
+              <xsd:element name="usuarioCarga" type="xsd:string" />
+              <xsd:element name="dataHoraCarga" type="xsd:string" />
+              <xsd:element name="usuarioConferencia" type="xsd:string" />
+              <xsd:element name="dataHoraConferencia" type="xsd:string" />
+              <xsd:element name="usuarioAprovacao" type="xsd:string" />
+              <xsd:element name="dataHoraAprovacao" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

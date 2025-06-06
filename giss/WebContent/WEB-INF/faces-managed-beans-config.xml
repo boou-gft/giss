@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+                              "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+	<!--  MANAGED BEANS -->
+	<!-- ============= LOG ================= -->
+	<managed-bean>
+		<managed-bean-name>logBean</managed-bean-name>
+		<managed-bean-class>
+			br.com.bradesco.web.giss.view.bean.LogBean
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- ============= usuario Logado ================= -->
+	<managed-bean>
+		<managed-bean-name>sessionBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.SessionBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+		
+	<!-- ============= FILTRO DE IMPLANTAÇÃO ================= -->
+	<managed-bean>
+		<managed-bean-name>filtroBean</managed-bean-name>
+		<managed-bean-class>
+			br.com.bradesco.web.giss.view.bean.FiltroBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>agContaServe</property-name>
+			<property-class>
+				br.com.bradesco.web.giss.service.business.banco.IBancoService
+			</property-class>
+			<value>#{bancoServiceProxy}</value>
+		</managed-property>
+	</managed-bean>
+
+
+	<managed-bean>
+		<managed-bean-name>themeBean</managed-bean-name>
+		<managed-bean-class>
+			br.com.bradesco.web.aq.view.components.app.UIMenu.view.bean.ThemeBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>styleLocation</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>/template/css</value>
+		</managed-property>
+		<managed-property>
+			<property-name>jsLocation</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>/template/javascript</value>
+		</managed-property>
+		<managed-property>
+			<property-name>imageLocation</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>/template/images</value>
+		</managed-property>
+		<managed-property>
+			<property-name>menuProviderService</property-name>
+			<property-class>
+				br.com.bradesco.web.aq.view.components.app.UIMenu.provider.IMenuProviderService
+			</property-class>
+			<value>#{menuProviderService}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>exceptionBean</managed-bean-name>
+		<managed-bean-class>
+			br.com.bradesco.web.giss.view.bean.controller.exception.ExceptionBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<!-- ============= Alteração de senha =============== -->
+
+	<managed-bean>
+		<managed-bean-name>changePasswordBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.ChangePasswordBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>alterarSenhaService</property-name>
+			<property-class>br.com.bradesco.web.giss.service.provider.intranet.IAlterarSenhaService</property-class>
+			<value>#{authenticationService}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>autenticationService</property-name>
+			<property-class>br.com.bradesco.web.aq.application.security.intranet.service.IAuthenticationService</property-class>
+			<value>#{authenticationService}</value>
+		</managed-property>
+	</managed-bean>
+
+
+	<!-- =============== PDC Paginator ======================= -->
+	
+	<!-- Bean para exemplo de Criptografia -->
+	<managed-bean>
+		<managed-bean-name>exemploCriptografiaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.CriptografiaBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>cipher</property-name>
+			<property-class>br.com.bradesco.web.aq.application.security.encryption.IBradescoCipher</property-class>
+			<value>#{bradescoCipher}</value>
+		</managed-property>
+	</managed-bean>
+
+	<!-- Referente a Tipo de Serviço -->
+	<managed-bean>
+		<managed-bean-name>tipoServicoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.tiposervico.TipoServicoBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>tipoServicoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.tiposervico.ITipoServicoService</property-class>
+			<value>#{tipoServicoImpl}</value>
+		</managed-property>
+	</managed-bean>	
+	
+		<!-- Referente a Ajuda -->
+	<managed-bean>
+		<managed-bean-name>ajudaVersaoSistemaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.ajuda.AjudaVersaoSistemaBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<!-- Referente a Tipo de Incidência -->
+	<managed-bean>
+		<managed-bean-name>tipoIncidenciaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.tipoincidencia.TipoIncidenciaBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>tipoIncidenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.tipoincidencia.ITipoIncidenciaService</property-class>
+			<value>#{tipoIncidenciaImpl}</value>
+		</managed-property>		
+	</managed-bean>	
+	
+	<!-- Referente a Contas Contábeis -->	
+	<managed-bean>
+		<managed-bean-name>contaContabilBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.contacontabil.ContaContabilBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>contaContabilImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.contacontabil.IContaContabilService</property-class>
+			<value>#{contaContabilImpl}</value>
+		</managed-property>	
+			
+		<managed-property>
+			<property-name>utilidadesServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.utilidade.impl.UtilidadesServiceImpl</property-class>
+			<value>#{utilidadesServiceImpl}</value>
+		</managed-property>	
+	</managed-bean>	
+	
+	<!-- Referente a Dependências -->
+	<managed-bean>
+		<managed-bean-name>dependenciaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.dependencia.DependenciaBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.dependencia.IDependenciaService</property-class>
+			<value>#{dependenciaImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>histDependenciaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.dependencia.HistoricoDependenciaBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.dependencia.IDependenciaService</property-class>
+			<value>#{dependenciaImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>dependeciasEncerradasBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.dependencia.DependenciaEncerradaBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.dependencia.IDependenciaService</property-class>
+			<value>#{dependenciaImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>tarifasCobradasBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.tarifas.TarifasCobradasBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>listaTarifasCobradasBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.tarifas.ListaTarifasCobradasBean</property-class>
+			<value>#{listaTarifasCobradasBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>listaTarifasCobradasBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.tarifas.ListaTarifasCobradasBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>conciliacaoApuracaoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.conciliacao.ConciliacaoApuracaoBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<!-- Referente a Municipios -->
+	<managed-bean>
+		<managed-bean-name>manterMunicipioBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.municipio.manter.ManterMunicipioBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>manterMunicipioImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.mantermunicipio.impl.ManterMunicipioServiceImpl</property-class>
+			<value>#{manterMunicipioImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>resultMunicNovoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.resultmunnovo.impl.ResultMunNovoServiceImpl</property-class>
+			<value>#{resultMunicNovoImpl}</value>
+		</managed-property>		
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>historicoMunicipioBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.municipio.historico.HistoricoMunicipioBean</managed-bean-class>						    												
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>historicoMunicipioImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.historicomunicipio.impl.HistoricoMunicipioServiceImpl</property-class>
+			<value>#{historicoMunicipioImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>dependenciasMunicipioBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.municipio.dependencias.DepMunicipioBean</managed-bean-class>						    												
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaMunicipioImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.depmunicipio.impl.DepMunicipioServiceImpl</property-class>
+			<value>#{dependenciaMunicipioImpl}</value>
+		</managed-property>		
+	</managed-bean>	
+	<managed-bean>
+		<managed-bean-name>resultMunicNovoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.municipio.resultadomunicnovos.ResultMunNovoBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>resultMunicNovoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.resultmunnovo.impl.ResultMunNovoServiceImpl</property-class>
+			<value>#{resultMunicNovoImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	<managed-bean> 
+		<managed-bean-name>aliquotaDiferenciadaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.municipio.aliquotadiferenciada.AliquotaDiferenciadaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>aliquotaDiferencImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.aliquotadiferenciada.impl.AliquotaDiferenciadaServiceImpl</property-class>
+			<value>#{aliquotaDiferencImpl}</value>
+		</managed-property>		
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>consultarInformacoesAliquotaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.aliquotamunicipio.ConsultarInformacoesAliquotaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>aliquotaISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issaliquota.impl.AliquotaISSServiceImpl</property-class>
+			<value>#{aliquotaISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>parametrizarMinMaxAliquotaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.aliquotamunicipio.ParametrizarMinMaxAliquotaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>	
+		<managed-property>
+			<property-name>aliquotaISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issaliquota.impl.AliquotaISSServiceImpl</property-class>
+			<value>#{aliquotaISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>	
+	
+	<!-- Referente a Contas não constantes na base -->
+	<managed-bean> 
+		<managed-bean-name>contasNaoConstantesBaseBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.contasnaoconstantesbase.ContasNaoConstantesBaseBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>contasNaoConstantesBaseImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.contasnaoconstantesbase.impl.ContasNaoConstBaseServiceImpl</property-class>
+			<value>#{contasNaoConstantesBaseImpl}</value>
+		</managed-property>		
+	</managed-bean>
+
+	<!-- Referente a Saldos Divergentes -->
+	
+	<managed-bean> 
+		<managed-bean-name>saldosDivergentesBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.saldosdivergentes.SaldosDivergentesBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>saldosDivergentesImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.saldosdivergentes.impl.SaldosDivergentesServiceImpl</property-class>
+			<value>#{saldosDivergentesImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	
+	<!-- Referente a Controle Saldos Recolhimento -->
+	
+	<managed-bean> 
+		<managed-bean-name>controleSaldosRecolhimento</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.controleRecolhimento.ControleSaldosRecolhimentoBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>controleSaldosRecolhimentoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consaldosrec.impl.ConSaldosRecServiceImpl</property-class>
+			<value>#{controleSaldosRecolhimentoImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	
+	<!-- Referente a Reprocessamento por Dependência -->
+	
+	<managed-bean> 
+		<managed-bean-name>reprocessamentoPorDependenciaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.reprocessamentopordependencia.ReprocessamentoPorDependenciaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>reprocessamentoPorDependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.reprocessamentopordependencia.impl.ReprocessamentoPorDependenciaServiceImpl</property-class>
+			<value>#{reprocessamentoPorDependenciaImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	
+	<!-- Referente a Reprocessamento por Municípios -->
+	<managed-bean> 
+		<managed-bean-name>reprocessamentoPorMunicipioBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.reprocessamentopormunicipio.ReprocessamentoPorMunicipioBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>reprocessamentoPorMunicipioImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.reprocessamentopormunicipio.impl.ReprocessamentopormunicipioServiceImpl</property-class>
+			<value>#{reprocessamentoPorMunicipioImpl}</value>
+		</managed-property>
+		
+		
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>listaPorPaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ListaPorPaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>apuracaoPorPaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ApuracaoPorPaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>listaPorPaBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ListaPorPaBean</property-class>
+			<value>#{listaPorPaBean}</value>
+		</managed-property>	
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>apuracaoParcialPeriodoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ApuracaoParcialPeriodoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>listaParcialPaBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ListaParcialPaBean</property-class>
+			<value>#{listaParcialPaBean}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>listaParcialPaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ListaParcialPaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>consultarPaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ConsultarPaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>listaParcialPaBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ListaParcialPaBean</property-class>
+			<value>#{listaParcialPaBean}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>parcialPaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ParcialPaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>listaParcialPaBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.apuracaoPa.ListaParcialPaBean</property-class>
+			<value>#{listaParcialPaBean}</value>
+		</managed-property>	
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>apuracaoMensalBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.mensal.ApuracaoMensalBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>consultarApuracaoMensalBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.ConsultarApuracaoMensalBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>	
+	
+	
+	<managed-bean>
+		<managed-bean-name>apuracaoAposFechamentoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.aposfechamento.ApuracaoAposFechamentoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	
+	<managed-bean> 
+		<managed-bean-name>valorMesTotalBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.valormestotal.ValorMesTotalBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>valorMesTotalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.valormestotal.impl.ValorMesTotalServiceImpl</property-class>
+			<value>#{valorMesTotalServiceImpl}</value>
+		</managed-property>	
+		<managed-property>
+			<property-name>utilidadesServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.utilidade.impl.UtilidadesServiceImpl</property-class>
+			<value>#{utilidadesServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>consultarApuracaoAposFechamentoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.ConsultarApuracaoAposFechamentoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>consultarApuracaoAposFechamentoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoaposfechamento.impl.ConsultarApuracaoAposFechamentoServiceImpl</property-class>
+			<value>#{consultarApuracaoAposFechamentoImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	
+	<!-- Referente a Oscilação Negativa -->
+	<managed-bean>
+		<managed-bean-name>consultarOscilacaoNegativaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.oscilacaoNegativa.ConsultarOscilacaoNegativaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>consultarOscilacaoNegativaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaooscilacaonegativa.impl.ConsultarApuracaoOscilacaoNegativaServiceImpl</property-class>
+			<value>#{consultarOscilacaoNegativaImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	
+	<managed-bean>
+		<managed-bean-name>consultarApuracaoParcialBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.ConsultarApuracaoParcialBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>consultarApuracaoParcialImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoparcial.impl.ConsultarapuracaoparcialServiceImpl</property-class>
+			<value>#{consultarApuracaoParcialImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<!-- Referente a Apuração Parcial -->
+	<managed-bean>
+		<managed-bean-name>apuracaoParcialBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracao.parcial.ApuracaoParcialBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoMensalServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.apuracaomensal.impl.ApuracaoMensalServiceImpl</property-class>
+			<value>#{apuracaoMensalServiceImpl}</value>
+		</managed-property>
+	</managed-bean>	
+	
+	<!-- Agência Incorpora Departamento -->
+	<managed-bean>
+		<managed-bean-name>agIncorpDeptoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.AgIncorpDeptoBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>agIncorpDepartServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.agincorpdepart.impl.AgIncorpDepartServiceImpl</property-class>
+			<value>#{agIncorpDepartServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>	
+	
+	<!-- Apuração Mensal Diferenciada -->
+	<managed-bean>
+		<managed-bean-name>apuracaoMensalDiferenciadaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.ApuracaoMensalDiferenciadaBean</managed-bean-class>								    							
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>consultarApuracaoParcialImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoparcial.impl.ConsultarapuracaoparcialServiceImpl</property-class>
+			<value>#{consultarApuracaoParcialImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>consultarApuracaoMensalDiferenciadaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaomensaldiferenciada.impl.ConsultarApuracaoMensalDiferenciadaServiceImpl</property-class>
+			<value>#{consultarApuracaoMensalDiferenciadaImpl}</value>
+		</managed-property>		
+	</managed-bean>
+
+	
+	<!-- Referente apuração Reprocessamento-->
+		
+	<managed-bean>
+		<managed-bean-name>apuracaoRepBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.apuracaoReprocessamento.ApuracaoRepBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>apuracaoRepServiceImpl</property-name>
+			<property-class>
+				br.com.bradesco.web.giss.service.business.apuracaorep.impl.ApuracaoRepServiceImpl</property-class>
+			<value>#{apuracaoRepServiceImpl}</value>
+		</managed-property>	
+		<managed-property>
+			<property-name>consultarApuracaoAposFechamentoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoaposfechamento.impl.ConsultarApuracaoAposFechamentoServiceImpl</property-class>
+			<value>#{consultarApuracaoAposFechamentoImpl}</value>
+		</managed-property>	
+	</managed-bean>	
+	
+	<!-- Referente Aliquota Zerada-->
+	<managed-bean> 
+		<managed-bean-name>consultarApuracaoAliquotaZeradaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.ConsultarApuracaoAliquotaZeradaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>consultarApuracaoParcialImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoparcial.impl.ConsultarapuracaoparcialServiceImpl</property-class>
+			<value>#{consultarApuracaoParcialImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>consultarApuracaoAliquotaZeradaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoaliquotazerada.impl.ConsultarApuracaoAliquotaZeradaServiceImpl</property-class>
+			<value>#{consultarApuracaoAliquotaZeradaImpl}</value>
+		</managed-property>
+			<managed-property>
+			<property-name>consultarApuracaoAposFechamentoImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoaposfechamento.impl.ConsultarApuracaoAposFechamentoServiceImpl</property-class>
+			<value>#{consultarApuracaoAposFechamentoImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	
+	
+	<!-- Referente a Movimento Não Tributável -->
+	
+	<managed-bean> 
+		<managed-bean-name>movimentoNaoTributavelBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.movimentoNaoTributavel.MovimentoNaoTributavelBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.dependencia.IDependenciaService</property-class>
+			<value>#{dependenciaImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>manterMunicipioImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.mantermunicipio.impl.ManterMunicipioServiceImpl</property-class>
+			<value>#{manterMunicipioImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>movimentoNaoTributavelImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.movnaotrib.impl.MovNaoTribServiceImpl</property-class>
+			<value>#{movimentoNaoTributavelImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<!-- Planilha de Apuração -->
+	
+	<managed-bean> 
+		<managed-bean-name>planApuracaoIssBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.consultar.PlanApuracaoIssBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>planApuracaoIssImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.planapuracaoiss.impl.PlanApuracaoIssServiceImpl</property-class>
+			<value>#{planApuracaoIssImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>consultarApuracaoParcialImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.consultarapuracaoparcial.impl.ConsultarapuracaoparcialServiceImpl</property-class>
+			<value>#{consultarApuracaoParcialImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<!-- Referente a Balancetes / Fiscalizacoes / ISS -->
+	<managed-bean> 
+		<managed-bean-name>gerarBalanceteFiscalizacoesIssBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.fiscalizacoesIss.GerarBalanceteFiscalizacoesIssBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>balancetesFiscalizacoesIssServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.balancetesfiscalizacoesiss.impl.BalancetesFiscalizacoesIssServiceImpl</property-class>
+			<value>#{balancetesFiscalizacoesIssServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>consultarBalanceteFiscalizacoesIssBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.fiscalizacoesIss.ConsultarBalanceteFiscalizacoesIssBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>balancetesFiscalizacoesIssServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.balancetesfiscalizacoesiss.impl.BalancetesFiscalizacoesIssServiceImpl</property-class>
+			<value>#{balancetesFiscalizacoesIssServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<!-- Referente a Balancetes / Obrigacoes / Acessorias -->
+	<managed-bean> 
+		<managed-bean-name>gerarBalanceteObrigacoesAcessoriasBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.obrigacoesAcessorias.GerarBalanceteObrigacoesAcessoriasBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>balancetesFiscalizacoesIssServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.balancetesfiscalizacoesiss.impl.BalancetesFiscalizacoesIssServiceImpl</property-class>
+			<value>#{balancetesFiscalizacoesIssServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>consultarBalanceteObrigacoesAcessoriasBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.obrigacoesAcessorias.ConsultarBalanceteObrigacoesAcessoriasBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>balancetesFiscalizacoesIssServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.balancetesfiscalizacoesiss.impl.BalancetesFiscalizacoesIssServiceImpl</property-class>
+			<value>#{balancetesFiscalizacoesIssServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>
+	
+	<!-- Referente a Balancetes / Obrigacoes / Webservice -->
+	<managed-bean>
+		<managed-bean-name>parametrizacaoDependenciaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.obrigacoesWebservice.ParametrizacaoDependenciaBean</managed-bean-class>		
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.dependencia.IDependenciaService</property-class>
+			<value>#{dependenciaImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>parametrizarDependenciaServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.parametrizardependencia.IParametrizarDependenciaService</property-class>
+			<value>#{parametrizarDependenciaServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>uploadTransmissaoArquivosBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.obrigacoesWebservice.UploadTransmissaoArquivosBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>dependenciaImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.dependencia.IDependenciaService</property-class>
+			<value>#{dependenciaImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>logTransmissaoArquivoServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.logtransmissaoarquivo.ILogTransmissaoArquivoService</property-class>
+			<value>#{logTransmissaoArquivoServiceImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>parametrizarDependenciaServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.parametrizardependencia.IParametrizarDependenciaService</property-class>
+			<value>#{parametrizarDependenciaServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>consultaLogArquivosBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.balancetes.obrigacoesWebservice.ConsultaLogArquivosBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logTransmissaoArquivoServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.logtransmissaoarquivo.ILogTransmissaoArquivoService</property-class>
+			<value>#{logTransmissaoArquivoServiceImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>codLancamentoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.codlancamento.CodLancamentoBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>codLancamentoServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.codlancamento.impl.CodLancamentoServiceImpl</property-class>
+			<value>#{codLancamentoServiceImpl}</value>
+		</managed-property>		
+	</managed-bean>
+
+	<managed-bean> 
+		<managed-bean-name>empresaISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.empresa.EmpresaISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>empresasISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issempresa.impl.EmpresasISSServiceImpl</property-class>
+			<value>#{empresasISSServiceImpl}</value>
+		</managed-property>	
+		<managed-property>
+			<property-name>utilidadesServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.utilidade.impl.UtilidadesServiceImpl</property-class>
+			<value>#{utilidadesServiceImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>municipioISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.municipio.MunicipioISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+			<property-name>municipioISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issmunicipio.impl.MunicipioISSServiceImpl</property-class>
+			<value>#{municipioISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>itemServicoLcISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.itemservicolc.ItemServicoLcISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>itemServicoLcISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issitemservicolc.impl.ItemServicoLcISSServiceImpl</property-class>
+			<value>#{itemServicoLcISSServiceImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>utilidadesServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.utilidade.impl.UtilidadesServiceImpl</property-class>
+			<value>#{utilidadesServiceImpl}</value>
+		</managed-property>	
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>aliquotaISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.aliquotamunicipio.AliquotaISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>aliquotaISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issaliquota.impl.AliquotaISSServiceImpl</property-class>
+			<value>#{aliquotaISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>historicoTransacoesRecusadasISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.aliquotamunicipio.HistoricoTransacoesRecusadasISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>aliquotaISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issaliquota.impl.AliquotaISSServiceImpl</property-class>
+			<value>#{aliquotaISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>arquivoEmpresaISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.arquivoempresa.ArquivoEmpresaISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>arquivoEmpresaISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.arquivoempresa.impl.ArquivoEmpresaISSServiceImpl</property-class>
+			<value>#{arquivoEmpresaISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>liberarPagtoISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.LiberarPagtoISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>liberarPagtoISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.liberarpagamento.impl.LiberarPagtoISSServiceImpl</property-class>
+			<value>#{liberarPagtoISSServiceImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>listarPgtosVencidosCompBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.ListarPgtosVencidosCompBean</property-class>
+			<value>#{listarPgtosVencidosCompBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>listarPgtosNaoGeradosBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.ListarPgtosNaoGeradosBean</property-class>
+			<value>#{listarPgtosNaoGeradosBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>listarPgtosNaoElegiveisBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.ListarPgtosNaoElegiveisBean</property-class>
+			<value>#{listarPgtosNaoElegiveisBean}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>consultarPagamentosBean</property-name>
+			<property-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.consultarpagamentos.ConsultarPagamentosBean</property-class>
+			<value>#{consultarPagamentosBean}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>listarPgtosVencidosCompBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.ListarPgtosVencidosCompBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>listarPgtosNaoGeradosBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.ListarPgtosNaoGeradosBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>listarPgtosNaoElegiveisBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.liberarpagamento.ListarPgtosNaoElegiveisBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>consultarPagamentosBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.consultarpagamentos.ConsultarPagamentosBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>processarPagtoISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.processarpagamento.ProcessarPagtoISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>processarPagtoISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issprocessarpagto.impl.ProcessarPagtoISSServiceImpl</property-class>
+			<value>#{processarPagtoISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>relatorioISSBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.relatorio.RelatorioISSBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>relatorioISSServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.issrelatorio.impl.RelatorioISSServiceImpl</property-class>
+			<value>#{relatorioISSServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>consultarPagamentosBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.consultarpagamentos.ConsultarPagamentosBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean> 
+		<managed-bean-name>manterAliquotaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.cargamassivaaliquota.ManterAliquotaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>cargaMassivaAliquotaServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.cargamassivaaliquota.impl.CargaMassivaAliquotaServiceImpl</property-class>
+			<value>#{cargaMassivaAliquotaServiceImpl}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>utilidadesServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.utilidade.impl.UtilidadesServiceImpl</property-class>
+			<value>#{utilidadesServiceImpl}</value>
+		</managed-property>	
+	</managed-bean>	
+
+	<managed-bean> 
+		<managed-bean-name>pesquisarPagamentoManualBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.pesquisarpagamentomanual.PesquisarPagamentoManualBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>parametrizarPercentualTransicaoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.percentualTransicao.ParametrizarPercentualTransicaoBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>percentualTransicaoServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.percentualTransicao.impl.PercentualTransicaoServiceImpl</property-class>
+			<value>#{percentualTransicaoServiceImpl}</value>
+		</managed-property>
+	</managed-bean>	
+	
+	<managed-bean> 
+		<managed-bean-name>cargaMassivaBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.cargamassivaaliquota.CargaMassivaBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>cargaMassivaAliquotaServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.cargamassivaaliquota.impl.CargaMassivaAliquotaServiceImpl</property-class>
+			<value>#{cargaMassivaAliquotaServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>processarContabilidadeMovimentoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.movimentoRetificador.ProcessarContabilidadeMovimentoBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>movimentoRetificadorServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.movimentoretificador.impl.MovimentoRetificadorServiceImpl</property-class>
+			<value>#{movimentoRetificadorServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>liberarPagamentoMovimentoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.movimentoRetificador.LiberarPagamentoMovimentoBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>movimentoRetificadorServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.movimentoretificador.impl.MovimentoRetificadorServiceImpl</property-class>
+			<value>#{movimentoRetificadorServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean> 
+		<managed-bean-name>reprocessarApuracaoBean</managed-bean-name>
+		<managed-bean-class>br.com.bradesco.web.giss.view.bean.controller.issgerencial.reprocessarApuracao.ReprocessarApuracaoBean</managed-bean-class>								    														
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>logManager</property-name>
+			<value>#{logManager}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>movimentoRetificadorServiceImpl</property-name>
+			<property-class>br.com.bradesco.web.giss.service.business.movimentoretificador.impl.MovimentoRetificadorServiceImpl</property-class>
+			<value>#{movimentoRetificadorServiceImpl}</value>
+		</managed-property>
+	</managed-bean>
+</faces-config>

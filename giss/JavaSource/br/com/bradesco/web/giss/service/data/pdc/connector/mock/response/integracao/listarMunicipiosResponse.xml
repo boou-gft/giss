@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarMunicipiosResponse>
+  <codMensagem>GISS0009</codMensagem>
+  <mensagem>EXISTEM MAIS DADOS A SEREM LISTADOS</mensagem>
+  <quantidadeOcorrencias>50</quantidadeOcorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1054</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>JARINU</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1085</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>JABOTICABAL</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1511</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PALESTINA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1580</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>RANCHARIA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1645</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SANTA CRUZ DAS PALMEIRAS</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1676</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SAO BENTO DO SAPUCAI</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1748</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SANTO ANASTACIO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1865</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>TAUBATE</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>1982</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>TABATINGA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2235</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>BARBOSA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2242</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>CACAPAVA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2280</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>BAURU</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2321</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>CAJOBI</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2376</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>CARDOSO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2527</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>MENDONCA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2675</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>GETULINA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2709</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>CERQUILHO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2747</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>AGUAS DE SAO PEDRO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2864</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PINDAMONHANGABA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2912</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PIRACICABA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>2981</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PITANGUEIRAS</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>3117</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>VIRADOURO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>3612</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>NOVO HORIZONTE</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>3636</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>MOGI-MIRIM</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4037</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>BOCAINA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4161</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>IRAPURU</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4264</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PRESIDENTE EPITACIO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4329</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>ARARAS</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4367</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>CRUZEIRO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4381</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>ESTRELA D'OESTE</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4398</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>ITAPEVI</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4408</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>ITATIBA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4587</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>GUARACI</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4604</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>GUARIBA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4680</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>JUNQUEIROPOLIS</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4800</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SUD MENUCCI</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4879</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>AURIFLAMA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4965</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>JAU</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>4996</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>JACAREI</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5098</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PALMARES PAULISTA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5146</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PARAPUA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5232</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SANTANA DO PARNAIBA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5256</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SAO JOAQUIM DA BARRA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5342</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>TABOAO DA SERRA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5373</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SAO SEBASTIAO</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5380</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>TAIUVA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5500</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>CACHOEIRA PAULISTA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5696</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>PERUIBE</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5782</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>SERRA NEGRA</nomeMunicipio>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoMunicipio>5892</codigoMunicipio>
+    <siglaUnidadeFederativa />
+    <nomeMunicipio>RINCAO</nomeMunicipio>
+  </ocorrencias>
+</listarMunicipiosResponse>

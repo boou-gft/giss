@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarMunicipiosNovosRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="cdMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="cdUf" type="xsd:int" default="0" />
+        <xsd:element name="tipoPesquisa" type="xsd:int" default="0" />
+        <xsd:element name="cdTela" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

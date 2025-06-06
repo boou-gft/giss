@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarApuracaoParcialDependenciaResponse>
+	<codMensagem/>
+	<mensagem/>
+        <quantidadeOcorrencias>2</quantidadeOcorrencias>
+        <sinalReceitaGeral>-</sinalReceitaGeral>
+        <valorReceitaGeral>324664.66</valorReceitaGeral>
+        <sinalISSGeral>+</sinalISSGeral>
+        <valorISSGeral>546874.89</valorISSGeral>
+        <ocorrencias>
+              <codigoPessoaJuridica>65478</codigoPessoaJuridica>
+              <numeroSequencialUnidadeOrganizacional>7815</numeroSequencialUnidadeOrganizacional>
+              <codigoDependencia>007</codigoDependencia>
+              <descricaoDependencia>Dependencia</descricaoDependencia>
+              <sinalReceita>-</sinalReceita>
+              <valorReceita>9831.87</valorReceita>
+              <sinalISS>+</sinalISS>
+              <valorISS>31446.45</valorISS>
+        </ocorrencias>  
+        <ocorrencias>
+              <codigoPessoaJuridica>46768</codigoPessoaJuridica>
+              <numeroSequencialUnidadeOrganizacional>8913</numeroSequencialUnidadeOrganizacional>
+              <codigoDependencia>007</codigoDependencia>
+              <descricaoDependencia>Agencia</descricaoDependencia>
+              <sinalReceita>+</sinalReceita>
+              <valorReceita>106486.65</valorReceita>
+              <sinalISS>-</sinalISS>
+              <valorISS>1446.45</valorISS>
+        </ocorrencias>  
+</listarApuracaoParcialDependenciaResponse>

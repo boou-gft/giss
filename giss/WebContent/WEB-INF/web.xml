@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	* Copyright 2004 The Apache Software Foundation.
+	*
+	* Licensed under the Apache License, Version 2.0 (the "License");
+	* you may not use this file except in compliance with the License.
+	* You may obtain a copy of the License at
+	*
+	*      http://www.apache.org/licenses/LICENSE-2.0
+	*
+	* Unless required by applicable law or agreed to in writing, software
+	* distributed under the License is distributed on an "AS IS" BASIS,
+	* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	* See the License for the specific language governing permissions and
+	* limitations under the License.
+-->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ 	xmlns="http://java.sun.com/xml/ns/javaee" 	
+ 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	<description>debug web.xml</description>
+	<display-name>GISS</display-name>
+	<context-param>
+		<description>
+			State saving method: "client" or "server" (= default) See JSF
+			Specification 2.5.2
+		</description>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+	<context-param>
+		<description>
+			This parameter tells MyFaces if javascript code should be allowed in
+			the rendered HTML output. If javascript is allowed, command_link
+			anchors will have javascript code that submits the corresponding
+			form. If javascript is not allowed, the state saving info and nested
+			parameters will be added as url parameters. Default: "true"
+		</description>
+		<param-name>org.apache.myfaces.ALLOW_JAVASCRIPT</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.apache.myfaces.DETECT_JAVASCRIPT</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<description>
+			If true, rendered HTML code will be formatted, so that it is "human
+			readable". i.e. additional line separators and whitespace will be
+			written, that do not influence the HTML code. Default: "true"
+		</description>
+		<param-name>org.apache.myfaces.PRETTY_HTML</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description>
+			If true, a javascript function will be rendered that is able to
+			restore the former vertical scroll on every request. Convenient
+			feature if you have pages with long lists and you do not want the
+			browser page to always jump to the top if you trigger a link or
+			button action that stays on the same page. Default: "false"
+		</description>
+		<param-name>org.apache.myfaces.AUTO_SCROLL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>tiles-definitions</param-name>
+		<param-value>
+			/WEB-INF/tiles.xml, /WEB-INF/tiles-definitions.xml
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/applicationContext.xml
+			/WEB-INF/applicationContext-security.xml
+			/WEB-INF/applicationContext-monitor.xml
+			/WEB-INF/applicationContext-log.xml
+			/WEB-INF/applicationContext-filters.xml
+			/WEB-INF/applicationContext-alert.xml
+			/WEB-INF/applicationContext-error.xml
+			/WEB-INF/applicationContext-object.xml
+			/WEB-INF/applicationContext-session.xml
+			/WEB-INF/applicationContext-pdc.xml
+			/WEB-INF/applicationContext-remoting.xml
+			/WEB-INF/applicationContext-pdc-connectors.xml
+			/WEB-INF/applicationContext-cache.xml
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>
+			/WEB-INF/faces-config.xml,/WEB-INF/faces-navigation-config.xml,/WEB-INF/faces-managed-beans-config.xml
+		</param-value>
+	</context-param>
+	<!-- BradescoCommosValidators Configuration Resources  -->
+	<context-param>
+		<param-name>
+			br.com.bradesco.web.aq.view.components.arq.UIClientSideValidation.validator.VALIDATOR_RULES
+		</param-name>
+		<param-value>
+			/br/com/bradesco/web/aq/view/components/arq/UIClientSideValidation/validator/validator-rules.xml,
+			/WEB-INF/custom-validator-rules.xml,
+		</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.richfaces.SKIN</param-name>
+		<param-value>blueSky</param-value>
+	</context-param>
+	
+	<!-- Filtros -->
+	<filter>
+		<filter-name>securityFilter</filter-name>
+		<filter-class>org.springframework.security.util.FilterToBeanProxy</filter-class>
+		<init-param>
+			<param-name>targetBean</param-name>
+			<param-value>filterChainProxy</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>filterChainProxy</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>lifecycle</param-name>
+			<param-value>servlet-container-managed</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>extensionsFilter</filter-name>
+		<filter-class>br.com.bradesco.web.aq.view.filters.AWBExtensionsFilter</filter-class>
+		<init-param>
+			<description>
+				Set the size limit for uploaded files. Format: 10 - 10 bytes 10k
+				- 10 KB 10m - 10 MB 1g - 1 GB
+			</description>
+			<param-name>uploadMaxFileSize</param-name>
+			<param-value>100m</param-value>
+		</init-param>
+		<init-param>
+			<description>
+				Set the threshold size - files below this limit are stored in
+				memory, files above this limit are stored on disk.
+
+				Format: 10 - 10 bytes 10k - 10 KB 10m - 10 MB 1g - 1 GB
+			</description>
+			<param-name>uploadThresholdSize</param-name>
+			<param-value>100k</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>bradescoFilterManager</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetFilterLifecycle</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<display-name>RichFaces Filter</display-name>
+		<filter-name>richfaces</filter-name>
+		<filter-class>org.ajax4jsf.Filter</filter-class>
+	</filter>
+	
+	<!-- Filters Mapping -->
+	<filter-mapping>
+		<filter-name>bradescoFilterManager</filter-name>
+		<url-pattern>*.jsf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>securityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>filterChainProxy</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>extensionsFilter</filter-name>
+		<url-pattern>*.jsf</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>extensionsFilter</filter-name>
+		<url-pattern>/faces/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>richfaces</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	
+	<!-- Listeners -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
+	</listener>
+	<!-- Listener para capturar os eventos de Sessao (por exemplo, Sessao Expirada) -->
+	<listener>
+		<listener-class>br.com.bradesco.web.aq.application.session.event.HttpSessionEventPublisher</listener-class>
+	</listener>
+	
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- Servlet Mappings -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.faces</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>20</session-timeout>
+		<cookie-config>
+			<name>JSESSIONID_giss</name>
+			<path>/giss</path>
+		</cookie-config>
+	</session-config>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<!-- Error Pages -->
+	<error-page>
+		<error-code>400</error-code>
+		<location>/template/errorPages/400.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>401</error-code>
+		<location>/template/errorPages/401.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/template/errorPages/403.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/template/errorPages/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/template/errorPages/500.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/template/errorPages/internalError.jsp</location>
+	</error-page>
+	
+	<mime-mapping>
+		<extension>wsdl</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+</web-app>

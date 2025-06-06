@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarDiferencasRetificadorContabilResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="IEMPR" type="xsd:string" />
+        <xsd:element name="PRODUTO" type="xsd:string" />
+        <xsd:element name="SIT-CONTABIL" type="xsd:int" default="0" />
+        <xsd:element name="CFNALD-ARQ-ISS" type="xsd:int" default="0" />
+        <xsd:element name="GISSWG0S-QTD-DEV" type="xsd:int" default="0" />
+        <xsd:element name="LISTA" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="CMUN" type="xsd:long" default="0" />
+              <xsd:element name="IMUN" type="xsd:string" />
+              <xsd:element name="VBASE-CALC-ANT" type="xsd:decimal" default="0" />
+              <xsd:element name="PALIQT-ANT" type="xsd:decimal" default="0" />
+              <xsd:element name="VAPURC-ANT" type="xsd:decimal" default="0" />
+              <xsd:element name="VBASE-CALC-ATU" type="xsd:decimal" default="0" />
+              <xsd:element name="PALIQT-ATU" type="xsd:decimal" default="0" />
+              <xsd:element name="VAPURC-ATU" type="xsd:decimal" default="0" />
+              <xsd:element name="VALOR-DIF" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

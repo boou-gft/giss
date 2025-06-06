@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarMunicipioResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="percentualAliquotaMunicipio" type="xsd:decimal" default="0" />
+        <xsd:element name="diaVencimentoTribut" type="xsd:int" default="0" />
+        <xsd:element name="indNecessidadePagtoDiaUtil" type="xsd:string" />
+        <xsd:element name="codigoFormaPagamento" type="xsd:int" default="0" />
+        <xsd:element name="percentualBaseAliquota" type="xsd:decimal" default="0" />
+        <xsd:element name="percentualAliquotaPadrao" type="xsd:decimal" default="0" />
+        <xsd:element name="codigoTipoIncidencia" type="xsd:int" default="0" />
+        <xsd:element name="nomeTipoIncidencia" type="xsd:string" />
+        <xsd:element name="codigoDependenciaCentralizadora" type="xsd:int" default="0" />
+        <xsd:element name="descricaoDependenciaCentralizadora" type="xsd:string" />
+        <xsd:element name="indiceVigencia" type="xsd:string" />
+        <xsd:element name="codigoMunicipioCentralizadora" type="xsd:long" default="0" />
+        <xsd:element name="descricaoMunicipio" type="xsd:string" />
+        <xsd:element name="codigoPessoaJuridicaCentralizadora" type="xsd:long" default="0" />
+        <xsd:element name="numeroSequencialCentralizadora" type="xsd:int" default="0" />
+        <xsd:element name="uFCentralizadora" type="xsd:string" />
+        <xsd:element name="descricaoUF" type="xsd:string" />
+        <xsd:element name="codigoLegislacaoVigente" type="xsd:int" default="0" />
+        <xsd:element name="descLegislacaoVigente" type="xsd:string" />
+        <xsd:element name="itemComplementarLei" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

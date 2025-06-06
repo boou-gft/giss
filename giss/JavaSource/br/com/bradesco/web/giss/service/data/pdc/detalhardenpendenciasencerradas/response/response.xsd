@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="detalharDenpendenciasEncerradasResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codigoDependencia" type="xsd:int" default="0" />
+        <xsd:element name="nomeDependencia" type="xsd:string" />
+        <xsd:element name="dataAbertura" type="xsd:string" />
+        <xsd:element name="dataEncerramento" type="xsd:string" />
+        <xsd:element name="codigoAgenciaIncorporadora" type="xsd:int" default="0" />
+        <xsd:element name="nomeAgenciaIncorporadora" type="xsd:string" />
+        <xsd:element name="enderecoAgenciaIncorporadora" type="xsd:string" />
+        <xsd:element name="numeroAgenciaIncorporadora" type="xsd:int" default="0" />
+        <xsd:element name="cepAgenciaIncorporadora" type="xsd:int" default="0" />
+        <xsd:element name="siglaUFAgenciaIncorporadora" type="xsd:string" />
+        <xsd:element name="paisAgenciaIncorporadora" type="xsd:string" />
+        <xsd:element name="codigoCadastroContribuinteMobiliario" type="xsd:long" default="0" />
+        <xsd:element name="tipoDepartamento" type="xsd:string" />
+        <xsd:element name="codigoDepartamentoAgenciaIncorporadora" type="xsd:int" default="0" />
+        <xsd:element name="descricaoDepartamentoAgenciaIncorporadora" type="xsd:string" />
+        <xsd:element name="inscricaoMunicipal" type="xsd:string" />
+        <xsd:element name="indicadorTributavelNaoTributavel" type="xsd:int" default="0" />
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="nomeMunicipio" type="xsd:string" />
+        <xsd:element name="estadoIncorporaDepartamento" type="xsd:string" />
+        <xsd:element name="codigoMunicipioIncorporaDepartamento" type="xsd:string" />
+        <xsd:element name="descricaoMunicipioIncorporaDepartamento" type="xsd:string" />
+        <xsd:element name="cnpj" type="xsd:long" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

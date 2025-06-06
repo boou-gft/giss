@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarDependenciasSaldoRecolhimentoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="indicadorPagamentoTributo" type="xsd:string" />
+        <xsd:element name="indicadorDiaUtil" type="xsd:string" />
+        <xsd:element name="diaVencimentoTributo" type="xsd:int" default="0" />
+        <xsd:element name="dataRecolhimento" type="xsd:string" />
+        <xsd:element name="ocorrencias" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numeroSequencialUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="mesAnoApuracao" type="xsd:int" default="0" />
+              <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="codigoUnidadeOrganizacionalResponsavel" type="xsd:int" default="0" />
+              <xsd:element name="nomeUnidadeOrganizacionalResponsavel" type="xsd:string" />
+              <xsd:element name="diaVencimentoTributo" type="xsd:int" default="0" />
+              <xsd:element name="contabil" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="sinal" type="xsd:string" />
+                    <xsd:element name="valor" type="xsd:decimal" default="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="indicadorSituacaoMensagem" type="xsd:int" default="0" />
+              <xsd:element name="dataAtual" type="xsd:string" />
+              <xsd:element name="dataProcessamento" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

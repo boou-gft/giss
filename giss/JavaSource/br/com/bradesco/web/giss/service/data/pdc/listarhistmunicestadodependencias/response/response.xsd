@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarHistMunicEstadoDependenciasResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="GISSW342-HEADER">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="GISSW342-COD-LAYOUT" type="xsd:string" default="GISSW342" />
+              <xsd:element name="GISSW342-TAM-LAYOUT" type="xsd:int" default="7816" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="descricaoMunicipio" type="xsd:string" />
+              <xsd:element name="dataAtualizacao" type="xsd:string" />
+              <xsd:element name="horaAtualizacao" type="xsd:string" />
+              <xsd:element name="dataExclusao" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

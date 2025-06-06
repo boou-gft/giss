@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarDependenciaApuracaoMensalResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="totalMunicipioReceitaSinal" type="xsd:string" />
+        <xsd:element name="totalMunicipioReceitaValor" type="xsd:double" default="0" />
+        <xsd:element name="totalMunicipioRecolherSinal" type="xsd:string" />
+        <xsd:element name="totalMunicipioRecolherValor" type="xsd:double" default="0" />
+        <xsd:element name="totalGeralReceitaSinal" type="xsd:string" />
+        <xsd:element name="totalGeralReceitaValor" type="xsd:double" default="0" />
+        <xsd:element name="totalGeralRecolherSinal" type="xsd:string" />
+        <xsd:element name="totalGeralRecolherValor" type="xsd:double" default="0" />
+        <xsd:element name="qtdeAgencia" type="xsd:long" default="0" />
+        <xsd:element name="totalAgenciaRecolherSinal" type="xsd:string" />
+        <xsd:element name="totalAgenciaRecolherValor" type="xsd:double" default="0" />
+        <xsd:element name="totalAgenciaReceitaSinal" type="xsd:string" />
+        <xsd:element name="totalAgenciaReceitaValor" type="xsd:double" default="0" />
+        <xsd:element name="qtdePa" type="xsd:long" default="0" />
+        <xsd:element name="totalPaRecolherSinal" type="xsd:string" />
+        <xsd:element name="totalPaRecolherValor" type="xsd:double" default="0" />
+        <xsd:element name="totalPaReceitaSinal" type="xsd:string" />
+        <xsd:element name="totalPaReceitaValor" type="xsd:double" default="0" />
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorDependenciaApuracaoMensal" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numeroSequenciaUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="mesAnoApuracao" type="xsd:int" default="0" />
+              <xsd:element name="codigoDependencia" type="xsd:string" />
+              <xsd:element name="descricaoDependencia" type="xsd:string" />
+              <xsd:element name="codPa" type="xsd:string" />
+              <xsd:element name="descPa" type="xsd:string" />
+              <xsd:element name="municipioReceitaSinal" type="xsd:string" />
+              <xsd:element name="municipioReceitaValor" type="xsd:double" default="0" />
+              <xsd:element name="geralReceitaSinal" type="xsd:string" />
+              <xsd:element name="geralReceitaValor" type="xsd:double" default="0" />
+              <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="descMunicipio" type="xsd:string" />
+              <xsd:element name="cdUF" type="xsd:string" />
+              <xsd:element name="descUF" type="xsd:string" />
+              <xsd:element name="tragSemTrag" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listaApuracaoParcialFinalResponse>
+<codMensagem/>
+<mensagem/>
+        <quantidadeOcorrencias>2</quantidadeOcorrencias>
+        <baseCalculo>10.0</baseCalculo>
+        <aliquotaPadrao>6.3</aliquotaPadrao>
+        <tipoIncidencia>Padrao</tipoIncidencia>
+        <solicitacao>2</solicitacao>
+        <dataSolicitacao>06.2010</dataSolicitacao>
+        <dataProcessamento>06.2010</dataProcessamento>
+        <ocorrencias>
+              <conta>183247642</conta>
+              <sinalMovimento>-</sinalMovimento>
+              <valorMovimento>34678794.99</valorMovimento>
+              <sinalTributavel>+</sinalTributavel>
+              <valorTributavel>32157695.22</valorTributavel>
+              <aliquota>3.0</aliquota>
+              <sinalISS>-</sinalISS>
+              <valorISS>3124456.99</valorISS>
+		</ocorrencias>
+		<ocorrencias>
+              <conta>183247642</conta>
+              <sinalMovimento>+</sinalMovimento>
+              <valorMovimento>94657765.52</valorMovimento>
+              <sinalTributavel>-</sinalTributavel>
+              <valorTributavel>346769.99</valorTributavel>
+              <aliquota>8.5</aliquota>
+              <sinalISS>+</sinalISS>
+              <valorISS>7324349.92</valorISS>
+		</ocorrencias>
+</listaApuracaoParcialFinalResponse>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarApuracaoFinalAposFechamentoISSResponse>
+<codMensagem/>
+        <mensagem/>
+        <quantidadeOcorrencias>2</quantidadeOcorrencias>
+        <porcentagemBaseCalculo>10.0</porcentagemBaseCalculo>
+        <porcentagemAliquotaPadarao>15.0</porcentagemAliquotaPadarao>
+        <tipoIncidencia>Padrao</tipoIncidencia>
+        <numeroSolicitacaoApuracao>4513</numeroSolicitacaoApuracao>
+        <dataSolicitacao>6.2010</dataSolicitacao>
+        <Ocorrencias>
+             <conta>73584686</conta>
+             <valorMovimento>
+                    <sinalValorMovimento>+</sinalValorMovimento>
+                    <valorValorMovimento>45657.81</valorValorMovimento>
+			 </valorMovimento>
+              <valorTributavel>
+                    <sinalvalorTributavel>+</sinalvalorTributavel>
+                    <valorvalorTributavel>4565457.99</valorvalorTributavel>
+			  </valorTributavel>
+              <porcentagemAliquota>26.3</porcentagemAliquota>
+              <valorISS>
+                    <sinalValorISS>-</sinalValorISS>
+                    <valorValorISS>16546.0</valorValorISS>
+			  </valorISS>
+              <valorISSMensal>
+                    <sinalValorISSMensal>+</sinalValorISSMensal>
+                    <valorValorISSMensal>15467.0</valorValorISSMensal>
+ 			</valorISSMensal>
+		</Ocorrencias>
+		<Ocorrencias>
+             <conta>73584686</conta>
+             <valorMovimento>
+                    <sinalValorMovimento>-</sinalValorMovimento>
+                    <valorValorMovimento>565864.90</valorValorMovimento>
+			 </valorMovimento>
+              <valorTributavel>
+                    <sinalvalorTributavel>+</sinalvalorTributavel>
+                    <valorvalorTributavel>56464.66</valorvalorTributavel>
+			  </valorTributavel>
+              <porcentagemAliquota>10.0</porcentagemAliquota>
+              <valorISS>
+                    <sinalValorISS>+</sinalValorISS>
+                    <valorValorISS>16546.0</valorValorISS>
+			  </valorISS>
+              <valorISSMensal>
+                    <sinalValorISSMensal>-</sinalValorISSMensal>
+                    <valorValorISSMensal>3000.66</valorValorISSMensal>
+ 			</valorISSMensal>
+		</Ocorrencias>		
+</listarApuracaoFinalAposFechamentoISSResponse>

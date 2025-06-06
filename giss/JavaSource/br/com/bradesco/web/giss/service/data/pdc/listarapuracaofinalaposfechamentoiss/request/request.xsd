@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoFinalAposFechamentoISSRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="numeroMaximoOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+        <xsd:element name="sequenciaUnidadeOrganiza" type="xsd:int" default="0" />
+        <xsd:element name="competencia" type="xsd:int" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarResulPesqApurMensalDifResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="descMunicipio" type="xsd:string" />
+        <xsd:element name="codUF" type="xsd:string" />
+        <xsd:element name="descUF" type="xsd:string" />
+        <xsd:element name="sinalApuracaoTotalM" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotalM" type="xsd:decimal" default="0" />
+        <xsd:element name="sinalApuracaoTotalMun" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotalMun" type="xsd:decimal" default="0" />
+        <xsd:element name="qtdeRegistros" type="xsd:int" default="0" />
+        <xsd:element name="OcorrenciasResultPesqApurMesDif" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codPessoaJuridOcor" type="xsd:long" default="0" />
+              <xsd:element name="numSeqUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="codDependencia" type="xsd:string" />
+              <xsd:element name="descDependencia" type="xsd:string" />
+              <xsd:element name="sinalRecTributApuracao" type="xsd:string" />
+              <xsd:element name="valorRecTributApuracao" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalApuracao" type="xsd:string" />
+              <xsd:element name="valorApuracao" type="xsd:decimal" default="0" />
+              <xsd:element name="sinalRecApuracao" type="xsd:string" />
+              <xsd:element name="valorRecApuracao" type="xsd:decimal" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

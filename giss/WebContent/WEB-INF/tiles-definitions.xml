@@ -1,0 +1,4675 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+                                   "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<!-- ########################################################################### 
+	En este xml se definen las paginas propias de la aplicacion, indicando de 
+	que template (o pagina) extienden, y cual es la jsp que define el contenido 
+	de la pagina. Tambien se pueden incluir aquellos atributos concretos de cada 
+	pagina. ########################################################################### -->
+
+<tiles-definitions>
+
+	<!-- El ejemplo de la aplicacion extiende el template layout para incluir 
+		la mavegacion especifica del ejemplo (redefiniendo de nuevo el atributo "menu") 
+		El resto de paginas del ejemplo, extenderan este layout para incluir la navegacion 
+		especifica del ejemplo, -->
+	<definition name="/passoUm.tiles" extends="main.layout">
+		<put name="body" value="/content/home1.jsp" />
+		<put name="tela" value="1034" />
+	</definition>
+
+	<definition name="/login.tiles" extends="main.layout">
+		<put name="body" value="/login.jsp" />
+		<put name="tela" value="1" />
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="LoginCSS" link="/css/login.css" />
+		</putList>
+	</definition>
+
+	<definition name="/fail.tiles" extends="main.layout">
+		<put name="body" value="/fail.jsp" />
+	</definition>
+
+	<definition name="/invalidRequestIp.tiles" extends="main.layout">
+		<put name="body" value="/invalidRequestIp.jsp" />
+	</definition>
+
+	<definition name="/totalTimeoutExpired.tiles" extends="main.layout">
+		<put name="body" value="/totalTimeoutExpired.jsp" />
+	</definition>
+
+	<definition name="/arqImplantationFilterOK.tiles" extends="main.layout">
+		<put name="body" value="/content/filtro/implantationFilterOK.jsp" />
+	</definition>
+
+	<definition name="/arqImplantationFilterFail.tiles" extends="main.layout">
+		<put name="body" value="/content/filtro/implantationFilterFail.jsp" />
+	</definition>
+
+	<definition name="app.exception.layout" extends="inner.layout">
+		<put name="isHome" value="true" />
+		<!-- Este aplicativo verifica seguridad de usuario/roles -->
+		<put name="checkUserRoles" value="true" />
+		<!-- Servicios de Consulta Rapida -->
+		<put name="quickServices" value="app.services.menu.options" />
+	</definition>
+
+	<!-- #### PAGINAS DE ERROR #### -->
+
+	<!-- definicion de excepcion con main layout (solo header y footer) -->
+	<definition name="/exception.tiles" extends="app.exception.layout">
+		<put name="body" value="/exception.jsp" />
+	</definition>
+
+	<definition name="arqException.tiles" extends="app.exception.layout">
+		<put name="body" value="/arqException.jsp" />
+	</definition>
+
+	<definition name="/appException.tiles" extends="app.exception.layout">
+		<put name="body" value="/appException.jsp" />
+	</definition>
+
+	<!-- #### AGRUPACION DE TODAS LAS PAGINAS DEL APLICATIVO #### -->
+
+	<definition name="app.menu.inner.layout" extends="menu.inner.layout">
+		<!-- Sobreescritura del Menu Principal Horizontal -->
+		<put name="mainMenu" value="app.main.menu.options" />
+		<!-- DefiniciaƒÆ’a†â€™aƒâ€ša‚Â³n de otras composiciones de menu, segun 
+			roles de usuario -->
+		<put name="rolePrimeMenu" value="app.rolePrime.menu.options" />
+		<!-- Este aplicativo verifica seguridad de usuario/roles -->
+		<put name="checkUserRoles" value="true" />
+
+		<!-- Servicios de Consulta Rapida -->
+		<put name="quickServices" value="app.services.menu.options" />
+
+	</definition>
+
+	<definition name="app.rolePrime.menu.options" extends="main.menu.options">
+		<!-- SOLO las opciones de menu del primer menu -->
+		<putList name="mainMenuOptions">
+			<item value="menu_presentation" link="presHome.jsf" tooltip="menu1" />
+			<item value="menu_internetBanking" link="ibHome.jsf" tooltip="menu3" />
+		</putList>
+	</definition>
+
+
+	<!-- TODAS las opciones de Menu Principal (horizontal) del Aplicativo -->
+	<definition name="app.main.menu.options" extends="main.menu.options">
+		<putList name="mainMenuOptions">
+			<item value="menu_presentation" link="presHome.jsf" tooltip="menu1" />
+			<item value="menu_arquitectura" link="arqHome.jsf" tooltip="menu2" />
+			<item value="menu_internetBanking" link="ibHome.jsf" tooltip="menu3" />
+		</putList>
+
+	</definition>
+
+	<!-- TODAS las opciones de menu de Quick Services Menu (menu vertical) -->
+	<definition name="app.services.menu.options" extends="services.menu.options">
+		<putList name="services">
+			<item value="quick_1" link="" />
+			<item value="quick_1_1" link="presArchitecture_components.jsf" />
+			<item value="quick_1_2" link="presApplication_components.jsf" />
+			<item value="quick_2" link="" />
+			<item value="quick_2_1" link="arqGestorSesion.jsf" />
+		</putList>
+	</definition>
+
+	<!-- ##################################################################### 
+		############ AGRUPACIaƒÆ’a†â€™aƒÂ¢a¢â€šÂ¬a…â€œN DE PAGINAS POR MENU ######################### 
+		##################################################################### -->
+	<definition name="presentation.menu.inner.layout" extends="app.menu.inner.layout">
+		<put name="menuSelected" value="menu1" />
+		<!-- identificador del menu seleccionado "tooltip" -->
+		<putList name="menuOptions">
+			<item value="menu_presentation_custom" link="#" tooltip="main" />
+			<item value="menu_presentation_custom_subitem_1" link="presCustom_components_1.jsf" />
+			<item value="menu_presentation_custom_subitem_2" link="presCustom_components_2.jsf" />
+			<item value="menu_presentation_custom_subitem_3" link="presCustom_components_3.jsf" />
+			<item value="menu_presentation_custom_subitem_4" link="presCustom_components_4.jsf" />
+			<item value="menu_presentation_custom_subitem_5" link="presCustom_components_5.jsf" />
+			<item value="menu_presentation_custom_subitem_6" link="presCustom_components_6.jsf" />
+			<item value="menu_presentation_custom_subitem_7" link="presCustom_components_7.jsf" />
+			<item value="menu_presentation_arq" link="#" tooltip="main" />
+			<item value="menu_presentation_arq_ejemplos" link="presArchitecture_components.jsf" />
+			<item value="menu_presentation_app" link="#" tooltip="main" />
+			<item value="menu_presentation_app_ejemplos" link="presApplication_components.jsf" />
+		</putList>
+	</definition>
+
+	<definition name="arquitectura.menu.inner.layout" extends="app.menu.inner.layout">
+		<put name="menuSelected" value="menu2" />
+		<!-- identificador del menu seleccionado "tooltip" -->
+		<putList name="menuOptions">
+			<item value="menu_arquitectura_gestores" link="#" tooltip="main" />
+			<item value="menu_arquitectura_gestores_objetos" link="arqGestorObjetos.jsf" />
+			<item value="menu_arquitectura_gestores_sesion" link="arqGestorSesion.jsf" />
+			<item value="menu_arquitectura_gestores_alertas" link="arqGestorAlertas.jsf" />
+			<item value="menu_arquitectura_gestores_cache" link="arqGestorCache.jsf" />
+			<item value="menu_arquitectura_gestores_log" link="arqLog.jsf" />
+			<item value="menu_arquitectura_excepciones" link="#" tooltip="main" />
+			<item value="menu_arquitectura_excepciones_lanzamiento" link="arqLanzamientoExcepciones.jsf" />
+			<item value="menu_arquitectura_filtro" link="#" tooltip="main" />
+			<item value="menu_arquitectura_filtro_cadastro" link="arqFiltro.jsf" />
+			<item value="menu_arquitectura_filtro_teste" link="arqImplantationFilterOK.jsf" />
+		</putList>
+	</definition>
+
+	<definition name="internetBanking.menu.inner.layout"
+		extends="app.menu.inner.layout">
+		<put name="menuSelected" value="menu3" />
+		<!-- identificador del menu seleccionado "tooltip" -->
+		<putList name="menuOptions">
+			<item value="menu_internetBanking_servicios" link="#" tooltip="main" />
+			<item value="menu_internetBanking_servicios_extrato" link="ibExtrato.jsf" />
+			<item value="menu_internetBanking_servicios_transfer" link="ibTeste1.jsf" />
+			<item value="menu_internetBanking_servicios_cambio" link="ibCambio.jsf" />
+		</putList>
+	</definition>
+
+	<!-- ##################################################################### 
+		############ DEFINICION HOMES POR MENU ############################## ##################################################################### -->
+	<definition name="home.presentation.menu.inner.layout"
+		extends="presentation.menu.inner.layout">
+		<put name="isHome" value="true" />
+	</definition>
+
+	<definition name="home.arquitectura.menu.inner.layout"
+		extends="arquitectura.menu.inner.layout">
+		<put name="isHome" value="true" />
+	</definition>
+
+	<definition name="home.internetBanking.menu.inner.layout"
+		extends="internetBanking.menu.inner.layout">
+		<put name="isHome" value="true" />
+	</definition>
+
+	<!-- #### PAGINAS HOME #### -->
+	<definition name="/presHome.tiles" extends="home.presentation.menu.inner.layout">
+		<put name="body" value="/content/home1.jsp" />
+	</definition>
+
+
+	<!-- #### TELAS #### -->
+
+	<definition name="custom_components.tiles" extends="home.presentation.menu.inner.layout">
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="ComponentsExampleCSS" link="/css/componentsExamples.css" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Ejemplo de Herencia de Tiles para heredar propiedades comunes, como 
+		el CSS -->
+
+	<!-- #### INICIO COMMAND #### -->
+	<definition name="/presCustom_components_1.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_1.jsp" />
+		<put name="tela" value="1011" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_command" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM COMMAND #### -->
+
+	<!-- #### INICIO GRAFIC #### -->
+	<definition name="/presCustom_components_2.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_2.jsp" />
+		<put name="tela" value="1012" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_grafic" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM GRAFIC #### -->
+
+	<!-- #### INICIO INPUT #### -->
+
+
+	<definition name="/presCustom_components_3.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_3.jsp" />
+		<put name="tela" value="1013" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_input" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM INPUT #### -->
+
+	<!-- #### INICIO OUTPUT #### -->
+
+	<definition name="/presCustom_components_4.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_4.jsp" />
+		<put name="tela" value="1014" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_output" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM OUTPUT #### -->
+
+
+	<!-- #### INICIO MESSAGES #### -->
+
+
+	<definition name="/presCustom_components_5.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_5.jsp" />
+		<put name="tela" value="1015" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_messages" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM MESSAGES #### -->
+
+	<!-- #### INICIO SELECT #### -->
+
+	<definition name="/presCustom_components_6.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_6.jsp" />
+		<put name="tela" value="1016" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_select" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM SELECT #### -->
+
+	<!-- #### INICIO PANELGRID #### -->
+
+	<definition name="/presCustom_components_7.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_7.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_customcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_panelgrid" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+	<!-- #### FIM PANELGRID #### -->
+
+	<definition name="/presIndicador_passos_1.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/indicador_passos_1.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_templates" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_indicadorpassos1" link="" />
+			<item value="path_indicadorpassos2" link="" />
+			<item value="path_indicadorpassos3" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presIndicador_passos_2.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/indicador_passos_2.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_templates" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_indicadorpassos1" link="" />
+			<item value="path_indicadorpassos2" link="" />
+			<item value="path_indicadorpassos3" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presIndicador_passos_3.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/indicador_passos_3.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_templates" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_indicadorpassos1" link="" />
+			<item value="path_indicadorpassos2" link="" />
+			<item value="path_indicadorpassos3" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presApplication_components_2.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/componentsExamples/application_components_2.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_applicationcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_alcada" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presApplication_components_3.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/componentsExamples/application_components_3.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_applicationcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_calendar" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presApplication_components_4.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/componentsExamples/application_components_4.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_applicationcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_modalmessages" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presApplication_components_5.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/componentsExamples/application_components_5.jsp" />
+		<put name="tela" value="1017" />
+		<put name="selection" value="path_applicationcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_scrollabledatatable" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/presArchitecture_components.tiles"
+		extends="home.presentation.menu.inner.layout">
+		<put name="body"
+			value="/content/componentsExamples/architecture_components.jsp" />
+		<put name="tela" value="1021" />
+		<put name="selection" value="path_architecturecomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_exemplo" link="" />
+		</putList>
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="ComponentsExampleCSS" link="/css/componentsExamples.css" />
+		</putList>
+	</definition>
+
+	<definition name="/presApplication_components_1.tiles"
+		extends="home.presentation.menu.inner.layout">
+		<put name="body"
+			value="/content/componentsExamples/application_components_1.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_applicationcomponents" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_exemplo" link="" />
+		</putList>
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="ComponentsExampleCSS" link="/css/componentsExamples.css" />
+		</putList>
+	</definition>
+
+	<definition name="/arqGestorObjetos.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/example/gestorObjetos.jsp" />
+		<put name="tela" value="211" />
+		<put name="selection" value="menu.labelKey.gestores" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_objetos" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/arqGestorSesion.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/example/gestorSesion.jsp" />
+		<put name="tela" value="212" />
+		<put name="selection" value="menu.labelKey.gestores" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_sessao" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/arqGestorAlertas.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/example/gestorAlertas.jsp" />
+		<put name="tela" value="213" />
+		<put name="selection" value="menu.labelKey.gestores" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_alertas" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/arqLog.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/log/gestorLogPiloto.jsp" />
+		<put name="tela" value="214" />
+		<put name="selection" value="menu.labelKey.gestores" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_log" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/arqCriptografia.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/example/criptografia.jsp" />
+		<put name="tela" value="214" />
+		<put name="selection" value="menu.labelKey.arquitetura.outros" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_criptografia" link="" />
+		</putList>
+	</definition>
+
+	<definition name="/arqFiltro.tiles" extends="arquitectura.menu.inner.layout">
+		<put name="body" value="/content/filtro/filtro.jsp" />
+		<put name="selection" value="menu_arquitectura_filtro" />
+		<put name="tela" value="215" />
+		<putList name="path">
+			<item value="menu_arquitectura" link="" />
+			<item value="menu_arquitectura_filtro" link="" />
+		</putList>
+	</definition>
+
+	<definition name="/arqLanzamientoExcepciones.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/example/lanzamientoExcepciones.jsp" />
+		<put name="tela" value="221" />
+		<put name="selection" value="path_excecoes" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_excecoes" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="menu2.IB.layout" extends="internetBanking.menu.inner.layout">
+		<!-- Lista de StyleSheets especificos a incluir en este GRUPO de paginas -->
+		<putList name="especificCSS">
+			<item value="TabelasCSS" link="/css/tabelas.css" />
+		</putList>
+	</definition>
+
+	<definition name="/ibExtrato.tiles" extends="menu2.IB.layout">
+		<put name="body" value="/content/extrato/extrato.jsp" />
+		<put name="selection" value="menu_internetBanking_servicios_extrato" />
+		<put name="tela" value="311" />
+		<putList name="path">
+			<item value="menu_internetBanking" link="" />
+			<item value="menu_internetBanking_servicios" link="" />
+		</putList>
+	</definition>
+
+	<definition name="/ibTransferencia3.tiles" extends="internetBanking.menu.inner.layout">
+		<put name="body" value="/content/transferencia/transferencia3.jsp" />
+		<put name="selection" value="menu_internetBanking_servicios_transfer" />
+		<put name="tela" value="3123" />
+		<putList name="path">
+			<item value="menu_internetBanking" link="" />
+			<item value="menu_internetBanking_servicios" link="" />
+		</putList>
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="PageCSS" link="/css/pages.css" />
+		</putList>
+	</definition>
+
+	<definition name="/ibTransferenciaFail.tiles" extends="internetBanking.menu.inner.layout">
+		<put name="body" value="/content/transferencia/transferenciaFail.jsp" />
+		<put name="selection" value="menu_internetBanking_servicios_transfer" />
+		<put name="tela" value="3124" />
+		<putList name="path">
+			<item value="menu_internetBanking" link="" />
+			<item value="menu_internetBanking_servicios" link="" />
+		</putList>
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="PageCSS" link="/css/pages.css" />
+		</putList>
+	</definition>
+
+	<definition name="/ibTransferencia2.tiles" extends="internetBanking.menu.inner.layout">
+		<put name="body" value="/content/transferencia/transferencia2.jsp" />
+		<put name="selection" value="menu_internetBanking_servicios_transfer" />
+		<put name="tela" value="3122" />
+		<putList name="path">
+			<item value="menu_internetBanking" link="" />
+			<item value="menu_internetBanking_servicios" link="" />
+		</putList>
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="PageCSS" link="/css/pages.css" />
+		</putList>
+	</definition>
+
+	<definition name="/ibTeste1.tiles" extends="internetBanking.menu.inner.layout">
+		<put name="body" value="/content/transferencia/transferencia.jsp" />
+		<put name="selection" value="menu_internetBanking_servicios_transfer" />
+		<put name="tela" value="312" />
+		<putList name="path">
+			<item value="menu_internetBanking" link="" />
+			<item value="menu_internetBanking_servicios" link="" />
+		</putList>
+		<!-- Lista de StyleSheets especificos a incluir en la pagina -->
+		<putList name="especificCSS">
+			<item value="PageCSS" link="/css/pages.css" />
+		</putList>
+		<putList name="especificJS">
+			<!-- <item value="ModuloJs1" link="/template/javascript/example.js"/> -->
+			<item value="ModuloJs1" link="/javascript/ajaxScript.js" />
+		</putList>
+	</definition>
+
+	<definition name="/ibCambio.tiles" extends="menu2.IB.layout">
+		<put name="body" value="/content/cambio/cambio.jsp" />
+		<put name="selection" value="menu_internetBanking_servicios_cambio" />
+		<put name="tela" value="313" />
+		<putList name="path">
+			<item value="menu_internetBanking" link="" />
+			<item value="menu_internetBanking_servicios" link="" />
+		</putList>
+	</definition>
+
+	<definition name="/arqGestorCacheList.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/cache/CacheManagerList.jsp" />
+		<put name="tela" value="211" />
+		<put name="selection" value="path_cache" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_cadastrocache" link="" />
+			<item value="path_listacache" link="" />
+
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/arqGestorCache.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/cache/CacheManagerEdit.jsp" />
+		<put name="tela" value="211" />
+		<put name="selection" value="menu.labelKey.gestores" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_cadastrocache" link="" />
+			<item value="path_listacache" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+	<definition name="/presCustom_components_8.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/componentsExamples/custom_components_8.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_scrollabledatatable.pag" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_scrollabledatatable.pag" link="" />
+		</putList>
+		<putList name="specificJS">
+			<item value="partialValidations" link="/javascript/partialValidations.js" />
+		</putList>
+	</definition>
+
+
+	<!-- Entradas relacionadas a funcionalidade pagina Ajuda -->
+
+	<definition name="/ajuda.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/ajuda/ajuda.jsp" />
+		<put name="tela" value="1018" />
+		<put name="passNumber" value="2" />
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Tipo de Servico -->
+
+	<definition name="/incluirTipoServico.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoServico/incluir/incluirTipoServico.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_incluirTipoServico" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_incluirTipoServico_incluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoTipoServico.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoServico/consultar/historico/historicoTipoServico.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_historicoTipoServico" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_historicoTipoServico_historico" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarTipoServico.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoServico/manter/alterarTipoServico.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_alterarTipoServico" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_manterTipoServico" link="" />
+			<item value="path_alterarTipoServico_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarTipoServicoProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoServico/manter/alterarTipoServicoProsseguir.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_alterarTipoServico" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_manterTipoServico" link="" />
+			<item value="path_alterarTipoServico_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<!-- Entradas relacionadas a funcionalidades Tipo de Incidencia -->
+
+	<definition name="/incluirTipoIncidencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/incluir/incluirTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_incluirTipoIncidencia" />
+		<put name="passNumber" value="2" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_TipoIncidencia_incluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterTipoIncidencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/manter/manterTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_manterTipoIncidencia" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_TipoIncidencia_manter" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarTipoIncidencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/manter/consultarTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_consultarTipoIncidencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_TipoIncidencia_manter" link="" />
+			<item value="path_TipoIncidencia_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarTipoIncidenciaHistorico.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/consultar/historico/consultarTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_consultarTipoIncidencia" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_TipoIncidencia_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarTipoIncidencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/manter/alterarTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_alterarTipoIncidencia" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_TipoIncidencia_manter" link="" />
+			<item value="path_TipoIncidencia_alterar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/excluirTipoIncidencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/manter/excluirTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_excluirTipoIncidencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_TipoIncidencia_manter" link="" />
+			<item value="path_TipoIncidencia_excluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoTipoIncidencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/parametros/tipoIncidencia/consultar/historico/historicoTipoIncidencia.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_historicoTipoIncidencia" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_parametros" link="" />
+			<item value="path_historicoTipoIncidencia_historico" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+
+	<!-- Entradas relacionadas a funcionalidade Conta Contábil -->
+
+	<definition name="/excluirContaContabil.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/contaContabil/manter/excluirContaContabil.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_excluir_conta_contabil" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_contascontabeis_pesquisa" link="" />
+			<item value="path_contascontabeis_alterar_excluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterContaContabil.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/contaContabil/manter/manterContaContabil.jsp" />
+		<put name="tela" value="1030" />
+		<put name="selection" value="path_mantercontacontabil" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_contascontabeis_pesquisa" link="" />
+			<item value="path_contascontabeis_alterar_excluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarContaContabil.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/contaContabil/manter/alterarContaContabil.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_contaContabil_titulo_alterar" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_contascontabeis_pesquisa" link="" />
+			<item value="path_contascontabeis_alterar_excluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/incluirContaContabil.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/contaContabil/incluir/incluirContaContabil.jsp" />
+		<put name="tela" value="1030" />
+		<put name="selection" value="path_incluircontacontabil" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_contascontabeis_incluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoContaContabil.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/contaContabil/consultar/historico/historicoContaContabil.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_historico_conta_contabil_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_historico_conta_contabil_integracao" link="" />
+			<item value="path_historico_conta_contabil_historico" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultaContaContabilTipoServico.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/contaContabil/consultar/contaTipoServico/consultarContaTipoServico.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_consulta_conta_contabil_tipo_servico_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_consulta_conta_contabil_integracao" link="" />
+			<item value="path_consulta_conta_contabil_pesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+
+	<!-- Entradas relacionadas a funcionalidade Dependências -->
+	<definition name="/manterDependencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependencia.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_manter_dependencia_dados_pesquisa" link="" />
+			<item value="path_manter_dependencia_resultado_pesquisa" link="" />
+			<item value="path_manter_dependencia_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_prosseguir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_manter_dependencia_prosseguir_dados_pesquisa"
+				link="" />
+			<item value="path_manter_dependencia_prosseguir_resultado_pesquisa"
+				link="" />
+			<item value="path_manter_dependencia_prosseguir_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoDependenciasNovas.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/resultadoDependenciasNovas/resultadoDependenciasNovas.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_resultadoDependenciasNovas" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoDependenciasNovasInformacoes.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/resultadoDependenciasNovas/resultadoDependenciasNovasInformacoes2.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_resultadoDependenciasNovas" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirDependencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/incluir/incluirDependencia.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_incluirDependencia" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_incluirDependencia_agencia" link="" />
+			<item value="path_incluirDependencia_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirDependenciaProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/incluir/incluirDependenciaProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_incluirDependencia" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_incluirDependencia_informacoes" link="" />
+			<item value="path_incluirDependencia_agencia" link="" />
+			<item value="path_incluirDependencia_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaAlterarProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaAlterarProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_alterar_prosseguir" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_manter_dependencia_alterar_resultado_pesquisa_prosseguir"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_inscricao_municipal_prosseguir"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_responsavel_recolhimento_prosseguir"
+				link="" />
+			<item value="path_manter_dependencia_alterar_confirmar_prosseguir"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoDependenciasNovasAgencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/resultadoDependenciasNovas/resultadoDependenciasNovasAgencia.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_resultadoDependenciasNovas" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_incluirDependencia" link="" />
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirDependenciasAgencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/incluir/incluirDependenciaProsseguirAgencia.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_incluirDependencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_incluirDependencia" link="" />
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoDependenciasNovasMunicipios.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/resultadoDependenciasNovas/resultadoDependenciasNovasMunicipios.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_resultadoDependenciasNovas" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/dependenciasListaMunicipiosIncluir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/incluir/incluirDependenciaSelecionarMunicipio.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_incluirDependencia" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_incluirDependencia_informacoes" link="" />
+			<item value="path_incluirDependencia_agencia" link="" />
+			<item value="path_incluirDependencia_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciasListaMunicipios.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaSelecionarMunicipio.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_manter_dependencia_prosseguir" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manter_dependencia_alterar_recolhimento" link="" />
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/conHistoricoDependencias.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/consultar/historico/historicoDependencias.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_historico_dependencia_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_dados_pesquisa" link="" />
+			<item value="path_resultado_pesquisa" link="" />
+		</putList>
+	</definition>
+	<definition name="/conHistoricoDependenciasAvancar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/consultar/historico/historicoDependenciasProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_historico_dependencia_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_dados_pesquisa" link="" />
+			<item value="path_resultado_pesquisa" link="" />
+		</putList>
+	</definition>
+	<definition name="/detalhesHistoricoDependencias.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/consultar/historico/historicoDependenciasConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_historico_dependencia_consultar" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_dados_pesquisa" link="" />
+			<item value="path_resultado_pesquisa" link="" />
+		</putList>
+	</definition>
+
+	<definition name="/conDependenciasEncerradas.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/consultar/dependenciasEncerradas/dependenciasEncerradas.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="dependencias_encerradas_path_dependencias_encerradas" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="dependencias_encerradas_path_dados_para_pesquisa"
+				link="" />
+			<item value="dependencias_encerradas_path_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/tarifasCobradas.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/tarifas/tarifasCobradas.jsp" />
+		<put name="tela" value="10001" />
+		<put name="selection" value="dependencias_consulta_tarifas_cobradas_pas" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_consultar" link="" />
+			<item value="label.tarifas.cobradas" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/listaTarifasCobradas.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/tarifas/listaTarifasCobradas.jsp" />
+		<put name="tela" value="10011" />
+		<put name="selection" value="dependencias_lista_tarifas_cobradas_pas" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_consultar" link="" />
+			<item value="label.tarifas.cobradas" link="" />
+			<item value="label_lista_tarifas_cobradas" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoPorPa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoPa/apuracaoPorPa.jsp" />
+		<put name="tela" value="10003" />
+		<put name="selection" value="label_consulta_relacao_pa" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="historico_municipios_btn_consultar" link="" />
+			<item value="menu.labelkey.relacaoPas" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/listaPorPa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoPa/listaPorPa.jsp" />
+		<put name="tela" value="10004" />
+		<put name="selection" value="label_consulta_relacao_pa" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="historico_municipios_btn_consultar" link="" />
+			<item value="menu.labelkey.relacaoPas" link="" />
+			<item value="historico_municipios_btn_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoParcialPa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoPa/apuracaoParcialPa.jsp" />
+		<put name="tela" value="10005" />
+		<put name="selection" value="label_consulta_pa_parcial_periodo" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="historico_municipios_btn_consultar" link="" />
+			<item value="menu.labelkey.apuracaoParcialIss" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/listaParcialPa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoPa/listaParcialPa.jsp" />
+		<put name="tela" value="10006" />
+		<put name="selection" value="label_consulta_pa_parcial_periodo" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="historico_municipios_btn_consultar" link="" />
+			<item value="menu.labelkey.apuracaoParcialIss" link="" />
+			<item value="historico_municipios_btn_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/listaPa.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/processamento/apuracao/pas/listaPa.jsp" />
+		<put name="tela" value="10010" />
+		<put name="selection" value="label_lista_pas" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="label_apuracao" link="" />
+			<item value="label_apuracao_pas" link="" />
+			<item value="label_lista_pas" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/parcialPa.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/processamento/apuracao/pas/parcialPa.jsp" />
+		<put name="tela" value="10007" />
+		<put name="selection" value="label_processamento_parcial_pas" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="label_apuracao" link="" />
+			<item value="menu.labelKey.parcial.pa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultaPa.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/processamento/apuracao/pas/consultaPa.jsp" />
+		<put name="tela" value="10008" />
+		<put name="selection" value="label_processamento_dos_pas" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="label_apuracao" link="" />
+			<item value="menu.labelKey.pa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/conciliacaoApuracao.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/batimento/conciliacao/conciliacaoApuracao.jsp" />
+		<put name="tela" value="10002" />
+		<put name="selection" value="label_consulta_conciliacao_apuracao" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="label_batimento" link="" />
+			<item value="menu.labelKey.conciliacao.apuracao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/conciliacaoApuracaoInclusao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/batimento/conciliacao/conciliacaoApuracaoInclusao.jsp" />
+		<put name="tela" value="10002" />
+		<put name="selection" value="label_inclusao_informacoes_valores_ajuste_conciliacao" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="label_batimento" link="" />
+			<item value="menu.labelKey.incluir.informacoes.valores" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalhesDependenciasEncerradasProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/consultar/dependenciasEncerradas/dependenciasEncerradasConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="dependencias_encerradas_path_dependencias_encerradas" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="dependencias_encerradas_path_dados_para_pesquisa"
+				link="" />
+			<item value="dependencias_encerradas_path_resultado_pesquisa"
+				link="" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaConsultar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_consultar" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_manter_dependencia_consultar_dados_pesquisa"
+				link="" />
+			<item value="path_manter_dependencia_consultar_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaAlterarRecolhimento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaAlterarRecolhimento.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_alterar_recolhimento" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_manter_dependencia_alterar_dados_pesquisa_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_resultado_pesquisa_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_inscricao_municipal_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_responsavel_recolhimento_recolhimento"
+				link="" />
+			<item value="path_manter_dependencia_alterar_confirmar_recolhimento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciasAgencia.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaAlterarRecolhimento.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_manter_dependencia_alterar_recolhimento" />
+		<put name="passNumber" value="5" />
+		<putList name="path">
+			<item value="path_manter_dependencia_alterar_dados_pesquisa_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_resultado_pesquisa_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_inscricao_municipal_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_responsavel_recolhimento_recolhimento"
+				link="" />
+			<item value="path_manter_dependencia_alterar_confirmar_recolhimento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirDependenciasAgencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/incluir/incluirDependenciaProsseguirAgencia.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_incluirDependencia" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+
+			<item value="path_resultadoDependenciasNovas_informacoesDeDependencia"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_agenciaIncorporaDepartamento"
+				link="" />
+			<item value="path_resultadoDependenciasNovas_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaExcluir.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/manterDependenciaExcluir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_excluir" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manter_dependencia_excluir_dados_pesquisa"
+				link="" />
+			<item value="path_manter_dependencia_excluir_resultado_pesquisa"
+				link="" />
+			<item value="path_manter_dependencia_excluir_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirrDependenciaAlterarRecolhimento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/dependencias/manter/incluirDependenciaProsseguirAgencia.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_incluir_dependencia_alterar_recolhimento" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_manter_dependencia_alterar_dados_pesquisa_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_resultado_pesquisa_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_inscricao_municipal_recolhimento"
+				link="" />
+			<item
+				value="path_manter_dependencia_alterar_responsavel_recolhimento_recolhimento"
+				link="" />
+			<item value="path_manter_dependencia_alterar_confirmar_recolhimento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+
+
+	<!-- Entradas relacionadas a funcionalidade Municípios -->
+
+	<!-- Manter Municipios -->
+	<definition name="/manterMunicipioInicial.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioDetalhes.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_consultarMunicipio" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioDetalheAlteracao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioAlterar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="onload" value="loadMasks();" />
+		<put name="selection" value="path_manteMunicipio" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_manterMunicipio_resultadoMunicipios" link="" />
+			<item value="path_manterMunicipio_infoMunicipio" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioDetalheExclusao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioExcluir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_excluir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioContasExclusao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioExcluirProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_contasMunicipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioContasExclusaoResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioExcluirProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_contasMunicipio" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioExclusao.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioExcluir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_excluir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarHistoricoMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/municipio/historico/consultarHistoricoMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="historico_municipio_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="historico_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioContasTipoServico.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioConsultarProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_contasMunicipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipioContasTipoServicoResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioConsultarProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_contasMunicipio" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAlteracaoRespRecolhimento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunicipioAlterarProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio_contasMunicipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manterMunicipio_resultadoMunicipios" link="" />
+			<item value="path_manterMunicipio_infoMunicipio" link="" />
+			<item value="path_manteMunicipio_selecionar_conta" link="" />
+			<item value="path_manteMunicipio_informacoes_conta" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAlteracaoRespRecolhimentoListaMunic.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunSelecionarMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manterMunicipio_resultadoMunicipios" link="" />
+			<item value="path_manterMunicipio_infoMunicipio" link="" />
+			<item value="path_manteMunicipio_selecionar_municipio" link="" />
+			<item value="path_manteMunicipio_selecionar_dependencia" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunSelecionarAgencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunSelecionarAgencia.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_manterMunicipio_resultadoMunicipios" link="" />
+			<item value="path_manterMunicipio_infoMunicipio" link="" />
+			<item value="path_manteMunicipio_selecionar_municipio" link="" />
+			<item value="path_manteMunicipio_selecionar_dependencia" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAlteracaoMunicipioContas.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunAlterarProsseguirConta.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_manteMunicipio_dadoPesquisa" link="" />
+			<item value="path_manteMunicipio_resultadoPesquisa" link="" />
+			<item value="path_manteMunicipio_contasMunicipio" link="" />
+			<item value="path_manteMunicipio_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAlteracaoMunicipioContasConfirmacao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/manter/manterMunAlterarConfirmar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manteMunicipio" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_manterMunicipio_resultadoMunicipios" link="" />
+			<item value="path_manterMunicipio_infoMunicipio" link="" />
+			<item value="path_manteMunicipio_selecionar_conta" link="" />
+			<item value="path_manteMunicipio_informacoes_conta" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoMunicipiosNovos.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/resultadoMunicipiosNovos/resultadoMunicipiosNovos.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_resultado_municipios_novos" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_resultado_municipios_novos" link="" />
+			<item value="path_resultado_municipios_novos_informacoes_municipio"
+				link="" />
+			<item value="path_resultado_municipios_novos_responsavel_recolhimento"
+				link="" />
+			<item value="path_resultado_municipios_novos_contas" link="" />
+			<item value="path_resultado_municipios_novos_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoMunicipiosNovosIncluir.tiles"
+		extends="custom_components.tiles">
+		<put name="onload" value="loadMasks();" />
+		<put name="body"
+			value="/content/integracao/municipios/resultadoMunicipiosNovos/resultadoMunicipiosNovosIncluir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_resultado_municipios_incluir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_resultado_municipios_novos" link="" />
+			<item value="path_resultado_municipios_novos_informacoes_municipio"
+				link="" />
+			<item value="path_resultado_municipios_novos_responsavel_recolhimento"
+				link="" />
+			<item value="path_resultado_municipios_novos_contas" link="" />
+			<item value="path_resultado_municipios_novos_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/resultadoMunicipiosNovosRecolhimento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/resultadoMunicipiosNovos/resultadoMunicipiosNovosRecolhimento.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection"
+			value="path_resultado_municipios_novos_responsavel_recolhimento" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_resultado_municipios_novos" link="" />
+			<item value="path_resultado_municipios_novos_informacoes_municipio"
+				link="" />
+			<item value="path_resultado_municipios_novos_responsavel_recolhimento"
+				link="" />
+			<item value="path_resultado_municipios_novos_contas" link="" />
+			<item value="path_resultado_municipios_novos_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoMunicipiosNovosPesqMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/resultadoMunicipiosNovos/resultadoMunicipiosNovosPesqMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_resultado_municipios_incluir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_resultado_municipios_novos" link="" />
+			<item value="path_resultado_municipios_novos_informacoes_municipio"
+				link="" />
+			<item value="path_resultado_municipios_novos_responsavel_recolhimento"
+				link="" />
+			<item value="path_resultado_municipios_novos_contas" link="" />
+			<item value="path_resultado_municipios_novos_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoMunicipiosNovosContas.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/resultadoMunicipiosNovos/resultadoMunicipiosNovosContas.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_resultado_municipios_novos_contas_municipio" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_resultado_municipios_novos" link="" />
+			<item value="path_resultado_municipios_novos_informacoes_municipio"
+				link="" />
+			<item value="path_resultado_municipios_novos_responsavel_recolhimento"
+				link="" />
+			<item value="path_resultado_municipios_novos_contas" link="" />
+			<item value="path_resultado_municipios_novos_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoMunicipiosNovosFinalizar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/resultadoMunicipiosNovos/resultadoMunicipiosNovosFinalizar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="onload" value="loadMasks();" />
+		<put name="selection" value="path_resultado_municipios_novos_contas_municipio" />
+		<put name="passNumber" value="5" />
+		<putList name="path">
+			<item value="path_resultado_municipios_novos" link="" />
+			<item value="path_resultado_municipios_novos_informacoes_municipio"
+				link="" />
+			<item value="path_resultado_municipios_novos_responsavel_recolhimento"
+				link="" />
+			<item value="path_resultado_municipios_novos_contas" link="" />
+			<item value="path_resultado_municipios_novos_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/filtroSelecMunicipiosSemConvenio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/selecMunicipiosSemConvenio/filtroSelecMunicipiosSemConvenio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_selec_sem_conv" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_selec_sem_conv" link="" />
+			<item value="label_pesquisar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Municípios -->
+	<definition name="/historicoMunicipio.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/historico/historicoMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="historico_municipios_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="historico_municipios_path_dados_pesquisa" link="" />
+			<item value="historico_municipios_path_resultado_pesquisa" link="" />
+			<item value="historico_municipios_path_contas_municipio" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoMunicipioConsultar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/historico/historicoMunicipioConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="historico_consultar_municipios_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="historico_municipios_path_dados_pesquisa" link="" />
+			<item value="historico_municipios_path_resultado_pesquisa" link="" />
+			<item value="historico_municipios_path_contas_municipio" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoMunicipioContas.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/historico/historicoMunicipioContas.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="historico_municipios_path_contas_do_municipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="historico_municipios_path_dados_pesquisa" link="" />
+			<item value="historico_municipios_path_resultado_pesquisa" link="" />
+			<item value="historico_municipios_path_contas_municipio" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoMunicipioContasResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/historico/historicoMunicipioContasResultado.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="historico_municipios_path_contas_do_municipio" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="historico_municipios_path_dados_pesquisa" link="" />
+			<item value="historico_municipios_path_resultado_pesquisa" link="" />
+			<item value="historico_municipios_path_contas_municipio" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/dependencias/manterDependenciaMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_municipio" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_manter_dependencia_municipio_dados_pesquisa_municipio"
+				link="" />
+			<item value="path_manter_dependencia_municipio_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaMunicipioProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/dependencias/manterDependenciaMunicipioProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_municipio_prosseguir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item
+				value="path_manter_dependencia_municipio_prosseguir_dados_pesquisa_municipio"
+				link="" />
+			<item
+				value="path_manter_dependencia_municipio_prosseguir_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/aliquotaDiferenciada.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/aliquotaDiferenciada/aliquotaDiferenciada.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="aliquota_diferenciada_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="aliquota_diferenciada_path_dados_pesquisa" link="" />
+			<item value="aliquota_diferenciada_path_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/aliquotaDiferenciadaResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/municipios/consultar/aliquotaDiferenciada/aliquotaDiferenciadaResultado.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="aliquota_diferenciada_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="aliquota_diferenciada_path_dados_pesquisa" link="" />
+			<item value="aliquota_diferenciada_path_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/saldosDivergentes.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/batimento/saldosDivergentes/saldosDivergentes.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_saldos_divergentes" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="aliquota_diferenciada_path_dados_pesquisa" link="" />
+			<item value="aliquota_diferenciada_path_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<!-- Entradas relacionadas a funcionalidade Contas Nao Constantes na Base -->
+
+	<definition name="/contasNaoConstantes.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/batimento/contasNaoConstantesBase/contasNaoConstantesBasePesquisar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="contas_nao_constantes_na_base_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="contas_nao_constantes_na_base_dados_pesquisa" link="" />
+			<item value="contas_nao_constantes_na_base_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/contasNaoConstantesResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/batimento/contasNaoConstantesBase/contasNaoConstantesBasePesquisar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="contas_nao_constantes_na_base_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="contas_nao_constantes_na_base_dados_pesquisa" link="" />
+			<item value="contas_nao_constantes_na_base_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/saldosDivergentesResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/batimento/saldosDivergentes/saldosDivergentesResultado.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_saldos_divergentes" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="aliquota_diferenciada_path_dados_pesquisa" link="" />
+			<item value="aliquota_diferenciada_path_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/controleSaldosRecolhimento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/controleRecolhimento/controleSaldosRecolhimento/controleSaldosRecolhimento.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="controle_saldos_recolhimento_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="controle_saldos_recolhimento_dados_pesquisa" link="" />
+			<item value="controle_saldos_recolhimento_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/controleSaldosRecolhimentoResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/controleRecolhimento/controleSaldosRecolhimento/controleSaldosRecolhimentoResultado.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="controle_saldos_recolhimento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="controle_saldos_recolhimento_dados_pesquisa" link="" />
+			<item value="controle_saldos_recolhimento_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<!-- Solicitar Apuracao Mensal -->
+
+	<definition name="/solicitarApuracaoMensal.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoMensal/solicitarApuracaoMensal.jsp" />
+		<put name="tela" value="1019" />
+		<put name="selection" value="sol_apuracao_mensal_path_processamento_mensal" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="sol_apuracao_mensal_path_dadosSolicitacao" link="" />
+			<item value="sol_apuracao_mensal_path_resultadoSolicitacao"
+				link="" />
+			<item value="sol_apuracao_mensal_path_resultadoContabilizacao"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!--Solicitar Apuracao Mensal Parcial -->
+
+	<definition name="/solicitarApuracaoParcial.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoParcial/solicitarApuracaoParcial.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_apuracaoparcial_processamento_parcial" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_apuracaoparcial_dados_solicitacao" link="" />
+			<item value="path_apuracaoparcial_resultado_solicitacao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/solicitarApuracaoParcial2.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoParcial/solicitarApuracaoParcial2.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_apuracaoparcial_processamento_parcial" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_apuracaoparcial_dados_solicitacao" link="" />
+			<item value="path_apuracaoparcial_resultado_solicitacao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!--Referente a Tela Apuracao Mensal ISS -->
+
+	<definition name="/consultarApuracaoMensal.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoMensalISS/consultarApuracaoMensal.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoMensal" />
+		<put name="passNumber" value="1" />
+		<put name="onload" value="habilitarBotaoProsseguirConsulta(document.forms[1]);" />
+		<putList name="path">
+			<item value="path_consultarApuracaoMensal_dados_pesquisa" link="" />
+			<item value="path_consultarApuracaoMensal_resultado_pesquisa"
+				link="" />
+			<item value="path_consultarApuracaoMensal_apuracao_mensal" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+			<item value="ApuracaoMensalJs"
+				link="/javascript/processamento/consultar/apuracaoMensalIss.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoApuracaoMensal.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoMensalISS/resultadoApuracaoMensal.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoMensal" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_consultarApuracaoMensal" link="" />
+			<item value="path_consultarApuracaoMensal_dados_pesquisa" link="" />
+			<item value="path_consultarApuracaoMensal_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+			<item value="ApuracaoMensalJs"
+				link="/javascript/processamento/consultar/apuracaoMensalIss.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalheDepenApuracaoMensal.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoMensalISS/detalheDepenApuracaoMensal.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_detalharDependenciaApuracaoMensal" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_consultarApuracaoMensal_dados_pesquisa" link="" />
+			<item value="path_consultarApuracaoMensal_resultado_pesquisa"
+				link="" />
+			<item value="path_consultarApuracaoMensal" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+			<item value="ApuracaoMensalJs"
+				link="/javascript/processamento/consultar/apuracaoMensalIss.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalheDepenApuracaoMensalConta.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoMensalISS/detalheDepenApuracaoMensalConta.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_detalharDependenciaApuracaoMensalNvConta" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_consultarApuracaoMensal_dados_pesquisa" link="" />
+			<item value="path_consultarApuracaoMensal_resultado_pesquisa"
+				link="" />
+			<item value="path_consultarApuracaoMensal" link="" />
+			<item value="path_consultarApuracaoMensalNvConta" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+			<item value="ApuracaoMensalJs"
+				link="/javascript/processamento/consultar/apuracaoMensalIss.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalheApuracaoMensal.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoMensalISS/detalheApuracaoMensal.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_detalheApuracaoMensal" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_detalheApuracaoMensal_dados_pesquisa" link="" />
+			<item value="path_detalheApuracaoMensal_resultado_pesquisa"
+				link="" />
+			<item value="path_detalheApuracaoMensal_apuracao_mensal" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!--Referente a Tela Apuracao Apos Fechamento Mensal -->
+
+	<definition name="/solicitarApuracaoAposFechamento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoAposFechamento/solicitarApuracaoAposFechamento.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_solicitarApuracaoAposFechamento" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_dadosSolicitacao" link="" />
+			<item value="path_resultadoSolicitacao" link="" />
+			<item value="path_resultadoContabilizacao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/solicitarApuracaoAposFechamento2.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoAposFechamento/solicitarApuracaoAposFechamento2.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_solicitarApuracaoAposFechamento" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_dadosSolicitacao" link="" />
+			<item value="path_resultadoSolicitacao" link="" />
+			<item value="path_resultadoContabilizacao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/solicitarApuracaoAposFechamento3.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoAposFechamento/solicitarApuracaoAposFechamento2.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_solicitarApuracaoAposFechamento" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_dadosSolicitacao" link="" />
+			<item value="path_resultadoSolicitacao" link="" />
+			<item value="path_resultadoContabilizacao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!--Referente a Tela Valor Mês Total -->
+
+	<definition name="/valorMesTotal.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/valorMesTotal/valorMesTotal.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="menu.labelKey.valoresMesTotalConsolidado" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_consultar" link="" />
+			<item value="menu.labelKey.valoresMesTotalConsolidado" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/valorMesTotalResultado.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/valorMesTotal/valorMesTotal.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_valor_mes_total" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_consultar" link="" />
+			<item value="menu.labelKey.valoresMesTotalConsolidado" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/valorMesTotalResultadoConta.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/valorMesTotal/valorMesTotalConta.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_valor_mes_total_conta" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_consultar" link="" />
+			<item value="menu.labelKey.valoresMesTotalConsolidado" link="" />
+			<item value="menu.labelKey.valoresMesTotalconta" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!--Referente a Tela Apuracao Após Fechamento ISS -->
+
+	<definition name="/consultarApuracaoAposFechamento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoAposFechamento/consultarApuracaoAposFechamento.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAposFechamento" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_apuracao_fechamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+			<item value="ApuracaoMensalJs"
+				link="/javascript/processamento/consultar/apuracaoMensalIss.js" />
+		</putList>
+	</definition>
+
+	<definition name="/depConsultarApuracaoAposFechamento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoAposFechamento/depConsultarApuracaoAposFechamento.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAposFechamento" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_apuracao_fechamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharApuracaoAposFechamento.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoAposFechamento/detalharApuracaoAposFechamento.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAposFechamento" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_apuracao_fechamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharApuracaoAposFechamentoConta.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoAposFechamento/detalharApuracaoAposFechamentoConta.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAposFechamentoNvConta" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAposFechamento_label_apuracao_fechamento"
+				link="" />
+			<item
+				value="consultarApuracaoAposFechamento_label_apuracao_fechamento_conta"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Referente a Tela Apuracao Parcila ISS -->
+
+	<definition name="/consultarApuracaoParcial.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoParcialISS/consultarApuracaoParcialISS.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoParcial" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="consultarApuracaoParcial_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_apuracao_parcial"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoApuracaoParcial.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoParcialISS/resultadoApuracaoParcial.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoParcial" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="consultarApuracaoParcial_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_apuracao_parcial"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoParcial.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoParcialISS/apuracaoParcial.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoParcial" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoParcial_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_apuracao_parcial"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoParcialConta.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoParcialISS/apuracaoParcialConta.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoParcialConta" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="consultarApuracaoParcial_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_resultado_pesquisa"
+				link="" />
+			<item value="consultarApuracaoParcial_label_apuracao_parcial"
+				link="" />
+			<item value="consultarApuracaoParcial_label_apuracao_parcial_aber_conta"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/valorMesTotalInicial.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/valorMesTotal/valorMesTotal.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="menu.labelKey.valoresMesTotalConsolidado" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="consultarApuracaoAposFechamento_label_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_consultar" link="" />
+			<item value="menu.labelKey.valoresMesTotalConsolidado" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoParcialIssConsultar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/apuracaoParcial/apuracaoParcialIssConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_apuracao_parcial_dados_pesquisa" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_apuracao_parcial_dados_pesquisa" link="" />
+			<item value="path_apuracao_parcial_resultado_pesquisa" link="" />
+			<item value="path_apuracao_parcial_apuracao_parcial" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/agenciaIncorpDepart.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/agenciaIncorpDepart/agenciaIncorpDepart.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="agencia_incorpora_departamento_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="agencia_incorpora_departamento_path_processamento"
+				link="" />
+			<item value="agencia_incorpora_departamento_path_resultado"
+				link="" />
+			<item value="agencia_incorpora_departamento_path_departamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/agenciaIncorpDepartConsultar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/agenciaIncorpDepart/agenciaIncorpDepart.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="agencia_incorpora_departamento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="agencia_incorpora_departamento_path_processamento"
+				link="" />
+			<item value="agencia_incorpora_departamento_path_resultado"
+				link="" />
+			<item value="agencia_incorpora_departamento_path_departamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/agenciaIncorpDepartResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/agenciaIncorpDepart/agenciaIncorpDepartResultado.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="agencia_incorpora_departamento_resultado_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="agencia_incorpora_departamento_resultado_path_processamento"
+				link="" />
+			<item value="agencia_incorpora_departamento_resultado_path_resultado"
+				link="" />
+			<item value="agencia_incorpora_departamento_resultado_path_departamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<!-- APURAcaO MENSAL DIFERENCIADA - INICIO -->
+
+	<definition name="/apuracaoMensalDiferenciadaDadosPesquisa.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/apuracaoMensalDiferenciada/apuracaoMensalDiferenciada.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_apuracaoMensalDiferenciada_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_apuracaoMensalDiferenciada_firstBall_dados_para_pesquisa"
+				link="" />
+			<item
+				value="path_apuracaoMensalDiferenciada_secondBall_resultado_da_pesquisa"
+				link="" />
+			<item value="path_apuracaoMensalDiferenciada_thirdBall_apuracao_mensal"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoMensalDiferenciadaDadosApuracao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/apuracaoMensalDiferenciada/apuracaoMensalDiferenciadaApuracao.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_apuracaoMensalDiferenciada_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_apuracaoMensalDiferenciada_firstBall_dados_para_pesquisa"
+				link="" />
+			<item
+				value="path_apuracaoMensalDiferenciada_secondBall_resultado_da_pesquisa"
+				link="" />
+			<item value="path_apuracaoMensalDiferenciada_thirdBall_apuracao_mensal"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoMensalDiferenciadaDadosConsulta.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/apuracaoMensalDiferenciada/apuracaoMensalDiferenciadaConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_apuracaoMensalDiferenciada_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_apuracaoMensalDiferenciada_firstBall_dados_para_pesquisa"
+				link="" />
+			<item
+				value="path_apuracaoMensalDiferenciada_secondBall_resultado_da_pesquisa"
+				link="" />
+			<item value="path_apuracaoMensalDiferenciada_thirdBall_apuracao_mensal"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<!-- APURAcaO MENSAL DIFERENCIADA - FIM -->
+
+	<!--APURAcaO REPROCESSAMENTO - INICIO -->
+
+
+	<definition name="/apuracaoReprocLista.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoReprocessamento/apuracaoReprocLista.jsp" />
+
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_apuracao_reprocessamento" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dados_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_resultado_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_apuracao_reprocessamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<definition name="/apuracaoReprocConsulta.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoReprocessamento/apuracaoReprocConsulta.jsp" />
+
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_apuracao_reprocessamento" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dados_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_resultado_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_apuracao_reprocessamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/apuracaoReprocResultado.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoReprocessamento/apuracaoReprocResultado.jsp" />
+
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_apuracao_reprocessamento" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dados_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_resultado_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_apuracao_reprocessamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+
+	<definition name="/apuracaoReprocConDetalhada.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/apuracaoReprocessamento/apuracaoReprocConDetalhada.jsp" />
+
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_apuracao_reprocessamento" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dados_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_resultado_pesquisa" link="" />
+			<item value="apuracao_reprocessamento_apuracao_reprocessamento"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!--APURAcaO REPROCESSAMENTO - FIM -->
+	<!-- Entradas relacionadas a funcionalidade Reprocessamento Por Dependência -->
+
+	<definition name="/solicitarReprocessamentoPorDependencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorDependencia/solicitarReprocessamentoPorDependencia.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_dependencia_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dependencia_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_dependencias"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_aliquotas"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_confirmar"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/solicitarReprocessamentoPorDependenciaProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorDependencia/solicitarReprocessamentoPorDependenciaProsseguir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_dependencia_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dependencia_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_dependencias"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_aliquotas"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_confirmar"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition
+		name="/solicitarReprocessamentoPorDependenciaContasMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorDependencia/solicitarReprocessamentoPorDependenciaContasMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection"
+			value="apuracao_reprocessamento_dependencia_contas_municipio_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dependencia_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_dependencias"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_aliquotas"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_confirmar"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition
+		name="/solicitarReprocessamentoPorDependenciaContasMunicipio2.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorDependencia/solicitarReprocessamentoPorDependenciaContasMunicipio2.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection"
+			value="apuracao_reprocessamento_dependencia_contas_municipio_path_title" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_dependencia_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_dependencias"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_aliquotas"
+				link="" />
+			<item value="apuracao_reprocessamento_dependencia_confirmar"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<!-- Entradas relacionadas a funcionalidade Reprocessamento Por Municípios -->
+
+
+	<definition name="/solicitarReprocessamentoPorMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorMunicipio/solicitarReprocessamentoPorMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_municipio_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_municipio_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_municipios"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_aliquotas" link="" />
+			<item value="apuracao_reprocessamento_municipio_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/solicitarReprocessamentoPorMunicipio2.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorMunicipio/solicitarReprocessamentoPorMunicipio2.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_municipio_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_municipio_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_municipios"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_aliquotas" link="" />
+			<item value="apuracao_reprocessamento_municipio_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition
+		name="/solicitarReprocessamentoPorMunicipioContasMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorMunicipio/solicitarReprocessamentoPorMunicipioContasMunicipio.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_municipio_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_municipio_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_municipios"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_aliquotas" link="" />
+			<item value="apuracao_reprocessamento_municipio_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/solicitarReprocessamentoPorMunicipioFinalizar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorMunicipio/solicitarReprocessamentoPorMunicipioContasMunicipio2.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_municipio_path_title" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="apuracao_reprocessamento_municipio_dados_processamento"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_municipios"
+				link="" />
+			<item value="apuracao_reprocessamento_municipio_aliquotas" link="" />
+			<item value="apuracao_reprocessamento_municipio_confirmar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/solicitarReprocessamentoPorMunicipioPesqMunicipio.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/reprocessamentoPorMunicipio/solicitarReprocessamentoPorMunicipioPesqMunicipios.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="apuracao_reprocessamento_municipio_path_title" />
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Oscilacao Negativa -->
+
+	<definition name="/consultarOscilacaoNegativa.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/oscilacaoNegativa/consultarOscilacaoNegativa.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_consultarApuracaoOscilacaoNegativa" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="oscilacaoNegativa_label_dados_pesquisa" link="" />
+			<item value="oscilacaoNegativa_label_oscilacao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoConsultaOscilacaoNegativa.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/oscilacaoNegativa/resultadoConsultaOscilacaoNegativa.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_consultarApuracaoOscilacaoNegativa" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_consultarApuracaoOscilacaoNegativa_label_dados_pesquisa"
+				link="" />
+			<item value="path_consultarApuracaoOscilacaoNegativa_label_oscilacao"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Aliquota Zerada -->
+
+	<definition name="/consultarApuracaoAliquotaZerada.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/aliquotaZerada/consultarApuracaoAliquotaZerada.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAliquotaZerada" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="consultarApuracaoAliquotaZerada_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAliquotaZerada_label_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarApuracaoAliquotaZeradaDependencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/aliquotaZerada/consultarApuracaoAliquotaZeradaDependencia.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAliquotaZerada" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="consultarApuracaoAliquotaZerada_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAliquotaZerada_label_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/resultadoApuracaoAliquotaZerada.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/aliquotaZerada/resultadoApuracaoAliquotaZerada.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAliquotaZerada" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="consultarApuracaoAliquotaZerada_label_dados_pesquisa"
+				link="" />
+			<item value="consultarApuracaoAliquotaZerada_label_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/listaMunicipiosAliquotaZerada.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/apuracao/consultar/aliquotaZerada/listarMunicipioAliquotaZerada.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_consultarApuracaoAliquotaZerada" />
+		<put name="passNumber" value="2" />
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+
+
+
+
+
+
+
+	<!-- Entradas relacionadas a funcionalidade Movimento Nao Tributável -->
+
+	<definition name="/movimentoNaoTributavel.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/movimentoNaoTributavel/movimentoNaoTributavel.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_movimentoNaoTributavel" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_movimentoNaoTributavel_label_dados_pesquisa"
+				link="" />
+			<item value="path_movimentoNaoTributavel_label_resultado_pesquisa"
+				link="" />
+			<item value="path_movimentoNaoTributavel_label_movimento" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarMovimentoNaoTributavelProsseguir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/movimentoNaoTributavel/movimentoNaoTributavelProsseguir.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_movimentoNaoTributavel" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_movimentoNaoTributavel_label_dados_pesquisa"
+				link="" />
+			<item value="path_movimentoNaoTributavel_label_resultado_pesquisa"
+				link="" />
+			<item value="path_movimentoNaoTributavel_label_movimento" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/movimentoNaoTributavelConsultar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/movimentoNaoTributavel/movimentoNaoTributavelConsultar.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_movimentoNaoTributavel" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_movimentoNaoTributavel_label_dados_pesquisa"
+				link="" />
+			<item value="path_movimentoNaoTributavel_label_resultado_pesquisa"
+				link="" />
+			<item value="path_movimentoNaoTributavel_label_movimento" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Planilha de Apuracao -->
+	<definition name="/planilhaApuracaoISS.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/planilhaApuracao/planilhaApuracaoISS.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_planilhaApuracao" />
+		<put name="passNumber" value="1" />
+		<put name="onload" value="habilitaBotaoProsseguir();" />
+		<putList name="path">
+			<item value="path_planilhaApuracao_label_dados_pesquisa" link="" />
+			<item value="path_planilhaApuracao_label_resultado_pesquisa"
+				link="" />
+			<!--<item value="path_planilhaApuracao_label_movimento" link="" /> -->
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/planilhaApuracaoISSResultado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/planilhaApuracao/planilhaApuracaoISSResultado.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_planilhaApuracao" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_planilhaApuracao_label_dados_pesquisa" link="" />
+			<item value="path_planilhaApuracao_label_resultado_pesquisa"
+				link="" />
+			<!--<item value="path_planilhaApuracao_label_movimento" link="" /> -->
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<!--Planilha de Apuracao - FIM -->
+
+	<definition name="/planilhaApuracaoISSAgencia.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultar/planilhaApuracao/planilhaApuracaoISSResultado.jsp" />
+		<put name="tela" value="1029" />
+		<put name="selection" value="path_planilhaApuracaoAg" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_planilhaApuracao_label_dados_pesquisa" link="" />
+			<item value="path_planilhaApuracao_label_resultado_pesquisa"
+				link="" />
+			<!--<item value="path_planilhaApuracao_label_movimento" link="" /> -->
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Balancetes / Fiscalizacoes ISS -->
+	<definition name="/gerarBalancetesFiscalizacoesIss.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/fiscalizacoesIss/gerarBalancetes/gerarBalanceteFiscalizacoesIss.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="gerar_balancete_fiscalizacoes_iss_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarBalancetesFiscalizacoesIss.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/fiscalizacoesIss/consultarBalancetes/consultarBalanceteFiscalizacoesIss.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="consultar_balancete_fiscalizacoes_iss_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+			<item value="gerar_balancete_fiscalizacoes_iss_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarDetalhesBalancetesFiscalizacoesIss.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/fiscalizacoesIss/consultarBalancetes/consultarDetalhesBalanceteFiscalizacoesIss.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="consultar_balancete_fiscalizacoes_iss_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+			<item value="gerar_balancete_fiscalizacoes_iss_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Balancetes / Obrigacoes Acessorias -->
+	<definition name="/gerarBalancetesObrigacoesAcessorias.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesAcessorias/gerarBalancetes/gerarBalanceteObrigacoesAcessorias.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="gerar_balancete_obrigacoes_acessorias_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarBalancetesObrigacoesAcessorias.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesAcessorias/consultarBalancetes/consultarBalanceteObrigacoesAcessorias.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="consultar_balancete_fiscalizacoes_iss_path_title" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarDetalhesBalancetesObrigacoesAcessorias.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesAcessorias/consultarBalancetes/consultarDetalhesBalanceteObrigacoesAcessorias.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="consultar_balancete_fiscalizacoes_iss_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+			<item value="gerar_balancete_fiscalizacoes_iss_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidade Balancetes / Obrigacoes Webservice -->
+	<definition name="/manterDependenciaParametrizacao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/parametrizacaoDependencias/manterDependenciaParametrizacao.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia" />
+		<put name="passNumber" value="1" />
+		<putList name="path">
+			<item value="path_parametrizacao_dependencia_dados_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterDependenciaProsseguirParametrizacao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/parametrizacaoDependencias/manterDependenciaProsseguirParametrizacao.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_manter_dependencia_prosseguir" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="path_parametrizacao_dependencia_dados_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/dependenciaParametrizacaoIncluir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/parametrizacaoDependencias/dependenciaParametrizacaoIncluir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_insercao_parametros_dependencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_parametrizacao_dependencia_dados_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_resultado_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_inserir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/dependenciaParametrizacaoAlterar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/parametrizacaoDependencias/dependenciaParametrizacaoAlterar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_alteracao_parametros_dependencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_parametrizacao_dependencia_dados_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_resultado_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_alterar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/dependenciaParametrizacaoExcluir.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/parametrizacaoDependencias/dependenciaParametrizacaoExcluir.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_exclusao_parametros_dependencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_parametrizacao_dependencia_dados_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_resultado_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_excluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/dependenciaParametrizacaoConsultar.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/parametrizacaoDependencias/dependenciaParametrizacaoConsultar.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="path_consultar_parametros_dependencia" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="path_parametrizacao_dependencia_dados_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_resultado_pesquisa"
+				link="" />
+			<item value="path_parametrizacao_dependencia_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/uploadTransmissaoArquivos.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/uploadTransmissaoArquivos/uploadTransmissaoArquivos.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection"
+			value="upload_transmissao_arquivos_obrigacoes_webservice_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="upload_transmissao_arquivos_obrigacoes_webservice_balancetes"
+				link="" />
+			<item value="upload_transmissao_arquivos_obrigacoes_webservice_path_title"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarLogArquivos.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/consultaLogArquivos/consultaLogArquivos.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="consulta_log_obrigacoes_webservice_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+			<item value="gerar_balancete_fiscalizacoes_iss_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharLogArquivos.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/balancetes/obrigacoesWebservice/consultaLogArquivos/detalharLogArquivos.jsp" />
+		<put name="tela" value="1031" />
+		<put name="selection" value="detalha_log_obrigacoes_webservice_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="gerar_balancete_fiscalizacoes_iss_dados_pesquisa"
+				link="" />
+			<item value="gerar_balancete_fiscalizacoes_iss_resultado_pesquisa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirCodLancamento.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/codLancamento/incluir/incluirCodLancamento.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="incluir_codigo_lancamento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="incluir_codigo_lancamento_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterCodLancamento.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/codLancamento/manter/manterCodLancamento.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="manter_codigo_lancamento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="manter_codigo_lancamento_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarCodLancamento.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/codLancamento/alterar/alterarCodLancamento.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="alterar_codigo_lancamento_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="manter_codigo_lancamento_path_title" link="" />
+			<item value="alterar_codigo_lancamento_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/conHistCodLancamento.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/codLancamento/historico/conHistCodLancamento.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="historico_codigo_lancamento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="historico_codigo_lancamento_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detHistCodLancamento.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/codLancamento/historico/detHistCodLancamento.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="historico_codigo_lancamento_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="label_title_integracao" link="" />
+			<item value="historico_codigo_lancamento_path_title" link="" />
+			<item value="label_detalhe" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirItemLeiCompl.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/itemLeiCompl/incluir/incluirItemLeiCompl.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="incluir_item_servico_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_item_servico_path_title" link="" />
+			<item value="incluir_item_servico_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarItemLeiCompl.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/itemLeiCompl/consultar/consultarItemLeiCompl.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consultar_item_servico_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_item_servico_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+
+	<definition name="/alterarItemLeiCompl.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/itemLeiCompl/alterar/alterarItemLeiCompl.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="alterar_item_servico_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_item_servico_path_title" link="" />
+			<item value="alterar_item_servico_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterItemLeiCompl.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/itemLeiCompl/manter/manterItemLeiCompl.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="manter_item_servico_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_item_servico_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarHistItemLeiCompl.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/itemLeiCompl/consultar/consultarHistItemLeiCompl.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consultar_historico_item_servico_lc_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_historico_item_servico_lc_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharHistItemLeiCompl.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/itemLeiCompl/consultar/detalharHistItemLeiCompl.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consultar_det_historico_item_servico_lc_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_historico_item_servico_lc_title" link="" />
+			<item value="consultar_det_historico_item_servico_lc_title"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirCadEmpresa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/cadEmpresa/incluir/incluirCadEmpresa.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="incluir_cad_empresa_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_cad_empresa_path_title" link="" />
+			<item value="incluir_cad_empresa_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<definition name="/detalharCadEmpresa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/cadEmpresa/detalhar/detalharCadEmpresa.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="detalhar_cad_empresa_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_cad_empresa_path_title" link="" />
+			<item value="detalhar_cad_empresa_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarCadEmpresa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/cadEmpresa/alterar/alterarCadEmpresa.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="alterar_cad_empresa_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_cad_empresa_path_title" link="" />
+			<item value="alterar_cad_empresa_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterCadEmpresa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/cadEmpresa/manter/manterCadEmpresa.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="manter_cad_empresa_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_cad_empresa_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/historicoCadEmpresa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/cadEmpresa/manter/historicoCadEmpresa.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="menu.labelKey.iss.manter.historicoEmpresa" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="menu.labelKey.iss.manter.historicoEmpresa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharHistCadEmpresa.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/cadEmpresa/manter/detalharHistCadEmpresa.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="menu.labelKey.iss.manter.dethistoricoEmpresa" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="menu.labelKey.iss.manter.historicoEmpresa" link="" />
+			<item value="menu.labelKey.iss.manter.dethistoricoEmpresa" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharMunicipioHistorico.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/municipio/historico/detalharMunicipioHistorico.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="menu.labelKey.iss.detalhe.municipio.historico" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="menu.labelKey.iss.historico.municipio" link="" />
+			<item value="menu.labelKey.iss.detalhe.municipio.historico"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharMunicipioHistorico2.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/manter/detalharMunicipioHistorico.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="menu.labelKey.iss.manter.detalharHistoricoEmpresa" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="menu.labelKey.iss.manter.consultarHistItem" link="" />
+			<item value="menu.labelKey.iss.manter.detalharHistoricoEmpresa"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirMunicipio.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/municipio/incluir/incluirMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="incluir_municipio_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="incluir_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarMunicipio.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/municipio/alterar/alterarMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="alterar_municipio_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_municipio_path_title" link="" />
+			<item value="alterar_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterMunicipio.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/municipio/manter/manterMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="manter_municipio_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<definition name="/detalharMunicipio.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/municipio/detalhar/detalharMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="detalhar_municipio_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_municipio_path_title" link="" />
+			<item value="detalhar_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<definition name="/manterAliquota.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/manter/manterAliquotaMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="manter_aliquota_municipio_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_aliquota_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<definition name="/alterarAliquota.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/alterar/alterarAliquotaMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="alterar_aliquota_municipio_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_aliquota_municipio_path_title" link="" />
+			<item value="alterar_aliquota_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+	<definition name="/detalharAliquota.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/detalhar/detalharAliquotaMunicipio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="detalhar_aliquota_municipio_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="manter_aliquota_municipio_path_title" link="" />
+			<item value="detalhar_aliquota_municipio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarInformacoesAliquota.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/manter/consultarInformacoesAliquota.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consultar_informacoes_aliquota_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_informacoes_aliquota_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/parametrizarMinMaxAliquota.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/manter/parametrizarMinMaxAliquota.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="parametrizacao_aliquota_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="parametrizacao_aliquota_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarHistoricoMinMaxAliquota.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/aliquotasPorMunicipio/manter/consultarHistoricoMinMaxAliquota.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consultar_historico_aliquota_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_historico_aliquota_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/conArquivoEmp.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/gerencialIss/arquivoEmpresa/conArquivoEmp.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consutlar_arquivo_empresa_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consutlar_arquivo_empresa_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detArquivoEmp.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/gerencialIss/arquivoEmpresa/detArquivoEmp.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="detalhar_arquivo_empresa_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consutlar_arquivo_empresa_path_title" link="" />
+			<item value="detalhar_arquivo_empresa_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/conArquivoEmpSem.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/arquivoEmpresaSemanal/conArquivoEmpSem.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consutlar_arquivo_empresa_semanais_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/liberarPagto.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/liberarPagto.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="liberar_pagamento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="liberar_pagamento_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/liberarPagtoIssRetificado.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/liberarPagto.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_liberarPagamentoIssCompleto" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_liberarPagamentoIss" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+
+	<definition name="/listarPgtosVencidosComp.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/listarPgtosVencidosComp.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="listar_pagtos_vencidos_comp_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="liberar_pagamento_path_title" link="" />
+			<item value="listar_pagtos_vencidos_comp_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/listarPgtosVencidosCompRetificado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/listarPgtosVencidosComp.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="listar_pagtos_vencidos_comp_path_title" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_liberarPagamentoIss" link="" />
+			<item value="listar_pagtos_vencidos_comp_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/pgtosNaoGerados.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/pgtosNaoGerados.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="valores_provisionados_sem_dados_pgto_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="liberar_pagamento_path_title" link="" />
+			<item value="valores_provisionados_sem_dados_pgto_path_title"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/pgtosNaoGeradosRetificado.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/pgtosNaoGerados.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="valores_provisionados_sem_dados_pgto_path_title" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_liberarPagamentoIss" link="" />
+			<item value="valores_provisionados_sem_dados_pgto_path_title"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarNaoElegiveis.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/consultarNaoElegiveis.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="valores_provisionados_municipios_nao_elegiveis" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="liberar_pagamento_path_title" link="" />
+			<item value="valores_provisionados_municipios_nao_elegiveis"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarNaoElegiveisRetificado.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/consultarNaoElegiveis.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="valores_provisionados_municipios_nao_elegiveis" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_liberarPagamentoIss" link="" />
+			<item value="valores_provisionados_municipios_nao_elegiveis"
+				link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/processarPagto.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/liberarPagamento/processarPagto.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="processar_pagamento_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="processar_pagamento_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarPagamentos.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/consultarPagamentos.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="consultar_pagamentos_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_pagamentos_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharConsultaPagamentos.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/detalharConsultaPagamentos.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="detalhe_consulta_pagamentos_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="consultar_pagamentos_path_title" link="" />
+			<item value="detalhe_consulta_pagamentos_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/pesquisarPagamentoManual.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/pesquisarPagamentoManual.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="liberar_pgto_manual_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="liberar_pgto_manual_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharPagtoManualIndividual.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/detalharPagtoManualIndividual.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="pagamento_manual_individual_path_title" />
+		<put name="passNumber" value="4" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="pesquisar_pagamento_manual_path_title" link="" />
+			<item value="calcular_pagamento_manual_path_title" link="" />
+			<item value="pagamento_manual_individual_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/calcularPagamentoManual.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/calcularPagamentoManual.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="calcular_pagamento_manual_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="pesquisar_pagamento_manual_path_title" link="" />
+			<item value="calcular_pagamento_manual_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarPgtoManualEmLote.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/consultarPgtoManualEmLote.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="pagamento_manual_lote_path_title" />
+		<put name="passNumber" value="3" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="pesquisar_pagamento_manual_path_title" link="" />
+			<item value="pagamento_manual_lote_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/gerarRelatorio.tiles" extends="custom_components.tiles">
+		<put name="body" value="/content/gerencialIss/relatorio/gerarRelatorio.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="gerar_relatorio_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="gerar_relatorio_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/gerarRelatoriosAliquotas.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/relatorio/gerarRelatoriosAliquotas.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="gerar_relatorios_aliquotas_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="gerar_relatorios_aliquotas_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/gerarHistoricoTransacoesRecusadas.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/relatorio/gerarHistoricoTransacoesRecusadas.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="gerar_relatorios_historico_transacoes_recusadas_path_title" />
+		<put name="passNumber" value="2" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="gerar_relatorios_historico_transacoes_recusadas_path_title" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidades Parametrizar Percentual Transição -->
+
+	<definition name="/consultarPercentualTransicao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/percentualTransicao/consultarPercentualTransicao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_parametrizacaoPercentuaisTransicao" />
+		<put name="passNumber" value="2" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="path_parametrizacaoPercentuaisTransicao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/incluirPercentualTransicao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/percentualTransicao/incluirPercentualTransicao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_parametrizacaoPercentuaisTransicao" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="path_parametrizacaoPercentuaisTransicao" link="" />
+			<item value="path_incluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/alterarPercentualTransicao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/percentualTransicao/alterarPercentualTransicao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_parametrizacaoPercentuaisTransicao" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="iss_gerencial_path_title" link="" />
+			<item value="path_parametrizacaoPercentuaisTransicao" link="" />
+			<item value="path_alterar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidades Carga Massiva Aliquota -->
+
+	<definition name="/consultarCargaMassivaIntegracao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/cargaMassiva/consultarCargaMassiva.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_cargaMassiva" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_integracao" link="" />
+			<item value="path_aliquotas" link="" />
+			<item value="path_cargaMassiva" link="" />
+			<item value="path_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarCargaMassivaIssGerencial.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/cargaMassiva/consultarCargaMassiva.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_cargaMassiva" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_parametrizar" link="" />
+			<item value="path_cargaMassiva" link="" />
+			<item value="path_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharCargaMassivaIntegracao.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/cargaMassiva/detalharCargaMassiva.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_detalharCargaMassiva" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_integracao" link="" />
+			<item value="path_aliquotas" link="" />
+			<item value="path_cargaMassiva" link="" />
+			<item value="path_detalhar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/detalharCargaMassivaIssGerencial.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/cargaMassiva/detalharCargaMassiva.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_detalharCargaMassiva" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_parametrizar" link="" />
+			<item value="path_cargaMassiva" link="" />
+			<item value="path_detalhar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Movimento Retificador e Complementar -->
+
+	<definition name="/consultarProcessarContabilidade.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/movimentoRetificador/consultarProcessarContabilidade.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_processarContabilidadeCompleto" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_processarContabilidade" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/diferencaProcessarContabilidade.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/movimentoRetificador/diferencasContabeis.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_processarContabilidadeCompleto" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_processarContabilidade" link="" />
+			<item value="path_diferencasContabeis" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/consultarLiberarPagamentoIss.tiles"
+		extends="custom_components.tiles">
+		<put name="body"
+			value="/content/gerencialIss/movimentoRetificador/consultarLiberarPagamentoIss.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_liberarPagamentoIssCompleto" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_liberarPagamentoIss" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/reprocessarApuracao.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/processamento/consultarPagamentos/reprocessarApuracao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_reprocessarApuracao" />
+		<put name="passNumber" value="3" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_issGerencial" link="" />
+			<item value="path_processamento" link="" />
+			<item value="path_reprocessarApuracao" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<!-- Entradas relacionadas a funcionalidades Manter Aliquota -->
+	<definition name="/manterAliquotaConsultar.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/manter/manterAliquotaConsultar.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_manterAliquotas" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_integracao" link="" />
+			<item value="path_aliquotas" link="" />
+			<item value="path_manterAliquotas" link="" />
+			<item value="path_consultar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAliquotaIncluir.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/manter/manterAliquotaManutencao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_manterAliquotas" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_integracao" link="" />
+			<item value="path_aliquotas" link="" />
+			<item value="path_manterAliquotas" link="" />
+			<item value="path_incluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAliquotaAlterar.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/manter/manterAliquotaManutencao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_manterAliquotas" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_integracao" link="" />
+			<item value="path_aliquotas" link="" />
+			<item value="path_manterAliquotas" link="" />
+			<item value="path_alterar" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+	<definition name="/manterAliquotaExcluir.tiles" extends="custom_components.tiles">
+		<put name="body"
+			value="/content/integracao/aliquotas/manter/manterAliquotaManutencao.jsp" />
+		<put name="tela" value="1018" />
+		<put name="selection" value="path_manterAliquotas" />
+		<put name="passNumber" value="4" />
+		<put name="onload" value="loadMasks();" />
+		<putList name="path">
+			<item value="path_integracao" link="" />
+			<item value="path_aliquotas" link="" />
+			<item value="path_manterAliquotas" link="" />
+			<item value="path_excluir" link="" />
+		</putList>
+		<putList name="especificJS">
+			<item value="javascript" link="/javascript/javaScripts.js" />
+		</putList>
+	</definition>
+
+</tiles-definitions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<consultarDependenciaAliquotaZeradaResponse>
+ <codMensagem/>
+ <mensagem/>
+        <receitaTotalSinal>+</receitaTotalSinal>
+        <receitaTotalValor>7845.0</receitaTotalValor>
+        <numConsultas>2</numConsultas>
+        <ocorrencias>
+              <codPessoa>1568</codPessoa>
+              <numSequencial>6689</numSequencial>
+              <dependencia>4586</dependencia>
+              <descricao>Matriz</descricao>
+              <receitaSinal>-</receitaSinal>
+              <receitaValor>46569.33</receitaValor>
+        </ocorrencias>  
+		<ocorrencias>
+              <codPessoa>1889</codPessoa>
+              <numSequencial>9043</numSequencial>
+              <dependencia>6423</dependencia>
+              <descricao>Departamento</descricao>
+              <receitaSinal>+</receitaSinal>
+              <receitaValor>9566874.63</receitaValor>
+        </ocorrencias>  
+</consultarDependenciaAliquotaZeradaResponse>            

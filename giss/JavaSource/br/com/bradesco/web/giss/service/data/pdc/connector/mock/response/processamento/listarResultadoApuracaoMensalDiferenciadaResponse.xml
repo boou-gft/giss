@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarResultadoApuracaoMensalDiferenciadaResponse>
+	<codMensagem/>
+	<mensagem/>
+	<numeroConsultas>2</numeroConsultas>
+	<baseCalculo>10</baseCalculo>
+	<aliquotaPadrao>5</aliquotaPadrao>
+	<tipoIncidencia>Progressivo 1</tipoIncidencia>
+	<solicitacao>1</solicitacao>
+	<dataSolicitacao>01.01.2008</dataSolicitacao>
+	<movimentoSinal>+</movimentoSinal>
+	<movimentoValor>5000.00</movimentoValor>
+	<tributavelSinal>+</tributavelSinal>
+	<tributavelValor>8000.00</tributavelValor>
+	<ocorrencias>
+		<faixaInicialSinal>+</faixaInicialSinal>
+		<faixaInicialValor>1000.00</faixaInicialValor>
+		<faixaFinalSinal>+</faixaFinalSinal>
+		<faixaFinalValor>4000.00</faixaFinalValor>
+		<aliquotaFaixa>2</aliquotaFaixa>
+		<redutorSinal>+</redutorSinal>
+		<redutorValor>100.00</redutorValor>
+	</ocorrencias>
+	<ocorrencias>
+		<faixaInicialSinal>+</faixaInicialSinal>
+		<faixaInicialValor>4000.00</faixaInicialValor>
+		<faixaFinalSinal>+</faixaFinalSinal>
+		<faixaFinalValor>8000.00</faixaFinalValor>
+		<aliquotaFaixa>3</aliquotaFaixa>
+		<redutorSinal>+</redutorSinal>
+		<redutorValor>200.00</redutorValor>
+	</ocorrencias>
+</listarResultadoApuracaoMensalDiferenciadaResponse>

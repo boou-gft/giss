@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarApuracaoReprocessamentoResponse>
+ <codMensagem/>
+ <mensagem/>
+       <ocorrencias>
+              <baseCalculo>10.0</baseCalculo>
+              <aliquotaPadrao>10.0</aliquotaPadrao>
+              <tipoIncidencia>Padrao</tipoIncidencia>
+              <numConsultas>2</numConsultas>
+              <conta>15431</conta>
+              <movimentoSinal>145613</movimentoSinal>
+              <movimentoValor>41654</movimentoValor>
+              <tributavelSinal>-</tributavelSinal>
+              <tributavelValor>321546.00</tributavelValor>
+              <aliquota>9.0</aliquota>
+              <issSinal>+</issSinal>
+              <issValor>65471.00</issValor>
+         </ocorrencias>
+          <ocorrencias>
+              <baseCalculo>10.0</baseCalculo>
+              <aliquotaPadrao>10.0</aliquotaPadrao>
+              <tipoIncidencia>Padrao</tipoIncidencia>
+              <numConsultas>2</numConsultas>
+              <conta>15431</conta>
+              <movimentoSinal>145613</movimentoSinal>
+              <movimentoValor>41654</movimentoValor>
+              <tributavelSinal>-</tributavelSinal>
+              <tributavelValor>321546.00</tributavelValor>
+              <aliquota>9.0</aliquota>
+              <issSinal>+</issSinal>
+              <issValor>65471.00</issValor>
+         </ocorrencias>          
+</listarApuracaoReprocessamentoResponse>

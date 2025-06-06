@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarPlanilhaApuracaoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="codAgenciaDev" type="xsd:int" default="0" />
+        <xsd:element name="descAgenciaDev" type="xsd:string" />
+        <xsd:element name="descUf" type="xsd:string" />
+        <xsd:element name="cnpj" type="xsd:long" default="0" />
+        <xsd:element name="inscMunicipial" type="xsd:string" />
+        <xsd:element name="endereco" type="xsd:string" />
+        <xsd:element name="cep" type="xsd:int" default="0" />
+        <xsd:element name="complementoCep" type="xsd:int" default="0" />
+        <xsd:element name="codAgenciaCentralizadora" type="xsd:int" default="0" />
+        <xsd:element name="digAgenciaCentralizadora" type="xsd:string" />
+        <xsd:element name="descAgenciaCentralizadora" type="xsd:string" />
+        <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="digitoMunicipio" type="xsd:string" />
+        <xsd:element name="mesCompetencia" type="xsd:string" />
+        <xsd:element name="anoContencia" type="xsd:int" default="0" />
+        <xsd:element name="diaVenciemtnoTributo" type="xsd:int" default="0" />
+        <xsd:element name="listaPlanApuracao" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="tipoRegistro" type="xsd:string" />
+              <xsd:element name="codTipoServico" type="xsd:int" default="0" />
+              <xsd:element name="descTipoServico" type="xsd:string" />
+              <xsd:element name="cosif" type="xsd:string" />
+              <xsd:element name="codGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codSubGrupo" type="xsd:int" default="0" />
+              <xsd:element name="conta" type="xsd:int" default="0" />
+              <xsd:element name="digConta" type="xsd:string" />
+              <xsd:element name="descRazao" type="xsd:string" />
+              <xsd:element name="itemLei" type="xsd:string" />
+              <xsd:element name="aliquotaApuracao" type="xsd:double" default="0" />
+              <xsd:element name="sinalReceita" type="xsd:string" />
+              <xsd:element name="valorReceita" type="xsd:double" default="0" />
+              <xsd:element name="sinalIss" type="xsd:string" />
+              <xsd:element name="valorIss" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="sinalRedutorTotal" type="xsd:string" />
+        <xsd:element name="valorRedutorTotal" type="xsd:double" default="0" />
+        <xsd:element name="valorTotalReceita" type="xsd:double" default="0" />
+        <xsd:element name="valorTotalIss" type="xsd:double" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarDependenciasEncerradasResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:long" default="0" />
+              <xsd:element name="numeroSequencialUnidadeOrganizacional" type="xsd:int" default="0" />
+              <xsd:element name="codigoDependencia" type="xsd:int" default="0" />
+              <xsd:element name="nomeDependencia" type="xsd:string" />
+              <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+              <xsd:element name="nomeMunicipio" type="xsd:string" />
+              <xsd:element name="siglaUnidadeFederativa" type="xsd:string" />
+              <xsd:element name="dataExclusao" type="xsd:string" />
+              <xsd:element name="horaManutencao" type="xsd:string" />
+              <xsd:element name="codigoDependenciaIncorporadora" type="xsd:int" default="0" />
+              <xsd:element name="nomeDependenciaIncorporadora" type="xsd:string" />
+              <xsd:element name="dataBaixa" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

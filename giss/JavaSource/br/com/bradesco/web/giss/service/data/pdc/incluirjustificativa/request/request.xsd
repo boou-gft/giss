@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="incluirJustificativaRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="descJustificativa" type="xsd:string" />
+        <xsd:element name="vlrAjuste" type="xsd:string" />
+        <xsd:element name="sinalVlrAjuste" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

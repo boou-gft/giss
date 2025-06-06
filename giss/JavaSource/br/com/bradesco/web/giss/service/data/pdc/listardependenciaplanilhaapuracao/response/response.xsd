@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarDependenciaPlanilhaApuracaoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="periodoInicio" type="xsd:int" default="0" />
+        <xsd:element name="periodoFim" type="xsd:int" default="0" />
+        <xsd:element name="quantidadeOcorrencia" type="xsd:int" default="0" />
+        <xsd:element name="qtdeAgencia" type="xsd:long" default="0" />
+        <xsd:element name="qtdePa" type="xsd:long" default="0" />
+        <xsd:element name="ocorrencias" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoPessoaJuridica" type="xsd:int" default="0" />
+              <xsd:element name="numeroSequencial" type="xsd:int" default="0" />
+              <xsd:element name="dataCompetencia" type="xsd:int" default="0" />
+              <xsd:element name="contaContabil" type="xsd:long" default="0" />
+              <xsd:element name="codigoDependencia" type="xsd:string" />
+              <xsd:element name="codigoPaa" type="xsd:int" default="0" />
+              <xsd:element name="descricaoDependencia" type="xsd:string" />
+              <xsd:element name="descricaoPa" type="xsd:string" />
+              <xsd:element name="sinalReceita" type="xsd:string" />
+              <xsd:element name="valorReceita" type="xsd:double" default="0" />
+              <xsd:element name="sinalTributoApuracao" type="xsd:string" />
+              <xsd:element name="valorTributoApuracao" type="xsd:double" default="0" />
+              <xsd:element name="uf" type="xsd:string" />
+              <xsd:element name="municipio" type="xsd:string" />
+              <xsd:element name="tragSemTrag" type="xsd:string" />
+              <xsd:element name="codMunicipio" type="xsd:long" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

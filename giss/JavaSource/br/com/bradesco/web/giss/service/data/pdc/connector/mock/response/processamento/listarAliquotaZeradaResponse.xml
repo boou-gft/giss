@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarAliquotaZeradaResponse>
+	<codMensagem/>
+	<mensagem/>
+        <receitaTotalSinal>-</receitaTotalSinal>
+        <receitaTotalValor>95463.00</receitaTotalValor>
+        <numConcultas>3</numConcultas>
+        <ocorrencias>
+              <conta>733843135</conta>
+              <descricao>Departamento</descricao>
+              <receitaSinal>+</receitaSinal>
+              <receitaValor>234567.69</receitaValor>
+		</ocorrencias>
+		<ocorrencias>
+              <conta>124573324</conta>
+              <descricao>Matriz</descricao>
+              <receitaSinal>+</receitaSinal>
+              <receitaValor>99943477.65</receitaValor>
+		</ocorrencias>		
+		<ocorrencias>
+              <conta>45734348</conta>
+              <descricao>Agencia</descricao>
+              <receitaSinal>+</receitaSinal>
+              <receitaValor>6548876.57</receitaValor>
+		</ocorrencias>
+</listarAliquotaZeradaResponse>

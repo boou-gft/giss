@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="processarRetificadorLiberacaoRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="listaEntrada" maxOccurs="100">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="anoMesCompetencia" type="xsd:int" default="0" />
+              <xsd:element name="codigoEmpresa" type="xsd:int" default="0" />
+              <xsd:element name="identificadorTransacaoIss" type="xsd:int" default="0" />
+              <xsd:element name="numeroApuracaoIss" type="xsd:int" default="0" />
+              <xsd:element name="nomeProduto" type="xsd:string" />
+              <xsd:element name="dataRecepcao" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

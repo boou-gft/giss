@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoMensalNvContaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="percentBaseCalculo" type="xsd:double" default="0" />
+        <xsd:element name="percentAliquotaPadrao" type="xsd:double" default="0" />
+        <xsd:element name="tipoIndicador" type="xsd:string" />
+        <xsd:element name="qtdeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="sinalApuracaoTotal" type="xsd:string" />
+        <xsd:element name="valorApuracaoTotal" type="xsd:double" default="0" />
+        <xsd:element name="sinalTributoTotal" type="xsd:string" />
+        <xsd:element name="valorTributoTotal" type="xsd:double" default="0" />
+        <xsd:element name="sinalTributavelTotal" type="xsd:string" />
+        <xsd:element name="valorTribututavelTotal" type="xsd:double" default="0" />
+        <xsd:element name="listaApuracaoMensalNvConta" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="cosif" type="xsd:string" />
+              <xsd:element name="codGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codSubGrupo" type="xsd:int" default="0" />
+              <xsd:element name="conta" type="xsd:int" default="0" />
+              <xsd:element name="digConta" type="xsd:string" />
+              <xsd:element name="sinalConta" type="xsd:string" />
+              <xsd:element name="valorConta" type="xsd:double" default="0" />
+              <xsd:element name="sinalTributo" type="xsd:string" />
+              <xsd:element name="valorTributo" type="xsd:double" default="0" />
+              <xsd:element name="percentAliquota" type="xsd:double" default="0" />
+              <xsd:element name="sinaltributavel" type="xsd:string" />
+              <xsd:element name="valorTributavel" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

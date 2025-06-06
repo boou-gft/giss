@@ -1,0 +1,249 @@
+/*
+	Definicion de estilos para componentes JSF de la arquitectura
+*/
+.tabela_celula_normal
+{
+    BORDER-RIGHT:medium none;
+    BORDER-TOP: medium none;
+    FONT-SIZE: 10px;
+    BORDER-LEFT: medium none;
+    COLOR: #5b5b5c;
+    BORDER-BOTTOM: 1px solid;
+    FONT-FAMILY: Verdana, Arial, Tahoma;
+    TEXT-DECORATION: none;
+}
+
+.tabela_celula_destaque
+{
+    BORDER-RIGHT: #ececec 1px solid;
+    BORDER-TOP: #ececec 1px solid;
+    FONT-SIZE: 10px;
+    BORDER-LEFT: medium none;
+    COLOR: #5b5b5c;
+    BORDER-BOTTOM: #ececec 1px solid;
+    FONT-FAMILY: Verdana, Arial, Tahoma;
+    BACKGROUND-COLOR: #eaeaea;
+    TEXT-DECORATION: none;
+}
+.tabela_celula_destaque_acentuado
+{ 
+	FONT-SIZE: 10px; 
+	COLOR: #000000; 
+	FONT-FAMILY: Verdana, Arial, Tahoma; 
+	font-weight:bold;  
+	background-image:url(../../images/topo_tabela.gif);
+	HEIGHT: 29px;
+	
+}
+
+.alinhamento_centro 
+{
+	TEXT-ALIGN: center;	
+}
+
+.alinhamento_esquerda 
+{
+	TEXT-ALIGN: left;	
+}
+
+.alinhamento_direita 
+{
+	TEXT-ALIGN: right;	
+}
+
+.topo { 
+	position:absolute;
+    top:150px;
+    left: 9px;
+}
+
+.lin
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 1px;
+    COLOR: #C6C6CB;
+    FONT-FAMILY: Verdana, Arial, Helvetica, Sans-serif;
+    margin-top:9px;
+}
+
+.linha
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 1px;
+    COLOR: #C6C6CB;
+    FONT-FAMILY: Verdana, Arial, Helvetica, Sans-serif;
+}
+
+.comboCustomTamanho1
+{
+	width:263px;
+}
+
+.comboCustomTamanho3
+{
+	width:243px;
+}
+.direita{align: right;}
+.selectionMenu {
+	text-align: left;
+	font-family: verdana;	
+	font-weight: bold;
+	font-size: 17px;
+	color: #555555;
+	height: 40px;
+	vertical-align: top;
+	}
+	
+	
+.selectionMenu {
+	text-align: left;
+	font-family: verdana;	
+	font-weight: bold;
+	font-size: 17px;
+	color: #555555;
+	height: 40px;
+	vertical-align: top;
+	}
+
+.passSelected {
+	font-family: Verdana;
+	font-size: 10 px;
+	font-weight: bold;
+	background-image: url(../../images/icone_vermelho.gif);
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	color: #FFFFFF;
+	vertical-align: middle;
+	padding-right: 7px;
+	padding-left: 3px;
+}
+
+.passNoSelected {
+	font-family: Verdana;
+	font-size: 10 px;
+	font-weight: bold;
+	background-image: url(../../images/icone_cinza.gif);
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	color: #939393;
+	vertical-align: middle;
+	padding-right: 7px;
+	padding-left: 3px;
+}
+
+.textDefault {
+	font-family: Verdana;
+	font-size: 10 px;
+}
+
+.textPassSelected {
+	font-family: Verdana;
+	font-size: 10 px;
+	font-weight: bold;
+	text-align: left;
+	color: #000000;
+	vertical-align: middle;
+	padding-right: 20px;
+	padding-left: 5px;
+}
+
+.textPassNoSelected {
+	font-family: Verdana;
+	font-size: 10 px;
+	font-weight: normal;
+	text-align: left;
+	color: #000000;
+	vertical-align: middle;
+	padding-right: 20px;
+	padding-left: 5px;
+}
+
+	
+	
+.panelGridColumHeader50{width: 40%; text-align: left;}
+.panelGridColumHeader30{width: 30%; text-align: left;}
+.panelGridColumHeader10{width: 10%; text-align: left;}
+.panelGridColumHeader20{width: 20%; text-align: left;}
+.panelGridColumHeader25{width: 25%; text-align: left;}
+.panelGridColumHeader15{width: 18%; text-align: left;}
+.panelGridColumHeader80{width: 80%; text-align: left;}
+.panelGridColumHeader60{width: 62%; text-align: left;}
+
+.HtmlCommandButtonColorBradesco{font-family: verdana; font-size: 10px; background-color:#E23C41; color:white}
+.HtmlCommandLinkColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41 }
+.HtmlCommandButtonBradesco{font-family: verdana; font-size: 10px; cursor:hand;}
+.HtmlCommandButtonBradesco2{font-family: verdana; font-size: 10px;}
+.HtmlCommandLinkBradesco{font-family: verdana; font-size: 10px}
+
+.HtmlMessageColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41; font-weight:bold }
+.HtmlMessagesColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41; font-weight:bold }
+.HtmlMessageBradesco{font-family: verdana; font-size: 10px}
+.HtmlMessagesBradesco{font-family: verdana; font-size: 10px}
+
+.HtmlGraphicImageBradesco{font-family: verdana; font-size: 10px; border: none}
+
+.HtmlInputSecretColorBradesco{font-family: verdana; font-size: 10px; color:#58595B }
+.HtmlInputTextareaColorBradesco{font-family: verdana; font-size: 10px; color:#58595B }
+.HtmlInputTextColorBradesco{font-family: verdana; font-size: 10px; color:#58595B }
+.HtmlInputSecretBradesco{font-family: verdana; font-size: 10px}
+.HtmlInputTextareaBradesco{font-family: verdana; font-size: 10px}
+.HtmlInputTextBradesco{font-family: verdana; font-size: 10px}
+
+.HtmlOutputFormatBoldBradesco{font-family: verdana; font-size: 10px; font-weight:bold}
+.HtmlOutputLabelBoldBradesco{font-family: verdana; font-size: 10px; font-weight:bold}
+.HtmlOutputLinkBoldBradesco{font-family: verdana; font-size: 10px; font-weight:bold}
+.HtmlOutputTextBoldBradesco{font-family: verdana; font-size: 10px; font-weight:bold}
+
+.HtmlOutputFormatColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlOutputLabelColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlOutputLinkColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlOutputTextColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+
+.HtmlOutputFormatBradesco{font-family: verdana; font-size: 10px}
+.HtmlOutputLabelBradesco{font-family: verdana; font-size: 10px}
+.HtmlOutputLinkBradesco{font-family: verdana; font-size: 10px}
+.HtmlOutputTextBradesco{font-family: verdana; font-size: 10px}
+
+.HtmlOutputFormatTitleBradesco{font-family: verdana; font-size: 12px; font-weight:bold}
+.HtmlOutputLabelTitleBradesco{font-family: verdana; font-size: 12px; font-weight:bold}
+.HtmlOutputLinkTitleBradesco{font-family: verdana; font-size: 12px; font-weight:bold}
+.HtmlOutputTextTitleBradesco{font-family: verdana; font-size: 12px; font-weight:bold}
+.HtmlInputTextObrigatorioBradesco{background-color:#FFFBDE;}
+
+.HtmlOutputFormatTitleColorBradesco{font-family: verdana; font-size: 12px; color:#E23C41; font-weight:bold}
+.HtmlOutputLabelTitleColorBradesco{font-family: verdana; font-size: 12px; color:#E23C41; font-weight:bold}
+.HtmlOutputLinkTitleColorBradesco{font-family: verdana; font-size: 12px; color:#E23C41; font-weight:bold}
+.HtmlOutputTextTitleColorBradesco{font-family: verdana; font-size: 12px; color:#E23C41; font-weight:bold}
+
+.HtmlOutputTextRotuloBradesco{font-family: verdana; font-size: 10px; color:#000000;  text-align: left; }
+.HtmlBullet{margin-right:5px; width:5px; height:5px;}
+.HtmlOutputTextRespostaBradesco{margin-right:20px; font-family: verdana; font-size: 10px; font-weight:bold}
+.HtmlOutputTextBulletRegularBradesco{font-family: verdana; font-size: 9px; color:#000000;  text-align: left;}
+.HtmlOutputTextBulletBoldBradesco{font-family: verdana; font-size: 10px; font-weight:bold}
+
+.HtmlSelectBooleanCheckboxColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlSelectManyCheckboxColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlSelectManyListboxColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlSelectManyMenuColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlSelectOneListboxColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlSelectOneMenuColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+.HtmlSelectOneRadioColorBradesco{font-family: verdana; font-size: 10px; color:#E23C41}
+
+.HtmlSelectBooleanCheckboxBradesco{font-family: verdana; font-size: 10px}
+.HtmlSelectManyCheckboxBradesco{font-family: verdana; font-size: 10px}
+.HtmlSelectManyListboxBradesco{font-family: verdana; font-size: 10px}
+.HtmlSelectManyMenuBradesco{font-family: verdana; font-size: 10px}
+.HtmlSelectOneListboxBradesco{font-family: verdana; font-size: 10px}
+.HtmlSelectOneMenuBradesco{font-family: verdana; font-size: 10px}
+.HtmlSelectOneRadioBradesco{font-family: verdana; font-size: 10px; margin-right:5px;}
+
+.HtmlColumnBradesco{font-family: verdana; font-size: 10px}
+.HtmlDataTableBradesco{font-family: verdana; font-size: 10px}
+.HtmlPanelGridBradesco{font-family: verdana; font-size: 10px}
+.HtmlPanelGroupBradesco{font-family: verdana; font-size: 10px}
+
+.barraDeRolagem{height: 200px; overflow: auto;}

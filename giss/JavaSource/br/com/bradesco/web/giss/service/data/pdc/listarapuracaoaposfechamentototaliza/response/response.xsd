@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listarApuracaoAposFechamentoTotalizaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="quantidadeOcorrencias" type="xsd:int" default="0" />
+        <xsd:element name="percentualBaseCalculo" type="xsd:double" default="0" />
+        <xsd:element name="percentualAliquotaPadrao" type="xsd:double" default="0" />
+        <xsd:element name="codigoTipoIncidencia" type="xsd:string" />
+        <xsd:element name="codigoSolicitacaoApuracao" type="xsd:int" default="0" />
+        <xsd:element name="dataSolicitacaoApuracao" type="xsd:string" />
+        <xsd:element name="ocorrencias" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="contaContabil" type="xsd:long" default="0" />
+              <xsd:element name="motivo" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="sinalMotivo" type="xsd:string" />
+                    <xsd:element name="valorMotivo" type="xsd:double" default="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="tributavel" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="sinalTributavel" type="xsd:string" />
+                    <xsd:element name="valorTributavel" type="xsd:double" default="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="percentualAliquotaConta" type="xsd:double" default="0" />
+              <xsd:element name="iss" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="sinalISS" type="xsd:string" />
+                    <xsd:element name="valorISS" type="xsd:double" default="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="issmensal" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="sinalISSMensal" type="xsd:string" />
+                    <xsd:element name="valorISSMensal" type="xsd:double" default="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

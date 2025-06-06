@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="incluirMunicipioRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codigoMunicipio" type="xsd:long" default="0" />
+        <xsd:element name="diaVencimento" type="xsd:int" default="0" />
+        <xsd:element name="indNecessidadePagtoDiaUtil" type="xsd:string" />
+        <xsd:element name="codigoFormaPagamento" type="xsd:int" default="0" />
+        <xsd:element name="percentualBaseAliquota" type="xsd:decimal" default="0" />
+        <xsd:element name="percentualAliquotaPadrao" type="xsd:decimal" default="0" />
+        <xsd:element name="codigoTipoIncidencia" type="xsd:int" default="0" />
+        <xsd:element name="codigoUnidadeOrganizacional" type="xsd:long" default="0" />
+        <xsd:element name="numeroUnidadeOrganizacional" type="xsd:int" default="0" />
+        <xsd:element name="codigoLegislacaoVigente" type="xsd:int" default="0" />
+        <xsd:element name="itemComplementarLei" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comboEstadosResponse>
+  <codMensagem>GISS0019</codMensagem>
+  <mensagem>CONSULTA EFETUADA COM SUCESSO</mensagem>
+  <quantidadeOcorrencias>28</quantidadeOcorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>1</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>SP</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>SAO PAULO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>10</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>RO</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>RONDONIA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>11</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>AC</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>ACRE</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>13</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>AM</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>AMAZONAS</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>15</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>RR</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>RORAIMA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>17</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>PA</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>PARA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>19</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>AP</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>AMAPA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>30</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>MA</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>MARANHAO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>31</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>PI</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>PIAUI</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>32</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>CE</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>CEARA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>33</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>RN</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>RIO GRANDE DO NORTE</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>34</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>PB</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>PARAIBA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>35</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>PE</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>PERNAMBUCO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>36</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>AL</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>ALAGOAS</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>38</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>SE</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>SERGIPE</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>39</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>BA</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>BAHIA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>50</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>MG</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>MINAS GERAIS</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>52</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>ES</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>ESPIRITO SANTO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>54</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>RJ</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>RIO DE JANEIRO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>58</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>SP</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>SAO PAULO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>73</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>PR</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>PARANA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>75</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>SC</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>SANTA CATARINA</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>77</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>RS</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>RIO GRANDE DO SUL</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>90</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>MT</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>MATO GROSSO</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>91</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>MS</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>MATO GROSSO DO SUL</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>93</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>GO</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>GOIAS</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>96</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>DF</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>DISTRITO FEDERAL</nomeUnidadeFederativa>
+  </ocorrencias>
+  <ocorrencias>
+    <codigoUnidadeFederativa>97</codigoUnidadeFederativa>
+    <siglaUnidadeFederativa>TO</siglaUnidadeFederativa>
+    <nomeUnidadeFederativa>TOCANTINS</nomeUnidadeFederativa>
+  </ocorrencias>
+</comboEstadosResponse>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarDependenciaPlanilhaApuracaoResponse>
+	<codMensagem/>
+	<mensagem/>
+	<quantidadeOcorrencia>2</quantidadeOcorrencia>
+		<ocorrencias>
+			<codigoPessoaJuridica>1</codigoPessoaJuridica>
+			<numeroSequencial>1</numeroSequencial>
+			<dataCompetencia>062010</dataCompetencia>
+			<contaContabil>200</contaContabil>
+			<codigoDependencia>3546</codigoDependencia>
+			<descricaoDependencia>URB. MT - CUIABA</descricaoDependencia>
+			<sinalReceita>+</sinalReceita>
+			<valorReceita>200.50</valorReceita>
+			<sinalTributoApuracao>+</sinalTributoApuracao>
+			<valorTributoApuracao>450.60</valorTributoApuracao>
+		</ocorrencias>
+		<ocorrencias>
+			<codigoPessoaJuridica>1</codigoPessoaJuridica>
+			<numeroSequencial>2</numeroSequencial>
+			<dataCompetencia>062010</dataCompetencia>
+			<contaContabil>200</contaContabil>
+			<codigoDependencia>3776</codigoDependencia>
+			<descricaoDependencia>VITORIA RIBEIRINHA</descricaoDependencia>
+			<sinalReceita>+</sinalReceita>
+			<valorReceita>222.50</valorReceita>
+			<sinalTributoApuracao>+</sinalTributoApuracao>
+			<valorTributoApuracao>422.60</valorTributoApuracao>
+		</ocorrencias>
+</listarDependenciaPlanilhaApuracaoResponse>

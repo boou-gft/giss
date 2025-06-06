@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="alterarContaContabilRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+        <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+        <xsd:element name="codigoTipoServico" type="xsd:int" default="0" />
+        <xsd:element name="codigoItemLeiCompl" type="xsd:int" default="0" />
+        <xsd:element name="codigoUsuario" type="xsd:long" default="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

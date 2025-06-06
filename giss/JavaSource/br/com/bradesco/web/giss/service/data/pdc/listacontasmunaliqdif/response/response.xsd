@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="listaContasMunAliqDifResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="numeroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="250">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="codigoConta" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="numeroConta" type="xsd:int" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="descricaoRazao" type="xsd:string" />
+              <xsd:element name="itemLei" type="xsd:int" default="0" />
+              <xsd:element name="aliquotaPadrao" type="xsd:double" default="0" />
+              <xsd:element name="aliquotaDiferenciada" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

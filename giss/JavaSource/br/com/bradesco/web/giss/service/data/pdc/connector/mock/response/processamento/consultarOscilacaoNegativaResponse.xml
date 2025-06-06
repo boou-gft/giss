@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<consultarOscilacaoNegativaResponse>
+	 <codMensagem/>
+	 <mensagem/>
+     <numeroConsultas>4</numeroConsultas>
+        <ocorrencias>
+              <codigoContaContabil>7131010733</codigoContaContabil>
+              <nomeContaContabil>Departamento</nomeContaContabil>
+              <anteriorSinal>-</anteriorSinal>
+              <anteriorValor>5431.49</anteriorValor>
+              <atualSinal>+</atualSinal>
+              <atualValor>46547.69</atualValor>
+              <oscilacaoSinal>+</oscilacaoSinal>
+              <oscilacaoValor>3218.96</oscilacaoValor>
+		</ocorrencias>
+       <ocorrencias>
+              <codigoContaContabil>7131018000</codigoContaContabil>
+              <nomeContaContabil>Agencia</nomeContaContabil>
+              <anteriorSinal>+</anteriorSinal>
+              <anteriorValor>56541.85</anteriorValor>
+              <atualSinal>-</atualSinal>
+              <atualValor>3218.96</atualValor>
+              <oscilacaoSinal>+</oscilacaoSinal>
+              <oscilacaoValor>48541.00</oscilacaoValor>
+		</ocorrencias>
+       <ocorrencias>
+              <codigoContaContabil>7131011055</codigoContaContabil>
+              <nomeContaContabil>Matriz</nomeContaContabil>
+              <anteriorSinal>-</anteriorSinal>
+              <anteriorValor>4573.87</anteriorValor>
+              <atualSinal>-</atualSinal>
+              <atualValor>46547.69</atualValor>
+              <oscilacaoSinal>-</oscilacaoSinal>
+              <oscilacaoValor>56479.34</oscilacaoValor>
+		</ocorrencias>
+       <ocorrencias>
+              <codigoContaContabil>7131016644</codigoContaContabil>
+              <nomeContaContabil>Agencia</nomeContaContabil>
+              <anteriorSinal>-</anteriorSinal>
+              <anteriorValor>5431.49</anteriorValor>
+              <atualSinal>+</atualSinal>
+              <atualValor>46547.69</atualValor>
+              <oscilacaoSinal>+</oscilacaoSinal>
+              <oscilacaoValor>3218.96</oscilacaoValor>
+		</ocorrencias>				
+	
+</consultarOscilacaoNegativaResponse>	

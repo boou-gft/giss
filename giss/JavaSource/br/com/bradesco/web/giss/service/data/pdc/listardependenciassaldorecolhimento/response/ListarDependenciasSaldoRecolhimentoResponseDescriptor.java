@@ -1,0 +1,505 @@
+/*
+ * This class was automatically generated with 
+ * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
+ * Schema.
+ * $Id: ListarDependenciasSaldoRecolhimentoResponseDescriptor.java,v 1.1 2017/04/11 14:10:41 gmichelini Exp $
+ */
+
+package br.com.bradesco.web.giss.service.data.pdc.listardependenciassaldorecolhimento.response;
+
+  //---------------------------------/
+ //- Imported classes and packages -/
+//---------------------------------/
+
+import org.exolab.castor.mapping.AccessMode;
+import org.exolab.castor.xml.TypeValidator;
+import org.exolab.castor.xml.XMLFieldDescriptor;
+import org.exolab.castor.xml.validators.*;
+
+/**
+ * Class ListarDependenciasSaldoRecolhimentoResponseDescriptor.
+ * 
+ * @version $Revision: 1.1 $ $Date: 2017/04/11 14:10:41 $
+ */
+public class ListarDependenciasSaldoRecolhimentoResponseDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+
+
+      //--------------------------/
+     //- Class/Member Variables -/
+    //--------------------------/
+
+    /**
+     * Field elementDefinition
+     */
+    private boolean elementDefinition;
+
+    /**
+     * Field nsPrefix
+     */
+    private java.lang.String nsPrefix;
+
+    /**
+     * Field nsURI
+     */
+    private java.lang.String nsURI;
+
+    /**
+     * Field xmlName
+     */
+    private java.lang.String xmlName;
+
+    /**
+     * Field identity
+     */
+    private org.exolab.castor.xml.XMLFieldDescriptor identity;
+
+
+      //----------------/
+     //- Constructors -/
+    //----------------/
+
+    public ListarDependenciasSaldoRecolhimentoResponseDescriptor() 
+     {
+        super();
+        xmlName = "listarDependenciasSaldoRecolhimentoResponse";
+        elementDefinition = true;
+        
+        //-- set grouping compositor
+        setCompositorAsSequence();
+        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
+        org.exolab.castor.mapping.FieldHandler             handler        = null;
+        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
+        //-- initialize attribute descriptors
+        
+        //-- initialize element descriptors
+        
+        //-- _codMensagem
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_codMensagem", "codMensagem", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                return target.getCodMensagem();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    target.setCodMensagem( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _codMensagem
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _mensagem
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_mensagem", "mensagem", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                return target.getMensagem();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    target.setMensagem( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _mensagem
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _quantidadeOcorrencias
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.Integer.TYPE, "_quantidadeOcorrencias", "quantidadeOcorrencias", org.exolab.castor.xml.NodeType.Element);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                if(!target.hasQuantidadeOcorrencias())
+                    return null;
+                return new java.lang.Integer(target.getQuantidadeOcorrencias());
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    // ignore null values for non optional primitives
+                    if (value == null) return;
+                    
+                    target.setQuantidadeOcorrencias( ((java.lang.Integer)value).intValue());
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _quantidadeOcorrencias
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            IntegerValidator typeValidator= new IntegerValidator();
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _indicadorPagamentoTributo
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_indicadorPagamentoTributo", "indicadorPagamentoTributo", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                return target.getIndicadorPagamentoTributo();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    target.setIndicadorPagamentoTributo( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _indicadorPagamentoTributo
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _indicadorDiaUtil
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_indicadorDiaUtil", "indicadorDiaUtil", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                return target.getIndicadorDiaUtil();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    target.setIndicadorDiaUtil( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _indicadorDiaUtil
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _diaVencimentoTributo
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.Integer.TYPE, "_diaVencimentoTributo", "diaVencimentoTributo", org.exolab.castor.xml.NodeType.Element);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                if(!target.hasDiaVencimentoTributo())
+                    return null;
+                return new java.lang.Integer(target.getDiaVencimentoTributo());
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    // ignore null values for non optional primitives
+                    if (value == null) return;
+                    
+                    target.setDiaVencimentoTributo( ((java.lang.Integer)value).intValue());
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _diaVencimentoTributo
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            IntegerValidator typeValidator= new IntegerValidator();
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _dataRecolhimento
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_dataRecolhimento", "dataRecolhimento", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                return target.getDataRecolhimento();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    target.setDataRecolhimento( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _dataRecolhimento
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _ocorrenciasList
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(br.com.bradesco.web.giss.service.data.pdc.listardependenciassaldorecolhimento.response.Ocorrencias.class, "_ocorrenciasList", "ocorrencias", org.exolab.castor.xml.NodeType.Element);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                return target.getOcorrencias();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    ListarDependenciasSaldoRecolhimentoResponse target = (ListarDependenciasSaldoRecolhimentoResponse) object;
+                    target.addOcorrencias( (br.com.bradesco.web.giss.service.data.pdc.listardependenciassaldorecolhimento.response.Ocorrencias) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return new br.com.bradesco.web.giss.service.data.pdc.listardependenciassaldorecolhimento.response.Ocorrencias();
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(true);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _ocorrenciasList
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+        }
+        desc.setValidator(fieldValidator);
+    } //-- br.com.bradesco.web.giss.service.data.pdc.listardependenciassaldorecolhimento.response.ListarDependenciasSaldoRecolhimentoResponseDescriptor()
+
+
+      //-----------/
+     //- Methods -/
+    //-----------/
+
+    /**
+     * Method getAccessMode
+     * 
+     * 
+     * 
+     * @return AccessMode
+     */
+    public org.exolab.castor.mapping.AccessMode getAccessMode()
+    {
+        return null;
+    } //-- org.exolab.castor.mapping.AccessMode getAccessMode() 
+
+    /**
+     * Method getExtends
+     * 
+     * 
+     * 
+     * @return ClassDescriptor
+     */
+    public org.exolab.castor.mapping.ClassDescriptor getExtends()
+    {
+        return null;
+    } //-- org.exolab.castor.mapping.ClassDescriptor getExtends() 
+
+    /**
+     * Method getIdentity
+     * 
+     * 
+     * 
+     * @return FieldDescriptor
+     */
+    public org.exolab.castor.mapping.FieldDescriptor getIdentity()
+    {
+        return identity;
+    } //-- org.exolab.castor.mapping.FieldDescriptor getIdentity() 
+
+    /**
+     * Method getJavaClass
+     * 
+     * 
+     * 
+     * @return Class
+     */
+    public java.lang.Class getJavaClass()
+    {
+        return br.com.bradesco.web.giss.service.data.pdc.listardependenciassaldorecolhimento.response.ListarDependenciasSaldoRecolhimentoResponse.class;
+    } //-- java.lang.Class getJavaClass() 
+
+    /**
+     * Method getNameSpacePrefix
+     * 
+     * 
+     * 
+     * @return String
+     */
+    public java.lang.String getNameSpacePrefix()
+    {
+        return nsPrefix;
+    } //-- java.lang.String getNameSpacePrefix() 
+
+    /**
+     * Method getNameSpaceURI
+     * 
+     * 
+     * 
+     * @return String
+     */
+    public java.lang.String getNameSpaceURI()
+    {
+        return nsURI;
+    } //-- java.lang.String getNameSpaceURI() 
+
+    /**
+     * Method getValidator
+     * 
+     * 
+     * 
+     * @return TypeValidator
+     */
+    public org.exolab.castor.xml.TypeValidator getValidator()
+    {
+        return this;
+    } //-- org.exolab.castor.xml.TypeValidator getValidator() 
+
+    /**
+     * Method getXMLName
+     * 
+     * 
+     * 
+     * @return String
+     */
+    public java.lang.String getXMLName()
+    {
+        return xmlName;
+    } //-- java.lang.String getXMLName() 
+
+    /**
+     * Method isElementDefinition
+     * 
+     * 
+     * 
+     * @return boolean
+     */
+    public boolean isElementDefinition()
+    {
+        return elementDefinition;
+    } //-- boolean isElementDefinition() 
+
+}

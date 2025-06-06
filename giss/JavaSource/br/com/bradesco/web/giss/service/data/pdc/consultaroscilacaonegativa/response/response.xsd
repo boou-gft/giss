@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarOscilacaoNegativaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="codMensagem" type="xsd:string" />
+        <xsd:element name="mensagem" type="xsd:string" />
+        <xsd:element name="totalAnteriorSinal" type="xsd:string" />
+        <xsd:element name="totalAnteriorValor" type="xsd:double" default="0" />
+        <xsd:element name="totalAtualSinal" type="xsd:string" />
+        <xsd:element name="totalAtualValor" type="xsd:double" default="0" />
+        <xsd:element name="totalOscilacaoSinal" type="xsd:string" />
+        <xsd:element name="totalOscilacaoValor" type="xsd:double" default="0" />
+        <xsd:element name="nroConsultas" type="xsd:int" default="0" />
+        <xsd:element name="ocorrencias" maxOccurs="150">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="contaContabil" type="xsd:string" />
+              <xsd:element name="codigoGrupo" type="xsd:int" default="0" />
+              <xsd:element name="codigoSubgrupo" type="xsd:int" default="0" />
+              <xsd:element name="numeroConta" type="xsd:int" default="0" />
+              <xsd:element name="digitoConta" type="xsd:string" />
+              <xsd:element name="descRazao" type="xsd:string" />
+              <xsd:element name="anteriorSinal" type="xsd:string" />
+              <xsd:element name="anteriorValor" type="xsd:double" default="0" />
+              <xsd:element name="atualSinal" type="xsd:string" />
+              <xsd:element name="atualValor" type="xsd:double" default="0" />
+              <xsd:element name="oscilacaoSinal" type="xsd:string" />
+              <xsd:element name="oscilacaoValor" type="xsd:double" default="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listarDependenciaApuracaoMensalResponse>
+	<codMensagem/>
+	<mensagem/>
+	<codigoMunicipio>1000</codigoMunicipio>
+	<totalMunucipioReceitaSinal>+</totalMunucipioReceitaSinal>
+	<totalMunucipioReceitaValor>522198.01</totalMunucipioReceitaValor>
+	<totalMunucipioRecolherSinal>+</totalMunucipioRecolherSinal>
+	<totalMunucipioRecolherValor>10254.03</totalMunucipioRecolherValor>
+	<totalGeralReceitaSinal>+</totalGeralReceitaSinal>
+	<totalGeralReceitaValor>5522198.01</totalGeralReceitaValor>
+	<totalGeralRecolherSinal>+</totalGeralRecolherSinal>
+	<totalGeralRecolherValor>2510254.03</totalGeralRecolherValor>
+	<numeroConsultas>2</numeroConsultas>
+	<ocorrencias>
+		<codigoPessoaJuridica>1</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>1</numeroSequenciaUnidadeOrganizacional>
+		<mesAnoApuracao>022002</mesAnoApuracao>
+		<codigoDependencia>3546</codigoDependencia>
+		<descricaoDependencia>URB. MT - CUIABA</descricaoDependencia>
+		<municipioReceitaSinal>+</municipioReceitaSinal>
+		<municipioReceitaValor>115245.30</municipioReceitaValor>
+		<geralReceitaSinal>+</geralReceitaSinal>
+		<geralReceitaValor>5245.30</geralReceitaValor>
+    </ocorrencias>
+    <ocorrencias>
+		<codigoPessoaJuridica>1</codigoPessoaJuridica>
+		<numeroSequenciaUnidadeOrganizacional>2</numeroSequenciaUnidadeOrganizacional>
+		<mesAnoApuracao>022002</mesAnoApuracao>
+		<codigoDependencia>3776</codigoDependencia>
+		<descricaoDependencia>VITORIA RIBEIRINHA</descricaoDependencia>
+		<municipioReceitaSinal>+</municipioReceitaSinal>
+		<municipioReceitaValor>223545.30</municipioReceitaValor>
+		<geralReceitaSinal>+</geralReceitaSinal>
+		<geralReceitaValor>5245.30</geralReceitaValor>
+    </ocorrencias>
+</listarDependenciaApuracaoMensalResponse>

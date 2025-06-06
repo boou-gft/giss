@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+                              "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+
+	<!-- NAVEGACION -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>authenticate</from-outcome>
+			<to-view-id>/jsecuritycheck.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>exception</from-outcome>
+			<to-view-id>/exception.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>appException</from-outcome>
+			<to-view-id>/appException.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_index</from-outcome>
+			<to-view-id>/index.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/unsecure/logout.jsp</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>home_page1</from-outcome>
+			<to-view-id>/presHome.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>home_page2</from-outcome>
+			<to-view-id>/arqHome.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>home_page3</from-outcome>
+			<to-view-id>/ibHome.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_gestor_objetos</from-outcome>
+			<to-view-id>/arqGestorObjetos.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_gestor_sesion</from-outcome>
+			<to-view-id>/arqGestorSesion.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_gestor_alertas</from-outcome>
+			<to-view-id>/arqGestorAlertas.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_criptografia</from-outcome>
+			<to-view-id>/arqCriptografia.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_lanz_excepciones</from-outcome>
+			<to-view-id>/arqLanzamientoExcepciones.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom1</from-outcome>
+			<to-view-id>/presCustom_components_1.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom2</from-outcome>
+			<to-view-id>/presCustom_components_2.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom3</from-outcome>
+			<to-view-id>/presCustom_components_3.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom4</from-outcome>
+			<to-view-id>/presCustom_components_4.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom5</from-outcome>
+			<to-view-id>/presCustom_components_5.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom6</from-outcome>
+			<to-view-id>/presCustom_components_6.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_custom7</from-outcome>
+			<to-view-id>/presCustom_components_7.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_arq</from-outcome>
+			<to-view-id>/presArchitecture_components.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_app</from-outcome>
+			<to-view-id>/presApplication_components.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_extrato</from-outcome>
+			<to-view-id>/ibExtrato.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_transferencia</from-outcome>
+			<to-view-id>/ibTeste1.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_transferencia1</from-outcome>
+			<to-view-id>/ibTransferencia2.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_transferencia2</from-outcome>
+			<to-view-id>/ibTransferencia3.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_cambio</from-outcome>
+			<to-view-id>/ibCambio.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_log</from-outcome>
+			<to-view-id>/arqLog.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_scroll</from-outcome>
+			<to-view-id>/presApplication_components_5.jsf</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nav_scroll_pag</from-outcome>
+			<to-view-id>/presCustom_components_8.jsf</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>apuracaoReprocessamento</from-outcome>
+			<to-view-id>/apuracaoReprocLista.jsp</to-view-id>
+		</navigation-case>
+
+		<!-- CacheManager Test -->
+		<navigation-case>
+			<from-outcome>CacheManagerEdit</from-outcome>
+			<to-view-id>/arqGestorCache.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>CacheManagerList</from-outcome>
+			<to-view-id>/arqGestorCacheList.tiles</to-view-id>
+		</navigation-case>
+		
+		<!-- Navegação Ajuda -->
+		<navigation-case>
+			<from-outcome>ajuda</from-outcome>
+			<to-view-id>/ajuda.tiles</to-view-id>
+		</navigation-case>
+
+		<!-- Navegação Home -->
+		<navigation-case>
+			<from-outcome>presHome</from-outcome>
+			<to-view-id>/presHome.tiles</to-view-id>
+		</navigation-case>		
+		
+		<!-- Regras da AplicaÃ§Ã£o -->
+		<!-- Tipo de ServiÃ§o -->
+		<navigation-case>
+			<from-outcome>incluirTipoServico</from-outcome>
+			<to-view-id>/incluirTipoServico.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>alterarTipoServico</from-outcome>
+			<to-view-id>/alterarTipoServico.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>alterarTipoServicoProsseguir</from-outcome>
+			<to-view-id>/alterarTipoServicoProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>voltar_tiposervico</from-outcome>
+			<to-view-id>/alterarTipoServico.tiles</to-view-id>
+		</navigation-case>
+			
+		<navigation-case>
+			<from-outcome>historicoTipoServico</from-outcome>
+			<to-view-id>/historicoTipoServico.tiles</to-view-id>
+		</navigation-case>	
+
+		<!-- Tipo de Incidencia -->
+		<navigation-case>
+			<from-outcome>incluirTipoIncidencia</from-outcome>
+			<to-view-id>/incluirTipoIncidencia.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>manterTipoIncidencia</from-outcome>
+			<to-view-id>/manterTipoIncidencia.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>consultarTipoIncidencia</from-outcome>
+			<to-view-id>/consultarTipoIncidencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarTipoIncidenciaHistorico</from-outcome>
+			<to-view-id>/consultarTipoIncidenciaHistorico.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>alterarTipoIncidencia</from-outcome>
+			<to-view-id>/alterarTipoIncidencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>excluirTipoIncidencia</from-outcome>
+			<to-view-id>/excluirTipoIncidencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>voltar_incluirtipoincidencia</from-outcome>
+			<to-view-id>/incluirTipoIncidencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>voltar_mantertipoincidencia</from-outcome>
+			<to-view-id>/manterTipoIncidencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>voltar_historicotipoincidencia</from-outcome>
+			<to-view-id>/historicoTipoIncidencia.tiles</to-view-id>
+		</navigation-case>
+
+		<!-- Contas ContÃ¡beis -->	
+		<navigation-case>
+			<from-outcome>incluirContaContabil</from-outcome>
+			<to-view-id>/incluirContaContabil.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterContaContabil</from-outcome>
+			<to-view-id>/manterContaContabil.tiles</to-view-id>
+		</navigation-case>
+							
+		<navigation-case>
+				<from-outcome>carrega_alteracao</from-outcome>
+				<to-view-id>/alterarContaContabil.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>carrega_exclusao</from-outcome>
+				<to-view-id>/excluirContaContabil.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>excluirContaContabil</from-outcome>
+				<to-view-id>/excluirContaContabil.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>inicial_manter_contas</from-outcome>
+				<to-view-id>/manterContaContabil.tiles</to-view-id>
+		</navigation-case>
+							
+		<navigation-case>
+				<from-outcome>inicial_incluir_contas</from-outcome>
+				<to-view-id>/incluirContaContabil.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>historicoContaContabil</from-outcome>
+			<to-view-id>/historicoContaContabil.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultaContaContabilTipoServico</from-outcome>
+			<to-view-id>/consultaContaContabilTipoServico.tiles</to-view-id>
+		</navigation-case>		
+		
+		<navigation-case>
+			<from-outcome>historicoTipoIncidencia</from-outcome>
+			<to-view-id>/historicoTipoIncidencia.tiles</to-view-id>
+		</navigation-case>	
+		
+		<!-- Valor MÃªs Total -->
+		
+		<navigation-case>
+			<from-outcome>valorMesTotalInicial</from-outcome>
+			<to-view-id>/valorMesTotalInicial.tiles</to-view-id>
+		</navigation-case>
+		
+		<!-- DependÃªncias -->	
+		<navigation-case>
+			<from-outcome>manterDependencia</from-outcome>
+			<to-view-id>/manterDependencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterDependenciaMunicipio</from-outcome>
+			<to-view-id>/manterDependenciaMunicipio.tiles</to-view-id>
+		</navigation-case>		
+		
+		<navigation-case>
+				<from-outcome>resultadoDependenciasNovas</from-outcome>
+				<to-view-id>/resultadoDependenciasNovas.tiles</to-view-id>
+		</navigation-case>						
+		
+		<navigation-case>
+				<from-outcome>carrega_informacoes_dependencias_novas</from-outcome>
+				<to-view-id>/resultadoDependenciasNovasInformacoes.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>carrega_informacoes_dependencias_incluir</from-outcome>
+				<to-view-id>/incluirDependenciaProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>lista_dependencias_municipio</from-outcome>
+				<to-view-id>/manterDependenciaProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>incluirDependencia</from-outcome>
+			<to-view-id>/incluirDependencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>manter_alteracao</from-outcome>
+				<to-view-id>/manterDependenciaAlterarProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>manter_exclusao</from-outcome>
+				<to-view-id>/manterDependenciaExcluir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>manter_consulta</from-outcome>
+				<to-view-id>/manterDependenciaConsultar.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>prosseguir_agencias_dependencias_novas</from-outcome>
+				<to-view-id>/resultadoDependenciasNovasAgencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>prosseguir_agencias_incluir_dependencias</from-outcome>
+				<to-view-id>/incluirDependenciasAgencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>lista_municipios_dependencias_novas</from-outcome>
+				<to-view-id>/resultadoDependenciasNovasMunicipios.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>lista_municipios_incluir_dependencias</from-outcome>
+				<to-view-id>/dependenciasListaMunicipiosIncluir.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>conHistoricoDependencias</from-outcome>
+			<to-view-id>/conHistoricoDependencias.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>conHistoricoDependenciasAvancar</from-outcome>
+			<to-view-id>/conHistoricoDependenciasAvancar.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalhesHistoricoDependencias</from-outcome>
+			<to-view-id>/detalhesHistoricoDependencias.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>conDependenciasEncerradas</from-outcome>
+			<to-view-id>/conDependenciasEncerradas.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalhesDependenciasEncerradasProsseguir</from-outcome>
+			<to-view-id>/detalhesDependenciasEncerradasProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>lista_municipios_manter_recolhimento</from-outcome>
+				<to-view-id>/manterDependenciasListaMunicipios.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>manter_alterar_recolhimento</from-outcome>
+				<to-view-id>/manterDependenciaAlterarRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>incluir_alterar_recolhimento</from-outcome>
+				<to-view-id>/incluirDependenciaAlterarRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>prosseguir_agencias_manter_dependencias</from-outcome>
+				<to-view-id>/manterDependenciasAgencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>prosseguir_agencias_incluir_dependencias</from-outcome>
+				<to-view-id>/incluirDependenciasAgencia.tiles</to-view-id>
+		</navigation-case>
+		
+		
+		<!-- MunicÃ­pios -->
+		
+		<!-- Manter Municipios -->		
+		<navigation-case>
+			<from-outcome>manterMunicipioInicial</from-outcome>
+			<to-view-id>/manterMunicipioInicial.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioDetalhes</from-outcome>
+			<to-view-id>/manterMunicipioDetalhes.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioDetalheAlteracao</from-outcome>
+			<to-view-id>/manterMunicipioDetalheAlteracao.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioDetalheExclusao</from-outcome>
+			<to-view-id>/manterMunicipioDetalheExclusao.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioContasExclusao</from-outcome>
+			<to-view-id>/manterMunicipioContasExclusao.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioContasExclusaoResultado</from-outcome>
+			<to-view-id>/manterMunicipioContasExclusaoResultado.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarHistoricoMunicipio</from-outcome>
+			<to-view-id>/consultarHistoricoMunicipio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioContasTipoServico</from-outcome>
+			<to-view-id>/manterMunicipioContasTipoServico.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioContasTipoServicoResultado</from-outcome>
+			<to-view-id>/manterMunicipioContasTipoServicoResultado.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>manterMunicipioAlteracao</from-outcome>
+			<to-view-id>/manterMunicipioAlteracao.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterMunicipioExclusao</from-outcome>
+			<to-view-id>/manterMunicipioExclusao.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>manterAlteracaoRespRecolhimento</from-outcome>
+			<to-view-id>/manterAlteracaoRespRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterAlteracaoRespRecolhimentoListaMunic</from-outcome>
+			<to-view-id>/manterAlteracaoRespRecolhimentoListaMunic.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterAlteracaoMunicipioContas</from-outcome>
+			<to-view-id>/manterAlteracaoMunicipioContas.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterAlteracaoMunicipioContasConfirmacao</from-outcome>
+			<to-view-id>/manterAlteracaoMunicipioContasConfirmacao.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterMunSelecionarAgencia</from-outcome>
+			<to-view-id>/manterMunSelecionarAgencia.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>resultadoMunicipiosNovos</from-outcome>
+			<to-view-id>/resultadoMunicipiosNovos.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>historicoMunicipio</from-outcome>
+			<to-view-id>/historicoMunicipio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterDependenciaMunicipio</from-outcome>
+			<to-view-id>/manterDependenciaMunicipio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>filtroSelecMunicipiosSemConvenio</from-outcome>
+			<to-view-id>/filtroSelecMunicipiosSemConvenio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>apuracaoPorPa</from-outcome>
+			<to-view-id>/apuracaoPorPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>listaPorPa</from-outcome>
+			<to-view-id>/listaPorPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>apuracaoParcialPa</from-outcome>
+			<to-view-id>/apuracaoParcialPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>parcialPa</from-outcome>
+			<to-view-id>/parcialPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultaPa</from-outcome>
+			<to-view-id>/consultaPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>listaParcialPa</from-outcome>
+			<to-view-id>/listaParcialPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>listaPa</from-outcome>
+			<to-view-id>/listaPa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>manterDependenciaMunicipioProsseguir</from-outcome>
+			<to-view-id>/manterDependenciaMunicipioProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>aliquotaDiferenciada</from-outcome>
+			<to-view-id>/aliquotaDiferenciada.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>aliquotaDiferenciadaResultado</from-outcome>
+			<to-view-id>/aliquotaDiferenciadaResultado.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>voltar_detalhes_municipios_novos</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosIncluir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>voltar_pesquisa_municipios_novos</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosPesqMunicipio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>lista_agencias_municipios_novos</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>carrega_contas_municipios_novos</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosContas.tiles</to-view-id>
+		</navigation-case>
+		
+		
+		<!-- Referente a Tela Saldos Divergentes -->
+		
+		<navigation-case>
+				<from-outcome>saldosDivergentes</from-outcome>
+				<to-view-id>/saldosDivergentes.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+				<from-outcome>CONSULTAR_SALDOS_DIVERGENTES</from-outcome>
+				<to-view-id>/saldosDivergentesResultado.tiles</to-view-id>
+		</navigation-case>			
+
+		<navigation-case>
+				<from-outcome>contasNaoConstantes</from-outcome>
+				<to-view-id>/contasNaoConstantes.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+				<from-outcome>contasNaoConstantesResultado</from-outcome>
+				<to-view-id>/contasNaoConstantesResultado.tiles</to-view-id>
+		</navigation-case>	
+
+	    <navigation-case>
+				<from-outcome>controleSaldosRecolhimento</from-outcome>
+				<to-view-id>/controleSaldosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>controleSaldosRecolhimentoResultado</from-outcome>
+				<to-view-id>/controleSaldosRecolhimentoResultado.tiles</to-view-id>
+		</navigation-case>
+
+		<!-- Referente a Tela ApuraÃ§Ã£o Mensal -->
+		
+		<navigation-case>
+				<from-outcome>solicitarApuracaoMensal</from-outcome>
+				<to-view-id>/solicitarApuracaoMensal.tiles</to-view-id>
+		</navigation-case>	
+		
+	<!-- Referente a Tela ApuraÃ§cao Mensal Parcial -->	
+	
+		<navigation-case>
+				<from-outcome>solicitarApuracaoParcial</from-outcome>
+				<to-view-id>/solicitarApuracaoParcial.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>SUCESSO_PROSSEGUIR</from-outcome>
+				<to-view-id>/solicitarApuracaoParcial2.tiles</to-view-id>
+		</navigation-case>
+		
+	<!-- Referente a Tela Apuracao Apos Fechamento Mensal -->	
+	
+		<navigation-case>
+				<from-outcome>solicitarApuracaoAposFechamento</from-outcome>
+				<to-view-id>/solicitarApuracaoAposFechamento.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_FECHAMENTO_APURACAO</from-outcome>
+				<to-view-id>/solicitarApuracaoAposFechamento2.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>FINALIZAR_FECHAMENTO_APURACAO</from-outcome>
+				<to-view-id>/solicitarApuracaoAposFechamento3.tiles</to-view-id>
+		</navigation-case>
+		
+	<!-- Referente a Tela Valor MÃªs Total -->	
+		<navigation-case>
+			<from-outcome>valorMesTotal</from-outcome>
+			<to-view-id>/valorMesTotal.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>PROSSEGUIR_VALOR_MES_TOTAL</from-outcome>
+			<to-view-id>/valorMesTotalResultado.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+			<from-outcome>PROSSEGUIR_VALOR_MES_TOTAL_CONTA</from-outcome>
+			<to-view-id>/valorMesTotalResultadoConta.tiles</to-view-id>
+		</navigation-case>	
+		
+	<!-- Referente a Tela ApuraÃ§Ã£o Mensal ISS -->
+	<navigation-case>
+		<from-outcome>consultarApuracaoMensal</from-outcome>
+		<to-view-id>/consultarApuracaoMensal.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>resultadoApuracaoMensal</from-outcome>
+		<to-view-id>/resultadoApuracaoMensal.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>detalheDepenApuracaoMensal</from-outcome>
+		<to-view-id>/detalheDepenApuracaoMensal.tiles</to-view-id>
+	</navigation-case>
+
+	<navigation-case>
+		<from-outcome>detalheDepenApuracaoMensalConta</from-outcome>
+		<to-view-id>/detalheDepenApuracaoMensalConta.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+			<from-outcome>detalheApuracaoMensal</from-outcome>
+			<to-view-id>/detalheApuracaoMensal.tiles</to-view-id>
+	</navigation-case>
+
+	<!-- Referente a Tela ApuraÃ§Ã£o ApÃ³s Fechamento ISS -->
+
+	<navigation-case>
+		<from-outcome>consultarApuracaoAposFechamento</from-outcome>
+		<to-view-id>/consultarApuracaoAposFechamento.tiles</to-view-id>
+	</navigation-case>
+
+	<navigation-case>
+		<from-outcome>DEP_APURACAO</from-outcome>
+		<to-view-id>/depConsultarApuracaoAposFechamento.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>DETALHE_APURACAO</from-outcome>
+		<to-view-id>/detalharApuracaoAposFechamento.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>DETALHE_APURACAO_CONTA</from-outcome>
+		<to-view-id>/detalharApuracaoAposFechamentoConta.tiles</to-view-id>
+	</navigation-case>
+
+	<!-- Referente a Tela ApuraÃ§Ã£o Parcial ISS -->	
+		
+	<navigation-case>
+		<from-outcome>consultarApuracaoParcial</from-outcome>
+		<to-view-id>/consultarApuracaoParcial.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>AVANCAR_DEP_PARCIAL</from-outcome>
+		<to-view-id>/resultadoApuracaoParcial.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>AVANCAR_APURACAO_PARCIAL</from-outcome>
+		<to-view-id>/apuracaoParcial.tiles</to-view-id>
+	</navigation-case>
+	
+	<navigation-case>
+		<from-outcome>AVANCAR_APURACAO_PARCIAL_CONTA</from-outcome>
+		<to-view-id>/apuracaoParcialConta.tiles</to-view-id>
+	</navigation-case>
+	
+	<!-- Referente a Balancetes / Fiscalizacoes ISS -->
+		<navigation-case>
+			<from-outcome>DETALHE_APURACAO</from-outcome>
+			<to-view-id>/detalharApuracaoAposFechamento.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>DETALHE_APURACAO_CONTA</from-outcome>
+			<to-view-id>/detalharApuracaoAposFechamentoConta.tiles</to-view-id>
+		</navigation-case>
+
+		<!-- Referente a Tela ApuraÃ§Ã£o Parcial ISS -->
+
+		<navigation-case>
+			<from-outcome>consultarApuracaoParcial</from-outcome>
+			<to-view-id>/consultarApuracaoParcial.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>AVANCAR_DEP_PARCIAL</from-outcome>
+			<to-view-id>/resultadoApuracaoParcial.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>AVANCAR_APURACAO_PARCIAL</from-outcome>
+			<to-view-id>/apuracaoParcial.tiles</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>AVANCAR_APURACAO_PARCIAL_CONTA</from-outcome>
+			<to-view-id>/apuracaoParcialConta.tiles</to-view-id>
+		</navigation-case>
+
+		<!-- Referente a Balancetes / Fiscalizacoes ISS -->
+		<navigation-case>
+			<from-outcome>gerarBalancetesFiscalizacoesIss</from-outcome>
+			<to-view-id>/gerarBalancetesFiscalizacoesIss.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarBalancetesFiscalizacoesIss</from-outcome>
+			<to-view-id>/consultarBalancetesFiscalizacoesIss.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarDetalhesBalancetesFiscalizacoesIss</from-outcome>
+			<to-view-id>/consultarDetalhesBalancetesFiscalizacoesIss.tiles</to-view-id>
+		</navigation-case>
+		
+		<!-- Referente a Balancetes / Obrigacoes Acessorias -->	
+		<navigation-case>
+			<from-outcome>gerarBalancetesObrigacoesAcessorias</from-outcome>
+			<to-view-id>/gerarBalancetesObrigacoesAcessorias.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarBalancetesObrigacoesAcessorias</from-outcome>
+			<to-view-id>/consultarBalancetesObrigacoesAcessorias.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarDetalhesBalancetesObrigacoesAcessorias</from-outcome>
+			<to-view-id>/consultarDetalhesBalancetesObrigacoesAcessorias.tiles</to-view-id>
+		</navigation-case>	
+		
+		<!-- Referente a Balancetes / Obrigacoes Webservice -->	
+		<navigation-case>
+			<from-outcome>manterDependenciaParametrizacao</from-outcome>
+			<to-view-id>/manterDependenciaParametrizacao.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>lista_dependencias_municipio_parametrizacao</from-outcome>
+			<to-view-id>/manterDependenciaProsseguirParametrizacao.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>parametrizacao_inclusao</from-outcome>
+			<to-view-id>/dependenciaParametrizacaoIncluir.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>parametrizacao_alteracao</from-outcome>
+			<to-view-id>/dependenciaParametrizacaoAlterar.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>parametrizacao_exclusao</from-outcome>
+			<to-view-id>/dependenciaParametrizacaoExcluir.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>parametrizacao_consulta</from-outcome>
+			<to-view-id>/dependenciaParametrizacaoConsultar.tiles</to-view-id>
+		</navigation-case>
+		
+		
+		
+		
+		<navigation-case>
+			<from-outcome>uploadTransmissaoArquivos</from-outcome>
+			<to-view-id>/uploadTransmissaoArquivos.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarLogArquivos</from-outcome>
+			<to-view-id>/consultarLogArquivos.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalharLogArquivos</from-outcome>
+			<to-view-id>/detalharLogArquivos.tiles</to-view-id>
+		</navigation-case>
+					
+	</navigation-rule>
+	
+	
+	
+		
+	<navigation-rule>
+		<from-view-id>/resultadoMunicipiosNovos.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>INCLUIR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosIncluir.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/resultadoMunicipiosNovosIncluir.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovos.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>LIMPAR_CAMPOS</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosIncluir.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>PROSSEGUIR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/resultadoMunicipiosNovosRecolhimento.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosIncluir.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>LIMPAR_CAMPOS</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>PROSSEGUIR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>PESQUISA_MUNICIPIO</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosPesqMunicipio.tiles</to-view-id>
+		</navigation-case>		
+		<navigation-case>
+				<from-outcome>SUCESSO_PESQUISAR_AGENCIA</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>		
+		<navigation-case>
+				<from-outcome>LIMPAR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/resultadoMunicipiosNovosContas.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>LIMPAR_CAMPOS</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosContas.tiles</to-view-id>
+		</navigation-case>
+		
+		
+		
+		<navigation-case>
+				<from-outcome>PESQUISAR_CONTAS</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosContas.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_CONTAS_FINALIZAR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosFinalizar.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_MUNICIPIO</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosPesqMunicipio.jsp</to-view-id>
+		</navigation-case>	
+	
+	
+					
+		<navigation-case>
+				<from-outcome>PROSSEGUIR</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosRecolhimento.tiles</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_CONTAS</from-outcome>
+				<to-view-id>/resultadoMunicipiosNovosContas.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/historicoMunicipio.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_CONSULTAR</from-outcome>
+				<to-view-id>/historicoMunicipioConsultar.tiles</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/historicoMunicipioConsultar.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR_PESQUISAR</from-outcome>
+				<to-view-id>/historicoMunicipio.tiles</to-view-id>
+		</navigation-case>			
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_CONTAS</from-outcome>
+				<to-view-id>/historicoMunicipioContas.tiles</to-view-id>
+		</navigation-case>				
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/historicoMunicipioContas.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR_CONSULTAR</from-outcome>
+				<to-view-id>/historicoMunicipioConsultar.tiles</to-view-id>
+		</navigation-case>			
+		<navigation-case>
+				<from-outcome>PROSSEGUIR_CONTAS_RESULTADO</from-outcome>
+				<to-view-id>/historicoMunicipioContasResultado.tiles</to-view-id>
+		</navigation-case>				
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/historicoMunicipioContasResultado.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR_CONTAS</from-outcome>
+				<to-view-id>/historicoMunicipioContas.tiles</to-view-id>
+		</navigation-case>								
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/aliquotaDiferenciada.tiles</from-view-id>				
+		<navigation-case>
+				<from-outcome>PROSSEGUIR</from-outcome>
+				<to-view-id>/aliquotaDiferenciadaResultado.tiles</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/aliquotaDiferenciadaResultado.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/aliquotaDiferenciada.tiles</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>agenciaIncorpDepart</from-outcome>
+			<to-view-id>/agenciaIncorpDepart.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>agenciaIncorpDepartConsultar</from-outcome>
+			<to-view-id>/agenciaIncorpDepartConsultar.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>agenciaIncorpDepartResultado</from-outcome>
+			<to-view-id>/agenciaIncorpDepartResultado.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- APURACAO MENSAL DIFERENCIADA - INICIO-->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>apuracaoMensalDiferenciadaDadosPesquisa</from-outcome>
+			<to-view-id>/apuracaoMensalDiferenciadaDadosPesquisa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>apuracaoMensalDiferenciadaDadosApuracao</from-outcome>
+			<to-view-id>/apuracaoMensalDiferenciadaDadosApuracao.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>apuracaoMensalDiferenciadaDadosConsulta</from-outcome>
+			<to-view-id>/apuracaoMensalDiferenciadaDadosConsulta.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- APURAÃ‡ÃƒO MENSAL DIFERENCIADA - FIM-->
+
+	
+
+	
+	
+	<!-- APURAÃ‡ÃƒO REPROCESSAMENTO - INICIO-->
+	
+	<navigation-rule>
+		<from-view-id>/apuracaoReprocLista.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>PROSSEGUIR</from-outcome>
+				<to-view-id>/apuracaoReprocConsulta.tiles</to-view-id>
+		</navigation-case>		
+		<navigation-case>
+				<from-outcome>apuracaoReprocConDetalhada</from-outcome>
+				<to-view-id>/apuracaoReprocConDetalhada.tiles</to-view-id>
+		</navigation-case>	
+		
+	</navigation-rule>		
+		
+
+	
+	<navigation-rule>
+		<from-view-id>/apuracaoReprocConsulta.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/apuracaoReprocLista.tiles</to-view-id>
+		</navigation-case>	
+		
+		<navigation-case>
+				<from-outcome>PESQUISAR</from-outcome>
+				<to-view-id>/apuracaoReprocConsulta.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+				<from-outcome>CONSULTA_DETALHADA</from-outcome>
+				<to-view-id>/apuracaoReprocConDetalhada.tiles</to-view-id>
+			</navigation-case>		
+	</navigation-rule>		
+
+		
+		
+	<navigation-rule>
+		<from-view-id>/apuracaoReprocConDetalhada.jsp</from-view-id>	
+		<navigation-case>
+				<from-outcome>CONSULTAR</from-outcome>
+				<to-view-id>/apuracaoReprocResultado.tiles</to-view-id>
+		</navigation-case>	
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/apuracaoReprocConsulta.tiles</to-view-id>
+		</navigation-case>	
+		<navigation-case>
+				<from-outcome>apuracaoReprocLista</from-outcome>
+				<to-view-id>/apuracaoReprocLista.tiles</to-view-id>
+		</navigation-case>	
+	</navigation-rule>			
+		
+	<navigation-rule>
+		<from-view-id>/apuracaoReprocResultado.jsp</from-view-id>				
+		<navigation-case>
+				<from-outcome>VOLTAR</from-outcome>
+				<to-view-id>/apuracaoReprocConDetalhada.tiles</to-view-id>
+		</navigation-case>		
+	</navigation-rule>	
+	
+	
+		<!-- APURAÃ‡ÃƒO REPROCESSAMENTO - FIM-->
+	
+	<!-- ApuraÃ§Ã£o -->
+	<!-- Reprocessamento Por DependÃªncia -->
+	
+	<navigation-rule>
+		<navigation-case>
+				<from-outcome>solicitarReprocessamentoPorDependencia</from-outcome>
+				<to-view-id>/solicitarReprocessamentoPorDependencia.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>solicitarReprocessamentoPorDependenciaProsseguir</from-outcome>
+				<to-view-id>/solicitarReprocessamentoPorDependenciaProsseguir.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>solicitarReprocessamentoPorDependenciaContasMunicipio</from-outcome>
+				<to-view-id>/solicitarReprocessamentoPorDependenciaContasMunicipio.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+				<from-outcome>solicitarReprocessamentoPorDependenciaContasMunicipio2</from-outcome>
+				<to-view-id>/solicitarReprocessamentoPorDependenciaContasMunicipio2.tiles</to-view-id>
+		</navigation-case>
+	
+	</navigation-rule>
+	
+	<!-- Reprocessamento Por MunicÃ­pio -->
+	
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>solicitarReprocessamentoPorMunicipio</from-outcome>
+			<to-view-id>/solicitarReprocessamentoPorMunicipio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>solicitarReprocessamentoPorMunicipio2</from-outcome>
+			<to-view-id>/solicitarReprocessamentoPorMunicipio2.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>solicitarReprocessamentoPorMunicipioContasMunicipio</from-outcome>
+			<to-view-id>/solicitarReprocessamentoPorMunicipioContasMunicipio.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>solicitarReprocessamentoPorMunicipioFinalizar</from-outcome>
+			<to-view-id>/solicitarReprocessamentoPorMunicipioFinalizar.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>solicitarReprocessamentoPorMunicipioPesqMunicipio</from-outcome>
+			<to-view-id>/solicitarReprocessamentoPorMunicipioPesqMunicipio.tiles</to-view-id>
+		</navigation-case>
+	
+	</navigation-rule>
+	
+	<!-- OscilaÃ§Ã£o Negativa -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>consultarOscilacaoNegativa</from-outcome>
+			<to-view-id>/consultarOscilacaoNegativa.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>resultadoConsultaOscilacaoNegativa</from-outcome>
+			<to-view-id>/resultadoConsultaOscilacaoNegativa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Aliquota Zerada -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>consultarApuracaoAliquotaZerada</from-outcome>
+			<to-view-id>/consultarApuracaoAliquotaZerada.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarApuracaoAliquotaZeradaDependencia</from-outcome>
+			<to-view-id>/consultarApuracaoAliquotaZeradaDependencia.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>resultadoApuracaoAliquotaZerada</from-outcome>
+			<to-view-id>/resultadoApuracaoAliquotaZerada.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>listaMunicipiosAliquotaZerada</from-outcome>
+			<to-view-id>/listaMunicipiosAliquotaZerada.tiles</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	
+	<!-- Movimento NÃ£o TributÃ¡rio -->
+		
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>movimentoNaoTributavel</from-outcome>
+			<to-view-id>/movimentoNaoTributavel.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>consultarMovimentoNaoTributavelProsseguir</from-outcome>
+			<to-view-id>/consultarMovimentoNaoTributavelProsseguir.tiles</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>movimentoNaoTributavelConsultar</from-outcome>
+			<to-view-id>/movimentoNaoTributavelConsultar.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	
+	<!--Planilha APuraÃ§Ã£o -->
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>planilhaApuracaoISS</from-outcome>
+			<to-view-id>/planilhaApuracaoISS.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>planilhaApuracaoISSResultado</from-outcome>
+			<to-view-id>/planilhaApuracaoISSResultado.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>		
+
+	<!--Planilha APuraÃ§Ã£o -->
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>planilhaApuracaoISSAgencia</from-outcome>
+			<to-view-id>/planilhaApuracaoISSAgencia.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>		
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>incluirCodLancamento</from-outcome>
+			<to-view-id>/incluirCodLancamento.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>tarifasCobradas</from-outcome>
+			<to-view-id>/tarifasCobradas.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>listaTarifasCobradas</from-outcome>
+			<to-view-id>/listaTarifasCobradas.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>conciliacaoApuracaoInclusao</from-outcome>
+			<to-view-id>/conciliacaoApuracaoInclusao.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>conciliacaoApuracao</from-outcome>
+			<to-view-id>/conciliacaoApuracao.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>manterCodLancamento</from-outcome>
+			<to-view-id>/manterCodLancamento.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>alterarCodLancamento</from-outcome>
+			<to-view-id>/alterarCodLancamento.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+		
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>conHistCodLancamento</from-outcome>
+			<to-view-id>/conHistCodLancamento.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+		
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detHistCodLancamento</from-outcome>
+			<to-view-id>/detHistCodLancamento.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>incluirItemLeiCompl</from-outcome>
+			<to-view-id>/incluirItemLeiCompl.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>alterarItemLeiCompl</from-outcome>
+			<to-view-id>/alterarItemLeiCompl.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>manterItemLeiCompl</from-outcome>
+			<to-view-id>/manterItemLeiCompl.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarItemLeiCompl</from-outcome>
+			<to-view-id>/consultarItemLeiCompl.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarHistItemLeiCompl</from-outcome>
+			<to-view-id>/consultarHistItemLeiCompl.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharHistItemLeiCompl</from-outcome>
+			<to-view-id>/detalharHistItemLeiCompl.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>incluirCadEmpresa</from-outcome>
+			<to-view-id>/incluirCadEmpresa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>alterarCadEmpresa</from-outcome>
+			<to-view-id>/alterarCadEmpresa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>manterCadEmpresa</from-outcome>
+			<to-view-id>/manterCadEmpresa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharCadEmpresa</from-outcome>
+			<to-view-id>/detalharCadEmpresa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>historicoCadEmpresa</from-outcome>
+			<to-view-id>/historicoCadEmpresa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharHistCadEmpresa</from-outcome>
+			<to-view-id>/detalharHistCadEmpresa.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharMunicipioHistorico</from-outcome>
+			<to-view-id>/detalharMunicipioHistorico.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharMunicipioHistorico2</from-outcome>
+			<to-view-id>/detalharMunicipioHistorico2.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>incluirMunicipio</from-outcome>
+			<to-view-id>/incluirMunicipio.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>alterarMunicipio</from-outcome>
+			<to-view-id>/alterarMunicipio.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>manterMunicipio</from-outcome>
+			<to-view-id>/manterMunicipio.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharMunicipio</from-outcome>
+			<to-view-id>/detalharMunicipio.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>manterAliquotaMunicipio</from-outcome>
+			<to-view-id>/manterAliquota.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>alterarAliquotaMunicipio</from-outcome>
+			<to-view-id>/alterarAliquota.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharAliquotaMunicipio</from-outcome>
+			<to-view-id>/detalharAliquota.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarInformacoesAliquota</from-outcome>
+			<to-view-id>/consultarInformacoesAliquota.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>parametrizarMinMaxAliquota</from-outcome>
+			<to-view-id>/parametrizarMinMaxAliquota.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarHistoricoMinMaxAliquota</from-outcome>
+			<to-view-id>/consultarHistoricoMinMaxAliquota.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>conArquivoEmp</from-outcome>
+			<to-view-id>/conArquivoEmp.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>conArquivoEmpSem</from-outcome>
+			<to-view-id>/conArquivoEmpSem.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detArquivoEmp</from-outcome>
+			<to-view-id>/detArquivoEmp.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>liberarPagto</from-outcome>
+			<to-view-id>/liberarPagto.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>liberarPagtoIssRetificado</from-outcome>
+			<to-view-id>/liberarPagtoIssRetificado.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>pgtosNaoGerados</from-outcome>
+			<to-view-id>/pgtosNaoGerados.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>pgtosNaoGeradosRetificado</from-outcome>
+			<to-view-id>/pgtosNaoGeradosRetificado.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>listarPgtosVencidosComp</from-outcome>
+			<to-view-id>/listarPgtosVencidosComp.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>listarPgtosVencidosCompRetificado</from-outcome>
+			<to-view-id>/listarPgtosVencidosCompRetificado.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>processarPagto</from-outcome>
+			<to-view-id>/processarPagto.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarNaoElegiveis</from-outcome>
+			<to-view-id>/consultarNaoElegiveis.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarNaoElegiveisRetificado</from-outcome>
+			<to-view-id>/consultarNaoElegiveisRetificado.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarPagamentos</from-outcome>
+			<to-view-id>/consultarPagamentos.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharConsultaPagamentos</from-outcome>
+			<to-view-id>/detalharConsultaPagamentos.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>pesquisarPagamentoManual</from-outcome>
+			<to-view-id>/pesquisarPagamentoManual.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>detalharPagtoManualIndividual</from-outcome>
+			<to-view-id>/detalharPagtoManualIndividual.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>calcularPagamentoManual</from-outcome>
+			<to-view-id>/calcularPagamentoManual.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>consultarPgtoManualEmLote</from-outcome>
+			<to-view-id>/consultarPgtoManualEmLote.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>gerarRelatorio</from-outcome>
+			<to-view-id>/gerarRelatorio.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>	
+		<navigation-case>
+			<from-outcome>gerarRelatoriosAliquotas</from-outcome>
+			<to-view-id>/gerarRelatoriosAliquotas.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+	<navigation-case>
+		<from-outcome>gerarHistoricoTransacoesRecusadas</from-outcome>
+		<to-view-id>/gerarHistoricoTransacoesRecusadas.tiles</to-view-id>
+	</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Parametrizar Percentual TransiÃ§Ã£o -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>consultarPercentualTransicao</from-outcome>
+			<to-view-id>/consultarPercentualTransicao.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>incluirPercentualTransicao</from-outcome>
+			<to-view-id>/incluirPercentualTransicao.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>alterarPercentualTransicao</from-outcome>
+			<to-view-id>/alterarPercentualTransicao.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Carga Massiva Aliquota -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>consultarCargaMassivaIntegracao</from-outcome>
+			<to-view-id>/consultarCargaMassivaIntegracao.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>consultarCargaMassivaIssGerencial</from-outcome>
+			<to-view-id>/consultarCargaMassivaIssGerencial.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalharCargaMassivaIntegracao</from-outcome>
+			<to-view-id>/detalharCargaMassivaIntegracao.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>detalharCargaMassivaIssGerencial</from-outcome>
+			<to-view-id>/detalharCargaMassivaIssGerencial.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- Movimento Retificador e Complementar -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>consultarProcessarContabilidade</from-outcome>
+			<to-view-id>/consultarProcessarContabilidade.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>diferencaProcessarContabilidade</from-outcome>
+			<to-view-id>/diferencaProcessarContabilidade.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>liberarPagtoIssRetificado</from-outcome>
+			<to-view-id>/liberarPagtoIssRetificado.tiles</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>reprocessarApuracao</from-outcome>
+			<to-view-id>/reprocessarApuracao.tiles</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Manter Aliquota -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>manterAliquotaConsultar</from-outcome>
+			<to-view-id>/manterAliquotaConsultar</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>manterAliquotaIncluir</from-outcome>
+			<to-view-id>/manterAliquotaIncluir</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>manterAliquotaAlterar</from-outcome>
+			<to-view-id>/manterAliquotaAlterar</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>manterAliquotaExcluir</from-outcome>
+			<to-view-id>/manterAliquotaExcluir</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>
